@@ -10,7 +10,7 @@
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"  media="none" onload="if(media!='screen,projection')media='screen,projection'">
 
 		<!--Fetch material icons from the CDN asynchronously-->
-		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"  media="none" onload="if(media!='screen,projection')media='screen,projection'">
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="none" onload="if(media!='screen,projection')media='screen,projection'">
 
 		<!--Fetch font (Roboto) from the CDN asynchronously-->
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
@@ -174,7 +174,7 @@
 			<div class="footer-copyright">
 				<div class="container" id="footerText">
 					<a href="https://volatile.ga/" target="_blank" title="Volatile, Inc." style="color:#FFFFFF">&emsp;Volatile, Inc.&emsp;</a>
-					<a class="grey-text text-lighten-4 right" href="#footertext">Made with love for everyone</a>
+					<a class="grey-text text-lighten-4 right" href="">Made with love for everyone</a>
 				</div>
 			</div>
 		</footer>
