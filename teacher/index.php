@@ -8,7 +8,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 		<!--Fetch local style resources-->
-		<link rel="stylesheet" href="../css/tstyle.css">
+		<link rel="stylesheet" href="../css/tstyle.css" media="none" onload="if(media!='screen,projection')media='screen,projection'">
 
 		<!--Fetch minified normalizecss from the CDN asynchronously-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" media="none" onload="if(media!='screen,projection')media='screen,projection'">
@@ -218,7 +218,7 @@
 		</footer>
 
 		<!--JavaScript at end of body for optimized asynchronous loading-->
-		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!--Not loading asynchronously as tindex.js is dependant on this-->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!--Not loading asynchronously as tindex.js is dependant on this-->
 		<script type="text/javascript" src="../js/tindex.js" async></script>
 
 		<!--Onload Function-->
