@@ -10,21 +10,21 @@
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"  media="none" onload="if(media!='screen,projection')media='screen,projection'">
 
 		<!--Fetch material icons from the CDN asynchronously-->
-		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"  media="none" onload="if(media!='screen,projection')media='screen,projection'">
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="none" onload="if(media!='screen,projection')media='screen,projection'">
 
 		<!--Fetch font (Roboto) from the CDN asynchronously-->
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
 
 		<!--Set the shortcut icon-->
-		<link rel="shortcut icon" type="image/ico" href="../../images/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/ico" href="images/icons/favicon.ico">
 
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!--Progressive Web App meta tags-->
-		<link rel="manifest" href="../manifest.json">
-		<meta name="theme-color" content="#4DB6AC">
-		<meta name="Description" content="Programs from web tech lab sessions">
+		<link rel="manifest" href="manifest.json">
+		<meta name="theme-color" content="#EE6E73">
+		<meta name="Description" content="Omega is a collaborative classroom platform for teachers and students alike.">
 
 		<!--Overriden Styles-->
 		<style>
@@ -78,7 +78,7 @@
 		<nav>
 
 			<div class="nav-wrapper">
-				<img src="../images/icons/72.png" style="height:95%;" />
+				<img src="images/icons/72.png" style="height:95%;" />
 				<a href="" class="brand-logo">Omega</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="https://siddhantvinchurkar.me/" target="_blank" title="Siddhant Vinchurkar">Siddhant Vinchurkar</a></li>
@@ -94,7 +94,7 @@
 
 			<!--Progrss Bar-->
 			<div class="container" id="progressBar">
-				<img src="../images/icons/512.png" class="center2" />
+				<img src="images/icons/512.png" class="center2" />
 				<div class="progress center">
 					<div class="indeterminate" style="margin-right: auto; margin-left: auto; width: 250px;"></div>
 				</div>
@@ -102,21 +102,68 @@
 
 			<!--Contents-->
 			<div id="pageContents" style="display:none;">
-				<img src="../images/icons/512.png" class="center2" />
-				<!--Login Card [Info]-->
+				<img src="images/icons/512.png" class="center2" />
+				<!--Card Panel [Info]-->
 				<div class="row">
-					<div class="col s12 m4 offset-m4" style="margin-top:10em;">
-						<div class="card">
-							<div class="card-content">
-								<span class="card-title">Sign In</span>
-								<p>Sign in or sign up using your Google account.</p>
+					<div class="col s12 m4" id="info1">
+						<div class="card-panel teal">
+							<span class="white-text">Welcome to <b>Omega</b>! Find all web tech lab programs here.</span>
+						</div>
+					</div>
+					<div class="col s12 m4" id="info2" style="display:none;">
+						<div class="card-panel teal">
+							<span class="white-text">Welcome to <b>Omega</b>! Find all web tech lab programs here.</span>
+						</div>
+					</div>
+					<div class="col s12 m4" id="info3" style="display:none;">
+						<div class="card-panel teal">
+							<span class="white-text">Welcome to <b>Omega</b>! Find all web tech lab programs here.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<!--Card 2-->
+					<div class="col s12 m3">
+						<div class="card large">
+							<div class="card-image waves-effect waves-block waves-light">
+								<img class="activator" src="images/resume.jpg">
 							</div>
-							<div class="card-action">
-								<a href="#">This is a link</a>
-								<a href="#">This is a link</a>
+							<div class="card-content">
+								<span class="card-title activator grey-text text-darken-4" style="margin-top:1em;">HTML Resume<i class="material-icons right">arrow_upward</i></span>
+								<p>A responsive resume built in HTML5, CSS3 and a little bit of JavaScript.</p>
+							</div>
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">HTML Resume<i class="material-icons right">close</i></span>
+								<p>A responsive resume built in HTML5, CSS3 and a little bit of JavaScript.</p>
+								<img src="https://user-images.githubusercontent.com/30186107/29488525-f55a69d0-84da-11e7-8a39-5476f663b5eb.png" style="height:30%; width:80%;" />
+								<a href="" class="waves-effect waves-light btn"><i class="material-icons right">launch</i>Demo</a>
+								<p style="margin-top:2em;">Image Credits: <a style="float:right;background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@rawpixel?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from rawpixel"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">rawpixel</span></a></p>
 							</div>
 						</div>
 					</div>
+
+					<!--Card 2-->
+					<div class="col s12 m3">
+						<div class="card large">
+							<div class="card-image waves-effect waves-block waves-light">
+								<img class="activator" src="images/list.jpg">
+							</div>
+							<div class="card-content">
+								<span class="card-title activator grey-text text-darken-4" style="margin-top:1em;">HTML Lists<i class="material-icons right">arrow_upward</i></span>
+								<p>Lists are very useful. This program explores the various types of list elements HTML5 offers.</p>
+							</div>
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">HTML Resume<i class="material-icons right">close</i></span>
+								<p>Lists are very useful. This program explores the various types of list elements HTML5 offers.</p>
+								<img src="https://user-images.githubusercontent.com/30186107/29488525-f55a69d0-84da-11e7-8a39-5476f663b5eb.png" style="height:30%; width:80%;" />
+								<a href="" class="waves-effect waves-light btn"><i class="material-icons right">launch</i>Demo</a>
+								<p style="margin-top:2em;">Image Credits: <a style="float:right;background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@glenncarstenspeters?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Glenn Carstens-Peters"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Glenn Carstens-Peters</span></a></p>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 
@@ -127,29 +174,13 @@
 			<div class="footer-copyright">
 				<div class="container" id="footerText">
 					<a href="https://volatile.ga/" target="_blank" title="Volatile, Inc." style="color:#FFFFFF">&emsp;Volatile, Inc.&emsp;</a>
-					<a class="grey-text text-lighten-4 right" href="#footertext">Made with love for everyone</a>
+					<a class="grey-text text-lighten-4 right" href="">Made with love for everyone</a>
 				</div>
 			</div>
 		</footer>
 
 		<!--JavaScript at end of body for optimized asynchronous loading-->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js" async></script>
-
-		<!--JavaScript at end of body for optimized asynchronous loading-->
-		<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js" async></script>
-
-		<!-- Initialize Firebase -->
-		<script>
-			var config = {
-				apiKey: "AIzaSyDqGK6_kaWp7rUJbRZJv0MNwRQxbivySHs",
-				authDomain: "omega-97.firebaseapp.com",
-				databaseURL: "https://omega-97.firebaseio.com",
-				projectId: "omega-97",
-				storageBucket: "",
-				messagingSenderId: "768499171527"
-				};
-			firebase.initializeApp(config);
-		</script>
 
 		<!--Onload Function-->
 		<script type="text/javascript">
@@ -159,21 +190,23 @@
 				// Register a Service Worker
 				if('serviceWorker' in navigator) {
 				  navigator.serviceWorker
-				           .register('../sw.js')
+				           .register('sw.js')
 				           .then(function() { console.log("Service Worker Registered"); });
 				}
 
 				// Set the copyright year in the footer
 				document.getElementById("footerText").innerHTML = '&copy; ' + new Date().getFullYear() + document.getElementById("footerText").innerHTML;
 
+				// Dismiss information panels on click
+				document.getElementById("info1").onclick = function(){document.getElementById("info1").style.display="none";};
+				document.getElementById("info2").onclick = function(){document.getElementById("info2").style.display="none";};
+				document.getElementById("info3").onclick = function(){document.getElementById("info3").style.display="none";};
+
 				// Get rid of the loader after three seconds
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
 					}, 3000);
-
-				// Handle sign in event
-				var provider = new firebase.auth.GoogleAuthProvider();
 
 			}
 
