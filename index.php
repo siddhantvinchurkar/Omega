@@ -23,8 +23,8 @@
 
 		<!--Progressive Web App meta tags-->
 		<link rel="manifest" href="manifest.json">
-		<meta name="theme-color" content="#4DB6AC">
-		<meta name="Description" content="Programs from web tech lab sessions">
+		<meta name="theme-color" content="#EE6E73">
+		<meta name="Description" content="Omega is a collaborative classroom platform for teachers and students alike.">
 
 		<!--Overriden Styles-->
 		<style>

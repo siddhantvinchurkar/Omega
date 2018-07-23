@@ -41,9 +41,9 @@
     "background_color":"#FFFFFF",
     "display":"standalone",
     "orientation":"portrait",
-    "theme_color":"#4DB6AC",
+    "theme_color":"#EE6E73",
     "start_url":"index.php",
     "manifest_version": 2,
     "version": "1.0",
-    "summary":"Programs from web tech lab sessions (St. Joseph's College, Bengaluru)"
+    "summary":"Omega is a collaborative classroom platform for teachers and students alike."
 }
