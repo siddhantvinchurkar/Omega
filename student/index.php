@@ -1,214 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
-
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
 		<!--Fetch minified materializecss from the CDN asynchronously-->
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"  media="none" onload="if(media!='screen,projection')media='screen,projection'">
-
 		<!--Fetch material icons from the CDN asynchronously-->
 		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"  media="none" onload="if(media!='screen,projection')media='screen,projection'">
-
 		<!--Fetch font (Roboto) from the CDN asynchronously-->
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
-
 		<!--Set the shortcut icon-->
 		<link rel="shortcut icon" type="image/ico" href="images/icons/favicon.ico">
-
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<!--Progressive Web App meta tags-->
 		<link rel="manifest" href="manifest.json">
 		<meta name="theme-color" content="#4DB6AC">
 		<meta name="Description" content="Programs from web tech lab sessions">
-
 		<!--Overriden Styles-->
 		<style>
 			body {
-				display: flex;
-				min-height: 100vh;
-				flex-direction: column;
-				font-family: 'Roboto', sans-serif;
-				background-color: #F6F6F6;
+			display: flex;
+			min-height: 100vh;
+			flex-direction: column;
+			font-family: 'Roboto', sans-serif;
+			background-color: #F6F6F6;
 			}
-
 			main {
-				flex: 1 0 auto;
+			flex: 1 0 auto;
 			}
-
 			.container {
-				display: flex;
-				justify-content: center;
+			display: flex;
+			justify-content: center;
 			}
-
 			.center {
-				width: 250px;
-				position: absolute;
-				margin: auto;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
+			width: 250px;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
 			}
-
 			.center2 {
-				opacity:0.1;
-				position: absolute;
-				margin: auto;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
+			opacity:0.1;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
 			}
-
 			#label{
-				font-family:"comic sans ms";
-				background-color:black;
-				color:white;
+			font-family:"comic sans ms";
+			background-color:black;
+			color:white;
 			}
-
-  main {
-    flex: 1 0 auto;
-  }
-   
+			main {
+			flex: 1 0 auto;
 			}
-
+			}
 		</style>
-
 		<title>OmegaClassrooms</title>
-
 	</head>
-
 	<body>
-<!-- Heading Strip-->
+		<!-- Heading Strip-->
 		<header>
 			<nav>
-			<div class="nav-wrapper">
-				<img src="images/icons/72.png" style="height:95%;" />
-				<a href="" class="brand-logo">OMEGA</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="index.html"><p class="material-icons">arrow_back</p></a></li>
-					<li><a href="index.html"><p class="material-icons">arrow_forward</p></a></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
-
-        
-	<main>
-		<div class="container">
-			<div class="row">
-
-				<!--Card 1-->
-				<a href="index.html">
-				<div class="col s3"> 
-					<div class="card">
-						<div class="card-image"> 
-							<img src="images/list.jpg">
-							<span class="card-title"> Networks </span>
+				<div class="nav-wrapper">
+					<img src="images/icons/72.png" style="height:95%;" />
+					<a href="" class="brand-logo">OMEGA</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li>
+							<a href="index.html">
+								<p class="material-icons">arrow_back</p>
+							</a>
+						</li>
+						<li>
+							<a href="index.html">
+								<p class="material-icons">arrow_forward</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<div class="row">
+					<!--Card 1-->
+					<a href="index.html">
+						<div class="col s3">
+							<div class="card">
+								<div class="card-image"> 
+									<img src="images/list.jpg">
+									<span class="card-title"> Networks </span>
+								</div>
+								<div class="card-content">
+									<p id="label">NOTIFICATIONS</p>
+								</div>
+							</div>
 						</div>
-						<div class="card-content">
-							<p id="label">NOTIFICATIONS</p>
+					</a>
+					<!--Card 2-->
+					<a href="index.html">
+						<div class="col s3">
+							<div class="card">
+								<div class="card-image"> 
+									<img src="images/list.jpg">
+									<span class="card-title"> Multimedia Technology </span>
+								</div>
+								<div class="card-content">
+									<p id="label">NOTIFICATIONS</p>
+								</div>
+							</div>
 						</div>
-				</div>
-			</div>
-		</a>
-
-			<!--Card 2-->
-			<a href="index.html">
-				<div class="col s3"> 
-					<div class="card">
-						<div class="card-image"> 
-							<img src="images/list.jpg">
-							<span class="card-title"> Multimedia Technology </span>
+					</a>
+					<!--Card 3-->	
+					<a href="index.html">
+						<div class="col s3">
+							<div class="card">
+								<div class="card-image">
+									<img src="images/list.jpg">
+									<span class="card-title">Computer Graphics</span>
+								</div>
+								<div class ="card-content">
+									<p id="label"> NOTIFICATIONS </p>
+								</div>
+							</div>
 						</div>
-						<div class="card-content">
-							<p id="label">NOTIFICATIONS</p>
+					</a>
+					<!--Card 4-->	
+					<a href="index.html">
+						<div class="col s3">
+							<div class="card">
+								<div class="card-image">
+									<img src="images/list.jpg">
+									<span class="card-title">Java</span>
+								</div>
+								<div class ="card-content">
+									<p id="label"> NOTIFICATIONS </p>
+								</div>
+							</div>
 						</div>
+					</a>
+					<!--Card 5-->	
+					<a href="index.html">
+						<div class="col s3">
+							<div class="card">
+								<div class="card-image">
+									<img src="images/list.jpg">
+									<span class="card-title">Computer Organisation</span>
+								</div>
+								<div class ="card-content">
+									<p id="label"> NOTIFICATIONS </p>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!--Card 6-->	
+					<a href="index.html">
+						<div class="col s3">
+							<div class="card">
+								<div class="card-image">
+									<img src="images/list.jpg">
+									<span class="card-title">Web Technology</span>
+								</div>
+								<div class ="card-content">
+									<p id="label"> NOTIFICATIONS </p>
+								</div>
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
-		</a>
-
-			<!--Card 3-->	
-		<a href="index.html">
-			<div class="col s3">
-				<div class="card">
-					<div class="card-image">
-						<img src="images/list.jpg">
-						<span class="card-title">Computer Graphics</span>
-					</div>
-					<div class ="card-content">
-						<p id="label"> NOTIFICATIONS </p>
+			<!--Footer-->
+			<footer class="page-footer" style="padding-top:0px;">
+				<div class="footer-copyright">
+					<div class="container" id="footerText">
+						<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
 					</div>
 				</div>
-			</div>
-		</a>
-
-			<!--Card 4-->	
-		<a href="index.html">
-			<div class="col s3">
-				<div class="card">
-					<div class="card-image">
-						<img src="images/list.jpg">
-						<span class="card-title">Java</span>
-					</div>
-					<div class ="card-content">
-						<p id="label"> NOTIFICATIONS </p>
-					</div>
-				</div>
-			</div>
-		</a>
-
-			<!--Card 5-->	
-			<a href="index.html">
-			<div class="col s3">
-				<div class="card">
-					<div class="card-image">
-						<img src="images/list.jpg">
-						<span class="card-title">Computer Organisation</span>
-					</div>
-					<div class ="card-content">
-						<p id="label"> NOTIFICATIONS </p>
-					</div>
-				</div>
-			</div>
-		</a>
-			<!--Card 6-->	
-			<a href="index.html">
-			<div class="col s3">
-				<div class="card">
-					<div class="card-image">
-						<img src="images/list.jpg">
-						<span class="card-title">Web Technology</span>
-					</div>
-					<div class ="card-content">
-						<p id="label"> NOTIFICATIONS </p>
-					</div>
-				</div>
-			</div>
-		</a>
-		</div>
-	</div>
-
-	<!--Footer-->
-		<footer class="page-footer" style="padding-top:0px;">
-			<div class="footer-copyright">
-				<div class="container" id="footerText">
-					<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
-				</div>
-			</div>
-		</footer>
-
-	<!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="js/materialize.min.js">
-      </script>
-        
-	</main>
-</body>
+			</footer>
+			<!--JavaScript at end of body for optimized loading-->
+			<script type="text/javascript" src="js/materialize.min.js"></script>
+			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
+			<script type="text/javascript">
+				// Initialize Firebase
+				var config = {
+				  apiKey: "AIzaSyA5deESjwYhl6_zs2seCmwTMNtx3OFLodM",
+				  authDomain: "omegaclassrooms.firebaseapp.com",
+				  databaseURL: "https://omegaclassrooms.firebaseio.com",
+				  projectId: "omegaclassrooms",
+				  storageBucket: "omegaclassrooms.appspot.com",
+				  messagingSenderId: "230656441501"
+				};
+				firebase.initializeApp(config);
+			</script>
+		</main>
+	</body>
 </html>
