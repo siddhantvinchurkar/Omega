@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -69,7 +70,7 @@
 		<header>
 			<nav>
 				<div class="nav-wrapper">
-					<img src="images/icons/72.png" style="height:95%;" />
+					<img src="../images/icons/72.png" style="height:95%;" />
 					<a href="" class="brand-logo">OMEGA</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
@@ -84,91 +85,46 @@
 						</li>
 					</ul>
 				</div>
+
 			</nav>
+<!-- Sliding Navigation Bar -->
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="../images/list.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="../images/icons/72.png"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 		</header>
+
+
 		<main>
 			<div class="container">
 				<div class="row">
+
 					<!--Card 1-->
 					<a href="index.html">
-						<div class="col s3">
+						<div class="col s6">
 							<div class="card">
 								<div class="card-image"> 
-									<img src="images/list.jpg">
+									<img src="../images/list.jpg">
 									<span class="card-title"> Networks </span>
 								</div>
-								<div class="card-content">
-									<p id="label">NOTIFICATIONS</p>
-								</div>
-							</div>
-						</div>
-					</a>
-					<!--Card 2-->
-					<a href="index.html">
-						<div class="col s3">
-							<div class="card">
-								<div class="card-image"> 
-									<img src="images/list.jpg">
-									<span class="card-title"> Multimedia Technology </span>
-								</div>
-								<div class="card-content">
-									<p id="label">NOTIFICATIONS</p>
-								</div>
-							</div>
-						</div>
-					</a>
-					<!--Card 3-->	
-					<a href="index.html">
-						<div class="col s3">
-							<div class="card">
-								<div class="card-image">
-									<img src="images/list.jpg">
-									<span class="card-title">Computer Graphics</span>
-								</div>
-								<div class ="card-content">
-									<p id="label"> NOTIFICATIONS </p>
-								</div>
-							</div>
-						</div>
-					</a>
-					<!--Card 4-->	
-					<a href="index.html">
-						<div class="col s3">
-							<div class="card">
-								<div class="card-image">
-									<img src="images/list.jpg">
-									<span class="card-title">Java</span>
-								</div>
-								<div class ="card-content">
-									<p id="label"> NOTIFICATIONS </p>
-								</div>
-							</div>
-						</div>
-					</a>
-					<!--Card 5-->	
-					<a href="index.html">
-						<div class="col s3">
-							<div class="card">
-								<div class="card-image">
-									<img src="images/list.jpg">
-									<span class="card-title">Computer Organisation</span>
-								</div>
-								<div class ="card-content">
-									<p id="label"> NOTIFICATIONS </p>
-								</div>
-							</div>
-						</div>
-					</a>
-					<!--Card 6-->	
-					<a href="index.html">
-						<div class="col s3">
-							<div class="card">
-								<div class="card-image">
-									<img src="images/list.jpg">
-									<span class="card-title">Web Technology</span>
-								</div>
-								<div class ="card-content">
-									<p id="label"> NOTIFICATIONS </p>
+								<div class="card-content">			
+  									<div class="collection">
+    <a href="#!" class="collection-item"><span class="badge">1</span>Assignments</a>
+    <a href="#!" class="collection-item"><span class="badge">4</span>Notes</a>
+    <a href="#!" class="collection-item"><span class="badge">10</span>Annoucements</a>
+  </div>
 								</div>
 							</div>
 						</div>
@@ -183,8 +139,15 @@
 					</div>
 				</div>
 			</footer>
+
 			<!--JavaScript at end of body for optimized loading-->
-			<script type="text/javascript" src="js/materialize.min.js"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+			<script>
+				 document.addEventListener('DOMContentLoaded', function() {
+			    var elems = document.querySelectorAll('.sidenav');
+			    var instances = M.Sidenav.init(elems, 'edge');
+  });
+			</script>
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
 			<script type="text/javascript">
 				// Initialize Firebase
