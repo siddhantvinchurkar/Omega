@@ -2,6 +2,7 @@
 <html lang="en" >
 	<head>
 		<title>Omega</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<!--Fetch local style resources-->
@@ -26,7 +27,6 @@
 			min-height: 100vh;
 			flex-direction: column;
 			font-family: 'Roboto', sans-serif;
-			background-color: #F6F6F6;
 			}
 			main {
 			flex: 1 0 auto;
@@ -53,6 +53,15 @@
 			bottom: 0;
 			left: 0;
 			}
+			.left-center {
+			width: 250px;
+			position: left;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 100;
+			left: 0;
+			}
 		</style>
 	</head>
 	<body>
@@ -64,6 +73,24 @@
 					<a href="" class="brand-logo">Omega</a>
 				</div>
 			</nav>
+			<!-- Sliding Navigation Bar -->
+  			<ul id="slide-out" class="sidenav">
+   			 	<li><div class="user-view">
+      					<div class="background">
+        				<img src="../images/list.jpg">
+      					</div>
+      					<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
+      					<a href="#name"><span class="white-text name">John Doe</span></a>
+      					<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    				</div>
+    			</li>
+    			<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    			<li><a href="#!">Second Link</a></li>
+    			<li><div class="divider"></div></li>
+    			<li><a class="subheader">Subheader</a></li>
+    			<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  			</ul>
+  			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons left-center">menu</i></a>
 		</header>
 		<!--Main-->
 		<main>
@@ -196,9 +223,18 @@
 			</div>
 		</footer>
 		<!--JavaScript at end of body for optimized asynchronous loading-->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!--Not loading asynchronously as tindex.js is dependant on this-->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+		<!--Not loading asynchronously as tindex.js is dependant on this-->
 		<script type="text/javascript" src="../js/tindex.js" async></script>
 
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+		<script>
+				 document.addEventListener('DOMContentLoaded', function() {
+			    	var elems = document.querySelectorAll('.sidenav');
+			    	var instances = M.Sidenav.init(elems, 'edge middle');
+  				});
+		</script>
 		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script> <!--Not loading asynchronously as the following script is dependant on this-->
 		<script type="text/javascript">
 			// Initialize Firebase
