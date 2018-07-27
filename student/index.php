@@ -54,6 +54,15 @@
 			bottom: 0;
 			left: 0;
 			}
+			.verticalCenter{
+			width: 250px;
+			position: left;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom:0;
+			left: 0;
+			}
 			#label{
 			font-family:"comic sans ms";
 			background-color:black;
@@ -104,7 +113,7 @@
     <li><a class="subheader">Subheader</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons verticalCenter">chevron_right</i></a>
 
 </header>
 
