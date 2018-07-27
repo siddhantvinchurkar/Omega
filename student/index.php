@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 
+		<script type="text/javascript" src="student.js"> </script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -97,14 +98,15 @@
       <a href="#name"><span class="white-text name">John Doe</span></a>
       <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
+    <li><a href="#!" onclick="askClassCode();"><i class="material-icons">school</i>Join New Class</a></li>
+    <li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Subheader</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-		</header>
+
+</header>
 
 
 		<main>
@@ -142,12 +144,16 @@
 
 			<!--JavaScript at end of body for optimized loading-->
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+			
+			<!-- Slide Navigation Bar JS-->
 			<script>
 				 document.addEventListener('DOMContentLoaded', function() {
 			    var elems = document.querySelectorAll('.sidenav');
 			    var instances = M.Sidenav.init(elems, 'edge');
-  });
+  				});
 			</script>
+
+
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
 			<script type="text/javascript">
 				// Initialize Firebase
