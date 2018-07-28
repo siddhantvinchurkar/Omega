@@ -107,7 +107,7 @@
 									<br />
 									<div class="row">
 										<div class="col s12 m10 offset-m2">
-											<a id="google" style="background-color:#FFFFFF; color:#000000;" class="waves-effect waves-light btn"><img src="http://pngimg.com/uploads/google/google_PNG19635.png" height="30px" width="30px" style="margin-bottom:-10px;" />&emsp;<img src="https://u.imageresize.org/v2/54ba4d24-641f-49c7-b9f0-9600d2c7dfd7.png" style="margin-bottom:-5px;" height="19px" /></a>
+											<a id="google" style="background-color:#FFFFFF; color:#000000;" class="waves-effect waves-light btn"><img src="https://pngimg.com/uploads/google/google_PNG19635.png" height="30px" width="30px" style="margin-bottom:-10px;" />&emsp;<img src="https://u.imageresize.org/v2/54ba4d24-641f-49c7-b9f0-9600d2c7dfd7.png" style="margin-bottom:-5px;" height="19px" /></a>
 											<a id="github" style="background-color:#FFFFFF; color:#000000;" class="waves-effect waves-light btn"><i class="fab fa-github"></i>&emsp;<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" height="16px" /></a>
 										</div>
 									</div>
