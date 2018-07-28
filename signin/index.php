@@ -241,6 +241,7 @@
 						console.log("Signed In!");
 			
 						// TODO: Add internal logic to check if user has already signed up
+
 						var signedup = false;
 			
 						// If the user has not signed up yet, send confirmation email
