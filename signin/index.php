@@ -240,9 +240,18 @@
 						document.getElementById("openEmailButton").innerHTML='<i class="material-icons left">launch</i>Open ' + email.substring(email.indexOf("@")+1, email.indexOf("."));
 						console.log("Signed In!");
 			
-						// TODO: Add internal logic to check if user has already signed up
+						// Check if user has already signed up
 
 						var signedup = false;
+
+						$.get(
+								"https://omegaclassrooms.ga/actions/validateuser.php",
+								{fn : firstName, ln : lastName, eml : email, photourl : photoUrl},
+								function(data) {
+									console.log("%c" + data, "background: #222222; color: #BADA55;");
+									if(data === "1") signedup = true;
+								}
+							);
 			
 						// If the user has not signed up yet, send confirmation email
 						if(!signedup){
