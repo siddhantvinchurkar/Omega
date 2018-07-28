@@ -18,18 +18,17 @@
 
 	// SQL commands
 
-	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
-	$createusersql = "INSERT INTO users(fn, ln, eml, photo) VALUES('".$_GET['fn']."', '".$_GET['ln']."', '".$_GET['eml']."', '".$_GET['photourl']."')";
+	$confirmuseremailsql = "INSERT INTO users(cnf) VALUES(1) WHERE eml='".$_GET['email']."'";
 
-	if ($conn->query($checksql)->fetch_assoc()) {
+	if ($conn->query($confirmuseremailsql) === TRUE) {
 	    	echo "1";
 	}
 	else {
-		$conn->query($createusersql);
 	    	echo "0";
 	}
 
 // Close connection to the database
 $conn->close();
+header("Location: https://omegaclasrooms.ga/signin/confirmedemail.php");
 die();
 ?>
