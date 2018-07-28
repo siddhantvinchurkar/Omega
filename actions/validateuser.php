@@ -25,7 +25,7 @@
 	    	echo "1";
 	}
 	else {
-		$conn->query($createusersql)
+		$conn->query($createusersql);
 	    	echo "0";
 	}
 
