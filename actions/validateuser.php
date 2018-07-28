@@ -19,7 +19,7 @@
 	// SQL commands
 
 	$checksql = "SELECT * FROM USERS WHERE eml='".$_GET['eml']."'";
-	$createusersql = "INSERT INTO users(fn, ln, eml, photo) VALUES('".$_GET['fn']."', '".$_GET['ln']."', '".$_GET['eml']."', '".$_GET['photo']."')";
+	$createusersql = "INSERT INTO users(fn, ln, eml, photo) VALUES('".$_GET['fn']."', '".$_GET['ln']."', '".$_GET['eml']."', '".$_GET['photourl']."')";
 
 	if ($conn->query($checksql) === TRUE) {
 	    	echo "1";
