@@ -84,13 +84,13 @@
       					<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
     				</div>
     			</li>
-    			<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    			<li><a href="#!">Second Link</a></li>
-    			<li><div class="divider"></div></li>
-    			<li><a class="subheader">Subheader</a></li>
-    			<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    				<li><a href="#!" onclick="askClassCode();"><i class="material-icons">school</i>Add New Subject</a></li>
+    				<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
+    				<li><div class="divider"></div></li>
+    				<li><a class="subheader">Subheader</a></li>
+    				<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   			</ul>
-  			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons left-center">menu</i></a>
+  			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons">chevron_right</i></a>
 		</header>
 		<!--Main-->
 		<main>
