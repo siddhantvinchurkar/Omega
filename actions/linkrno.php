@@ -22,7 +22,7 @@
 
 	// SQL commands
 
-	$confirmuseremailsql = "UPDATE users SET cnf = '1' WHERE eml='".$_GET['email']."'";
+	$confirmuseremailsql = "UPDATE users SET rno = '".$_GET['rno']."' WHERE eml='".$_GET['email']."'";
 
 	// Execute the commands
 
@@ -34,7 +34,7 @@
 
 	// Redirect user to confirmed page
 
-	header("Location: https://omegaclassrooms.ga/signin/confirmedemail.php?confirmflag=".$confirmflag."&eml=".$_GET['email']);
+	header("Location: https://omegaclassrooms.ga/signin/approvalpending.php?eml=".$_GET['email']);
 
 	die();
 ?>
