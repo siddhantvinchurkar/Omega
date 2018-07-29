@@ -244,14 +244,25 @@
 
 						var signedup = false;
 
-						$.get(
-								"https://omegaclassrooms.ga/actions/validateuser.php",
-								{fn : firstName, ln : lastName, eml : email, photourl : photoUrl},
-								function(data) {
-									console.log("%c" + data, "background: #222222; color: #BADA55;");
-									if(data === "1") signedup = true;
-								}
-							);
+						$.ajax({
+							url: "https://omegaclassrooms.ga/actions/validateuser.php",
+							data: { 
+								"fn": firstName, 
+								"ln": lastName, 
+								"eml": email,
+								"photourl": photoUrl
+							},
+							cache: false,
+							async: false,
+							type: "GET",
+							success: function(data) {
+								console.log("%c" + data, "background: #222222; color: #BADA55;");
+								if(data === "1") signedup = true;
+							},
+							error: function(xhr) {
+								console.log("%c User Validation Failed!", "background: #222222; color: #FF0000;");
+							}
+						});
 			
 						// If the user has not signed up yet, send confirmation email
 						if(!signedup){
