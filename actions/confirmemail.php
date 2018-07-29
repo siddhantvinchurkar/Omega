@@ -24,7 +24,7 @@
 
 	$confirmuseremailsql = "UPDATE users SET cnf = '1' WHERE eml='".$_GET['email']."'";
 
-	if ($conn->query($confirmuseremailsql) === TRUE) {
+	if ($conn->query($confirmuseremailsql)->fetch_assoc()) {
 	    	$confirmflag = 1;
 	}
 	else {
