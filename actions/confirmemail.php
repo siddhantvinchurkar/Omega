@@ -29,6 +29,6 @@
 
 // Close connection to the database
 $conn->close();
-header("Location: https://omegaclasrooms.ga/signin/confirmedemail.php");
+header("Location: https://omegaclassrooms.ga/signin/confirmedemail.php");
 die();
 ?>
