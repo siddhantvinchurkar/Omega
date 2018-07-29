@@ -24,11 +24,7 @@
 
 	$confirmuseremailsql = "UPDATE users SET cnf = '1' WHERE eml='".$_GET['email']."'";
 
-	// Execute the commands
-
-	$conn->query($confirmuseremailsql);
-
-	if (mysqli_affected_rows($conn) > 0) {
+	if (mysqli_affected_rows($conn->query($confirmuseremailsql)) > 0) {
 	    	$confirmflag = 1;
 	}
 	else {
