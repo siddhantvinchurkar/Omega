@@ -29,7 +29,9 @@
 	    	echo "0";
 	}
 
-// Close connection to the database
-$conn->close();
-die();
+	// Close connection to the database
+
+	$conn->close();
+
+	die();
 ?>

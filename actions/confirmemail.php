@@ -8,7 +8,7 @@
 
 	// Some variables
 
-	$confirmflag = 0;
+	$confirmflag = 1;
 
 	// Create connection
 
@@ -24,15 +24,17 @@
 
 	$confirmuseremailsql = "UPDATE users SET cnf = '1' WHERE eml='".$_GET['email']."'";
 
-	if (mysqli_affected_rows($conn->query($confirmuseremailsql)) > 0) {
-	    	$confirmflag = 1;
-	}
-	else {
-	    	$confirmflag = 0;
-	}
+	// Execute the commands
 
-// Close connection to the database
-$conn->close();
-header("Location: https://omegaclassrooms.ga/signin/confirmedemail.php?confirmflag=".$confirmflag);
-die();
+	$conn->query($confirmuseremailsql);
+
+	// Close connection to the database
+
+	$conn->close();
+
+	// Redirect user to confirmed page
+
+	header("Location: https://omegaclassrooms.ga/signin/confirmedemail.php?confirmflag=".$confirmflag);
+
+	die();
 ?>
