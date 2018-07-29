@@ -24,7 +24,7 @@
 
 	$confirmuseremailsql = "INSERT INTO users(cnf) VALUES(1) WHERE eml='".$_GET['email']."'";
 
-	if ($conn->query($confirmuseremailsql)->fetch_assoc()) {
+	if ($conn->query($confirmuseremailsql)) {
 	    	$confirmflag = 1;
 	}
 	else {
