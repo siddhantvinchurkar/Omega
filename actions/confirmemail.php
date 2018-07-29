@@ -6,6 +6,10 @@
 	$password = "uglyhorse3449";
 	$dbname = "omega";
 
+	// Some variables
+
+	$confirmflag = 0;
+
 	// Create connection
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,14 +25,14 @@
 	$confirmuseremailsql = "INSERT INTO users(cnf) VALUES(1) WHERE eml='".$_GET['email']."'";
 
 	if ($conn->query($confirmuseremailsql) === TRUE) {
-	    	echo "1";
+	    	$confirmflag = 1;
 	}
 	else {
-	    	echo "0";
+	    	$confirmflag = 0;
 	}
 
 // Close connection to the database
 $conn->close();
-header("Location: https://omegaclassrooms.ga/signin/confirmedemail.php");
+header("Location: https://omegaclassrooms.ga/signin/confirmedemail.php?confirmflag=".$confirmflag);
 die();
 ?>
