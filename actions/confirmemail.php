@@ -1,6 +1,8 @@
 <?php
 	// Server Credentials
 
+	// Some comment
+
 	$servername = "localhost";
 	$username = "omega";
 	$password = "uglyhorse3449";
@@ -22,9 +24,9 @@
 
 	// SQL commands
 
-	$confirmuseremailsql = "INSERT INTO users(cnf) VALUES(1) WHERE eml='".$_GET['email']."'";
+	$confirmuseremailsql = "INSERT INTO users(cnf) VALUES('1') WHERE eml='".$_GET['email']."'";
 
-	if ($conn->query($confirmuseremailsql)) {
+	if ($conn->query($confirmuseremailsql) === TRUE) {
 	    	$confirmflag = 1;
 	}
 	else {
