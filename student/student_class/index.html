@@ -2,7 +2,9 @@
 <html lang="en">
 	<head>
 
+		<!--ask for new class code JS-->
 		<script type="text/javascript" src="student.js"> </script>
+
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -63,8 +65,22 @@
 			bottom:0;
 			left: 0;
 			}
+			#question{
+				font-weight: bold;
+				color:white;
+				background-color:#3b4759;
+			}
+			#date{
+				font-weight:lighter;
+				background-color:black;
+				text-align: center;
+			}
 			#label{
-			padding-left: 25px;
+				font-style: italic;
+				font-size: 23px;
+				line-height: 40px;
+				color:white;
+				padding-left: 10px;
 			}
 			main {
 			flex: 1 0 auto;
@@ -86,14 +102,19 @@
 					<a href="" class="brand-logo">OMEGA</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="index.html">
-								<p class="material-icons">arrow_back</p>
-							</a>
+							<a href="index.html"><i class="tiny material-icons">dashboard</i></a>
 						</li>
+
 						<li>
-							<a href="index.html">
-								<p class="material-icons">arrow_forward</p>
-							</a>
+							<a href="index.html"><i class="tiny material-icons">announcements</i></a>
+						</li>
+
+						<li>
+							<a href="index.html"><i class="tiny material-icons">assignments</i></a>
+						</li>
+
+						<li>
+							<a href="index.html"><i class="tiny material-icons">library_books</i></a>
 						</li>
 					</ul>
 				</div>
@@ -101,21 +122,23 @@
 
 <!-- Sliding Navigation Bar -->
   <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="../images/list.jpg">
-      </div>
-      <a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!" onclick="askClassCode();"><i class="material-icons">school</i>Join New Class</a></li>
-    <li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    	<li>
+    		<div class="user-view">
+      			<div class="background">
+        			<img src="../images/list.jpg">
+      			</div>
+      		<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
+      		<a href="#name"><span class="white-text name">John Doe</span></a>
+      		<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    		</div>
+    	</li>
+    	<li><a href="#!" onclick="askClassCode();"><i class="material-icons">school</i>Join New Class</a></li>
+    	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
+    	<li><div class="divider"></div></li>
+    	<li><a class="subheader">Subheader</a></li>
+    	<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons">chevron_right</i></a>
+  	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="small material-icons">chevron_right</i></a>
 
 </header>
 
@@ -123,23 +146,34 @@
 		<main>
 				<!-- Card 1 -->
 			<div class="col s6 m12">
-    				<div class="card horizontal">
+    				<div class="card horizontal blue-grey darken-1">
       					<div class="card-stacked">
-      						<div class="card-content" id="label">
-      							<h5>Assignment 1 </h5>
+      						<div id="label">
+      							Assignment 1
       						</div>
-        					<div class="card-content" id="question">
-          						<p>Write a Java Script to ask for Class code</p>
+      							<!--h4><left><i class="medium material-icons">assignment</i>1</left></h4>-->
+
+      					</div>
+
+      				<div class="container">
+      					<div class="row">
+        					<div class="cols s6 m3 card" id="question">
+          							<p>------------------- THE QUESTION GOES HERE ---------------</p>
+          						<div class="cols s6 m3 card" id="date">
+          							<p> 28 July 2018</p>
+          						</div>
         					</div>
-        				<div class="card-action">
-          					<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-   								 <i class="material-icons right">send</i>
-  							</button>
         				</div>
+        			</div>
+
+        					<div class="card-stacked">
+          						<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+   									 <i class="material-icons right">send</i>
+  								</button>
+        					</div>
       				</div>
-    			</div>
- 			</div>
-			
+    		</div>
+ 				
 		</main>
 			<!--Footer-->
 			<footer class="page-footer" style="padding-top:0px;">
