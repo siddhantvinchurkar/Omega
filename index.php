@@ -5,6 +5,15 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!--Set the shortcut icon-->
+		<link rel="shortcut icon" type="image/ico" href="images/icons/favicon.ico">
+
+		<!--Progressive Web App meta tags-->
+		<link rel="manifest" href="manifest.json">
+		<meta name="theme-color" content="#EE6E73">
+		<meta name="Description" content="Omega is a collaborative classroom platform for teachers and students alike.">
+
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
