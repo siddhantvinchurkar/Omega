@@ -68,11 +68,11 @@
 			#question{
 				font-weight: bold;
 				color:white;
-				background-color:#3b4759;
+				background-color:#008080;
 			}
 			#date{
 				font-weight:lighter;
-				background-color:black;
+				background-color:grey;
 				text-align: center;
 			}
 			#label{
@@ -81,10 +81,12 @@
 				line-height: 40px;
 				color:white;
 				padding-left: 10px;
+
 			}
 			main {
 			flex: 1 0 auto;
 			}
+
 		}
 			
 		</style>
@@ -135,8 +137,8 @@
     	<li><a href="#!" onclick="askClassCode();"><i class="material-icons">school</i>Join New Class</a></li>
     	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     	<li><div class="divider"></div></li>
-    	<li><a class="subheader">Subheader</a></li>
-    	<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    	<li><a class="subheader">Account</a></li>
+    	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
   	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="small material-icons">chevron_right</i></a>
 
@@ -146,14 +148,12 @@
 		<main>
 				<!-- Card 1 -->
 			<div class="col s6 m12">
-    				<div class="card horizontal blue-grey darken-1">
+    				<div class="card horizontal #26a69a teal lighten-1">
       					<div class="card-stacked">
-      						<div id="label">
-      							Assignment 1
-      						</div>
-      							<!--h4><left><i class="medium material-icons">assignment</i>1</left></h4>-->
-
-      					</div>
+          						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2" name="action"><i class="material-icons right">assignment</i><b>Assignment 1</b>
+   									 
+  								</button>
+        					
 
       				<div class="container">
       					<div class="row">
@@ -167,14 +167,14 @@
         			</div>
 
         					<div class="card-stacked">
-          						<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2 type="submit" name="action"><b>Submit</b>
    									 <i class="material-icons right">send</i>
   								</button>
         					</div>
       				</div>
     		</div>
- 				
-		</main>
+ 		<!-- End of Card 1 -->
+ 		</main>
 			<!--Footer-->
 			<footer class="page-footer" style="padding-top:0px;">
 				<div class="footer-copyright">
