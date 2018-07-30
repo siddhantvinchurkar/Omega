@@ -23,4 +23,4 @@ SOFTWARE.
 
 ![Authorized Signatory](https://u.imageresize.org/v2/5a26b301-a5dd-4add-9031-75b90a53bbce.png "Authorized Signatory")
 
-### **Siddhant Vinchurkar**
+### **Authorized Signatory**
