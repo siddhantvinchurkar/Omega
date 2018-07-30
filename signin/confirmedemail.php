@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--GITSTATS-->
 <html lang="en">
 	<head>
 		<!--Basic meta tags-->
