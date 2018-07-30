@@ -55,7 +55,7 @@
 
 		<!-- Feature 2 -->
 			<article class="container box style1 left">
-				<a href="#" class="image fit"><img src="http://opportunityculture.org/wp-content/uploads/2017/07/rows-teachers-no-stars.jpg" alt="" /></a>
+				<a href="#" class="image fit"><img src="https://opportunityculture.org/wp-content/uploads/2017/07/rows-teachers-no-stars.jpg" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Teachers</h2>
