@@ -5,7 +5,9 @@ self.addEventListener('install', function(e) {
 		caches.open('Omega').then(function(cache) {
 			return cache.addAll([
 				'index.php',
-				'signin/index.php',
+				'signin/',
+				'student/',
+				'teacher/',
 				'images/icons/favicon.ico',
 				'images/icons/48.png',
 				'images/icons/72.png',
