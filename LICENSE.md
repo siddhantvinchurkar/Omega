@@ -1,7 +1,7 @@
 ![MIT License](https://u.imageresize.org/v2/3cfd14ac-f323-455d-ae44-4b652db77e32.png "MIT License")
 # **MIT License**
 
-### **Copyright © 2018 [Siddhant Vinchurkar](https://github.com/siddhantvinchurkar "Siddhant Vinchurkar"), [Nikhil Sujit](https://github.com/nik98hil "Nikhil Sujit") and [Shreyas Harle](https://github.com/Harle11 "Shreyas Harle")**
+### **Copyright © 2018 [Siddhant Vinchurkar](https://github.com/siddhantvinchurkar "Siddhant Vinchurkar"), [Nikhil Sujith](https://github.com/nik98hil "Nikhil Sujith") and [Shreyas Harle](https://github.com/Harle11 "Shreyas Harle")**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
