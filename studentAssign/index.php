@@ -15,13 +15,13 @@
 		<!--Fetch font (Roboto) from the CDN asynchronously-->
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
 		<!--Set the shortcut icon-->
-		<link rel="shortcut icon" type="image/ico" href="images/icons/favicon.ico">
+		<link rel="shortcut icon" type="image/ico" href="../images/icons/favicon.ico">
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--Progressive Web App meta tags-->
-		<link rel="manifest" href="manifest.json">
+		<link rel="manifest" href="../manifest.json">
 		<meta name="theme-color" content="#4DB6AC">
-		<meta name="Description" content="Programs from web tech lab sessions">
+		<meta name="Description" content="Omega is a collaborative classroom platform for teachers and students alike.">
 		<!--Overriden Styles-->
 		<style>
 			body {
