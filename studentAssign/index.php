@@ -92,7 +92,7 @@
 		</style>
 
 
-		<title>OmegaClassrooms</title>
+		<title>Omega</title>
 	</head>
 	<body>
 		<!-- Heading Strip-->
