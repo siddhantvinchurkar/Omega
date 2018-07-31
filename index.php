@@ -2,8 +2,14 @@
 <html>
 	<head>
 		<title>Omega</title>
+
+		<!--Set document charset-->
 		<meta charset="utf-8" />
+
+		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!--Import local assets-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<!--Set the shortcut icon-->
@@ -94,6 +100,15 @@
 
 		<script type="text/javascript">
 			window.onload = function(){
+
+				// Register a Service Worker
+				if('serviceWorker' in navigator) {
+				  navigator.serviceWorker
+				           .register('sw.js')
+				           .then(function() { console.log("%c Service Worker Registered", "background:#222222; color:#BADA55;"); });
+				}
+
+				// Set current year
 				document.getElementById("year").innerHTML = new Date().getFullYear();
 			}
 		</script>
