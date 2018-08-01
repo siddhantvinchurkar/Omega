@@ -86,6 +86,12 @@
 			main {
 			flex: 1 0 auto;
 			}
+			.btn-floating{ 
+  			background-color:#e57373;
+			}
+			i.icon-white {
+			    color: white;
+			}
 
 		}
 			
@@ -103,19 +109,19 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="../student/index.php"><i class="tiny material-icons">dashboard</i></a>
+	<a href="../student/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
 						</li>
 
 						<li>
-							<a><i class="tiny material-icons">announcements</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
 
 						<li>
-							<a><i class="tiny material-icons">assignments</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>
-							<a><i class="tiny material-icons">library_books</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
 						</li>
 					</ul>
 				</div>
@@ -154,15 +160,13 @@
     	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
   	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="small material-icons">chevron_right</i></a>
+
 				<!-- Card 1 -->
 			<div class="col s6 m12">
     				<div class="card horizontal #26a69a teal lighten-1">
       					<div class="card-stacked">
           						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2" name="action"><i class="material-icons right">assignment</i><b>Assignment 1</b>
-   									 
   								</button>
-        					
-
       				<div class="container">
       					<div class="row">
         					<div class="cols s6 m3 card" id="question">
@@ -173,7 +177,6 @@
         					</div>
         				</div>
         			</div>
-
         					<div class="card-stacked">
           						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2 type="submit" name="action"><b>Submit</b>
    									 <i class="material-icons right">send</i>
@@ -181,7 +184,8 @@
         					</div>
       				</div>
     		</div>
- 		<!-- End of Card 1 -->
+    	
+ 		<!--End of Card 1 -->
  		</main>
 			<!--Footer-->
 			<footer class="page-footer" style="padding-top:0px;">
@@ -208,7 +212,15 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},3000);
+					},0);
+			</script>
+
+			<!--Button tooltips JS-->
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				    var elems = document.querySelectorAll('.tooltipped');
+				    var instances = M.Tooltip.init(elems);
+				  });
 			</script>
 
 

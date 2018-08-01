@@ -71,7 +71,10 @@
 			main {
 			flex: 1 0 auto;
 			}
+			i.icon-white {
+			    color: white;
 			}
+		}
 		</style>
 		<title>Omega</title>
 	</head>
@@ -84,19 +87,19 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a><i class="tiny material-icons">dashboard</i></a>
+	<a href="../student/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
 						</li>
 
 						<li>
-							<a><i class="tiny material-icons">announcements</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
 
 						<li>
-							<a href="../studentAssign/index.php"><i class="tiny material-icons">assignments</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>
-							<a><i class="tiny material-icons">library_books</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
 						</li>
 					</ul>
 				</div>
@@ -176,6 +179,14 @@
 			    var elems = document.querySelectorAll('.sidenav');
 			    var instances = M.Sidenav.init(elems, 'edge');
   				});
+			</script>
+
+			<!--Button tooltips JS-->
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				    var elems = document.querySelectorAll('.tooltipped');
+				    var instances = M.Tooltip.init(elems);
+				  });
 			</script>
 
 			<script>
