@@ -92,7 +92,7 @@
 						</li>
 
 						<li>
-							<a href="../studentAssign/index.html"><i class="tiny material-icons">assignments</i></a>
+							<a href="../studentAssign/index.php"><i class="tiny material-icons">assignments</i></a>
 						</li>
 
 						<li>

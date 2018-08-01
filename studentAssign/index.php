@@ -103,7 +103,7 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="../student/index.html"><i class="tiny material-icons">dashboard</i></a>
+							<a href="../student/index.php"><i class="tiny material-icons">dashboard</i></a>
 						</li>
 
 						<li>
