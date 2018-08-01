@@ -81,23 +81,41 @@
 			<nav>
 				<div class="nav-wrapper">
 					<img src="../images/icons/72.png" style="height:95%;" />
-					<a href="" class="brand-logo">OMEGA</a>
+					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="index.html">
-								<p class="material-icons">arrow_back</p>
-							</a>
+							<a><i class="tiny material-icons">dashboard</i></a>
 						</li>
+
 						<li>
-							<a href="index.html">
-								<p class="material-icons">arrow_forward</p>
-							</a>
+							<a><i class="tiny material-icons">announcements</i></a>
+						</li>
+
+						<li>
+							<a href="../studentAssign/index.html"><i class="tiny material-icons">assignments</i></a>
+						</li>
+
+						<li>
+							<a><i class="tiny material-icons">library_books</i></a>
 						</li>
 					</ul>
 				</div>
-
 			</nav>
-<!-- Sliding Navigation Bar -->
+</header>
+	
+<main>
+	<!--Progrss Bar-->
+			<div class="container" id="progressBar">
+				<img src="../images/icons/512.png" class="center2" />
+				<div class="progress center">
+					<div class="indeterminate" style="margin-right: auto; margin-left: auto; width: 250px;"></div>
+				</div>
+			</div>
+
+			<!--Contents-->
+			<div id="pageContents" style="display:none;">
+				<img src="../images/icons/512.png" class="center2" />
+			<!-- Sliding Navigation Bar -->
  <ul id="slide-out" class="sidenav">
     <li>
     	<div class="user-view"><div class="background">
@@ -115,12 +133,9 @@
     	<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
   	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons">chevron_right</i></a>
-</header>
-	
-<main>
+
 	<div class="container">
 		<div class="row">
-			
 			<!--Card 1-->
 			<a href="index.html">
 				<div class="col s6">
@@ -163,6 +178,13 @@
   				});
 			</script>
 
+			<script>
+				// Get rid of the loader after three seconds
+				setTimeout(function(){
+					document.getElementById("progressBar").style.display="none";
+					document.getElementById("pageContents").style.display="block";
+					},3000);
+			</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
 			<script type="text/javascript">

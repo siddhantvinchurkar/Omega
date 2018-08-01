@@ -97,32 +97,45 @@
 	<body>
 		<!-- Heading Strip-->
 		<header>
-
 			<nav>
 				<div class="nav-wrapper">
 					<img src="../images/icons/72.png" style="height:95%;" />
-					<a href="" class="brand-logo">OMEGA</a>
+					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="index.html"><i class="tiny material-icons">dashboard</i></a>
+							<a href="../student/index.html"><i class="tiny material-icons">dashboard</i></a>
 						</li>
 
 						<li>
-							<a href="index.html"><i class="tiny material-icons">announcements</i></a>
+							<a><i class="tiny material-icons">announcements</i></a>
 						</li>
 
 						<li>
-							<a href="index.html"><i class="tiny material-icons">assignments</i></a>
+							<a><i class="tiny material-icons">assignments</i></a>
 						</li>
 
 						<li>
-							<a href="index.html"><i class="tiny material-icons">library_books</i></a>
+							<a><i class="tiny material-icons">library_books</i></a>
 						</li>
 					</ul>
 				</div>
 			</nav>
+</header>
 
-<!-- Sliding Navigation Bar -->
+
+		<main>
+			<!--Progrss Bar-->
+			<div class="container" id="progressBar">
+				<img src="../images/icons/512.png" class="center2" />
+				<div class="progress center">
+					<div class="indeterminate" style="margin-right: auto; margin-left: auto; width: 250px;"></div>
+				</div>
+			</div>
+
+			<!--Contents-->
+			<div id="pageContents" style="display:none;">
+				<img src="../images/icons/512.png" class="center2" />
+						<!-- Sliding Navigation Bar -->
   <ul id="slide-out" class="sidenav">
     	<li>
     		<div class="user-view">
@@ -141,11 +154,6 @@
     	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
   	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="small material-icons">chevron_right</i></a>
-
-</header>
-
-
-		<main>
 				<!-- Card 1 -->
 			<div class="col s6 m12">
     				<div class="card horizontal #26a69a teal lighten-1">
@@ -193,6 +201,14 @@
 			    var elems = document.querySelectorAll('.sidenav');
 			    var instances = M.Sidenav.init(elems, 'edge');
   				});
+			</script>
+
+			<script>
+				// Get rid of the loader after three seconds
+				setTimeout(function(){
+					document.getElementById("progressBar").style.display="none";
+					document.getElementById("pageContents").style.display="block";
+					},3000);
 			</script>
 
 
