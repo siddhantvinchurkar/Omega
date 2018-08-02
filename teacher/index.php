@@ -69,7 +69,7 @@
 		<header>
 			<nav>
 				<div class="nav-wrapper">
-					<img src="../images/icons/72.png" style="height:95%;" />
+					<img data-target="slide-out" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
 					<a href="" class="brand-logo">Omega</a>
 				</div>
 			</nav>
@@ -84,13 +84,12 @@
       					<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
     				</div>
     			</li>
-    				<li><a href="#!" onclick="askClassCode();"><i class="material-icons">school</i>Add New Subject</a></li>
+    				<li><a href="#!" class="waves-effect" onclick="askClassCode();"><i class="material-icons">school</i>Add New Subject</a></li>
     				<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     				<li><div class="divider"></div></li>
     				<li><a class="subheader">Subheader</a></li>
     				<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   			</ul>
-  			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons">chevron_right</i></a>
 		</header>
 		<!--Main-->
 		<main>
@@ -145,63 +144,63 @@
 					</div>
 					<nav class="com__nav">
 						<ul class="com__nav-list">
-							<li class="com__nav-item1">
+							<li class="com__nav-item"><center><h5>I BCA</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>I BCA</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item1">
+							<li class="com__nav-item"><center><h5>II BCA</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>II BCA</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item1">
+							<li class="com__nav-item"><center><h5>III BCA</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>III BCA</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item2">
+							<li class="com__nav-item"><center><h5>I PMC</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>I PMC</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item2">
+							<li class="com__nav-item"><center><h5>II PMC</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>II PMC</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item2">
+							<li class="com__nav-item"><center><h5>III PMC</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>III PMC</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item3">
+							<li class="com__nav-item"><center><h5>I MEC</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>I MEC</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item3">
+							<li class="com__nav-item"><center><h5>II MEC</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>II MEC</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
 									<span class="white-line animate scaleInLeft delay-3"></span>
 								</a>
 							</li>
-							<li class="com__nav-item3">
+							<li class="com__nav-item"><center><h5>III MEC</h5></center>
 								<a href="" class="com__nav-link">
 									<h4>III MEC</h4>
 									<span class="white-line animate scaleInLeft delay-2"></span>
@@ -234,6 +233,16 @@
 			    	var elems = document.querySelectorAll('.sidenav');
 			    	var instances = M.Sidenav.init(elems, 'edge middle');
   				});
+
+				 function askClassCode(){
+					var code = prompt("Please enter the class code");
+
+					if(code!=null)
+					{
+						alert("The code to join the class is:" + " " +code);
+					}
+
+}
 		</script>
 		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script> <!--Not loading asynchronously as the following script is dependant on this-->
 		<script type="text/javascript">

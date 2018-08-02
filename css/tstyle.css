@@ -19,7 +19,7 @@ body  {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   position: absolute;
   top:0;
   left:0;
@@ -37,10 +37,13 @@ h1 {
       }
   p {
         margin: 0;
-        color: white;
+        color: black;
         max-width: 600px;
         font-size: 20px;
     }
+  h5{
+    color: black;
+  }
 .com__section.active {
   opacity: 1;
   visibility: visible;
@@ -54,10 +57,9 @@ h1 {
   list-style-type: none;
   display: flex;
   flex-flow: column wrap;
-  height: 100vh;
-  overflow: visible;
+  height: 80vh;
 }
-.com__nav-item1 {
+.com__nav-item {
   flex: 1;
   position: relative;
   overflow: visible;
@@ -65,44 +67,20 @@ h1 {
   background: cyan;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.com__nav-item2 {
-  flex: 1;
-  position: relative;
-  overflow: visible;
-  border-bottom: 4px solid #1BAFB9;
-  background: yellow;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+.com__nav-item.active {
+  background: grey;
 }
-.com__nav-item3 {
-  flex: 1;
-  position: relative;
-  overflow: visible;
-  border-bottom: 4px solid #1BAFB9;
-  background: magenta;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.com__nav-item1.active,
-.com__nav-item2.active,
-.com__nav-item3.active {
-  background: #20232a;
-}
-.com__nav-item3:last-child {
+.com__nav-item:last-child {
   border-bottom: none;
 }
-.com__nav-item1:hover,
-.com__nav-item2:hover,
-.com__nav-item3:hover {
+.com__nav-item:hover {
   flex: 2;
 }
-.com__nav-item1:hover .com__nav-link,
-.com__nav-item2:hover .com__nav-link,
-.com__nav-item3:hover .com__nav-link {
+.com__nav-item:hover .com__nav-link {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
-.com__nav-item1:hover .white-line,
-.com__nav-item2:hover .white-line,
-.com__nav-item3:hover .white-line {
+.com__nav-item:hover .white-line {
   -webkit-transform: none;
           transform: none;
   opacity: 1;
