@@ -83,7 +83,7 @@
 		<header>
 			<nav>
 				<div class="nav-wrapper">
-					<img src="../images/icons/72.png" style="height:95%;" />
+					<img data-target="slide-out" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
@@ -115,10 +115,11 @@
 				</div>
 			</div>
 
-			<!--Contents-->
-			<div id="pageContents" style="display:none;">
-				<img src="../images/icons/512.png" class="center2" />
-			<!-- Sliding Navigation Bar -->
+<!--Contents-->
+<div id="pageContents" style="display:none;">
+	<img src="../images/icons/512.png" class="center2" />
+
+<!-- Sliding Navigation Bar -->
  <ul id="slide-out" class="sidenav">
     <li>
     	<div class="user-view"><div class="background">
@@ -133,10 +134,8 @@
     	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     	<li><div class="divider"></div></li>
     	<li><a class="subheader">Subheader</a></li>
-    	<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    	<li><a class="waves-effect" href="#!"><i class="material-icons">clear</i>Sign Out</a></li>
   </ul>
-  	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons">chevron_right</i></a>
-
 	<div class="container">
 		<div class="row">
 			<!--Card 1-->
@@ -194,7 +193,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},3000);
+					},0);
 			</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->

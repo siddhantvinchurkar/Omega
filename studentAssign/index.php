@@ -92,12 +92,13 @@
 			i.icon-white {
 			    color: white;
 			}
+			.card{
+				width:400px;
+				height:300px;
+			}
 
 		}
-			
 		</style>
-
-
 		<title>Omega</title>
 	</head>
 	<body>
@@ -105,7 +106,7 @@
 		<header>
 			<nav>
 				<div class="nav-wrapper">
-					<img src="../images/icons/72.png" style="height:95%;" />
+					<img data-target="slide-out" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
@@ -117,7 +118,7 @@
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments" href="../student/index.php"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>
@@ -159,33 +160,25 @@
     	<li><a class="subheader">Account</a></li>
     	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
-  	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="small material-icons">chevron_right</i></a>
-
-				<!-- Card 1 -->
-			<div class="col s6 m12">
-    				<div class="card horizontal #26a69a teal lighten-1">
-      					<div class="card-stacked">
-          						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2" name="action"><i class="material-icons right">assignment</i><b>Assignment 1</b>
-  								</button>
-      				<div class="container">
-      					<div class="row">
-        					<div class="cols s6 m3 card" id="question">
-          							<p>------------------- THE QUESTION GOES HERE ---------------</p>
-          						<div class="cols s6 m3 card" id="date">
-          							<p> 28 July 2018</p>
-          						</div>
-        					</div>
-        				</div>
-        			</div>
-        					<div class="card-stacked">
-          						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2 type="submit" name="action"><b>Submit</b>
-   									 <i class="material-icons right">send</i>
-  								</button>
-        					</div>
-      				</div>
-    		</div>
-    	
- 		<!--End of Card 1 -->
+  
+<div class="container">
+<div class="row">
+		<!-- Card 1-->
+    <div class="col s12 m12">
+      <div class="card">
+          <span class="card-title">Assignment 1</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        <div class="card-content">
+          <p>The question goes here</p>
+        </div>
+    </div>
+      </div>
+    </div>
+    <!-- End of Card 1 -->
+    
+  </div>
+</div>
+		
  		</main>
 			<!--Footer-->
 			<footer class="page-footer" style="padding-top:0px;">
