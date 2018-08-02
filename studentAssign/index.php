@@ -86,6 +86,12 @@
 			main {
 			flex: 1 0 auto;
 			}
+			.btn-floating{ 
+  			background-color:#e57373;
+			}
+			i.icon-white {
+			    color: white;
+			}
 
 		}
 			
@@ -97,32 +103,45 @@
 	<body>
 		<!-- Heading Strip-->
 		<header>
-
 			<nav>
 				<div class="nav-wrapper">
 					<img src="../images/icons/72.png" style="height:95%;" />
-					<a href="" class="brand-logo">OMEGA</a>
+					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="index.html"><i class="tiny material-icons">dashboard</i></a>
+	<a href="../student/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
 						</li>
 
 						<li>
-							<a href="index.html"><i class="tiny material-icons">announcements</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
 
 						<li>
-							<a href="index.html"><i class="tiny material-icons">assignments</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>
-							<a href="index.html"><i class="tiny material-icons">library_books</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
 						</li>
 					</ul>
 				</div>
 			</nav>
+</header>
 
-<!-- Sliding Navigation Bar -->
+
+		<main>
+			<!--Progrss Bar-->
+			<div class="container" id="progressBar">
+				<img src="../images/icons/512.png" class="center2" />
+				<div class="progress center">
+					<div class="indeterminate" style="margin-right: auto; margin-left: auto; width: 250px;"></div>
+				</div>
+			</div>
+
+			<!--Contents-->
+			<div id="pageContents" style="display:none;">
+				<img src="../images/icons/512.png" class="center2" />
+						<!-- Sliding Navigation Bar -->
   <ul id="slide-out" class="sidenav">
     	<li>
     		<div class="user-view">
@@ -142,19 +161,12 @@
   </ul>
   	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="small material-icons">chevron_right</i></a>
 
-</header>
-
-
-		<main>
 				<!-- Card 1 -->
 			<div class="col s6 m12">
     				<div class="card horizontal #26a69a teal lighten-1">
       					<div class="card-stacked">
           						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2" name="action"><i class="material-icons right">assignment</i><b>Assignment 1</b>
-   									 
   								</button>
-        					
-
       				<div class="container">
       					<div class="row">
         					<div class="cols s6 m3 card" id="question">
@@ -165,7 +177,6 @@
         					</div>
         				</div>
         			</div>
-
         					<div class="card-stacked">
           						<button class="btn waves-effect waves-light #33691e #e57373 red lighten-2 type="submit" name="action"><b>Submit</b>
    									 <i class="material-icons right">send</i>
@@ -173,7 +184,8 @@
         					</div>
       				</div>
     		</div>
- 		<!-- End of Card 1 -->
+    	
+ 		<!--End of Card 1 -->
  		</main>
 			<!--Footer-->
 			<footer class="page-footer" style="padding-top:0px;">
@@ -193,6 +205,22 @@
 			    var elems = document.querySelectorAll('.sidenav');
 			    var instances = M.Sidenav.init(elems, 'edge');
   				});
+			</script>
+
+			<script>
+				// Get rid of the loader after three seconds
+				setTimeout(function(){
+					document.getElementById("progressBar").style.display="none";
+					document.getElementById("pageContents").style.display="block";
+					},0);
+			</script>
+
+			<!--Button tooltips JS-->
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				    var elems = document.querySelectorAll('.tooltipped');
+				    var instances = M.Tooltip.init(elems);
+				  });
 			</script>
 
 
