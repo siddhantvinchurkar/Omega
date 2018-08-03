@@ -56,15 +56,6 @@
 			bottom: 0;
 			left: 0;
 			}
-			.verticalCenter{
-			width: 250px;
-			position: left;
-			margin: auto;
-			top: 0;
-			right: 0;
-			bottom:0;
-			left: 0;
-			}
 			#question{
 				font-weight: bold;
 				color:white;
@@ -92,9 +83,18 @@
 			i.icon-white {
 			    color: white;
 			}
-			.card{
-				width:400px;
-				height:300px;
+			.card-title{
+				background-color:#42a5f5;
+				padding:5px;
+
+			}
+			.card-content{
+				width:auto;
+				padding: 24px;
+			}
+			.card-link{
+				width:auto;
+				padding: 2px;
 			}
 
 		}
@@ -160,36 +160,50 @@
     	<li><a class="subheader">Account</a></li>
     	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
-  
-<div class="container">
-<div class="row">
-		<!-- Card 1-->
-    <div class="col s12 m12">
-      <div class="card">
-          <span class="card-title">Assignment 1</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">send</i></a>
-        <div class="card-content">
-          <p><h5><center>The Question Goes Here</center></h5></p>
-        </div>
-    </div>
-      </div>
-    </div>
-    <!-- End of Card 1 -->
+ <div class="row">
 
-    <!-- Card 2-->
-    <div class="col s12 m12">
-      <div class="card">
-          <span class="card-title">Assignment 2</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">send</i></a>
-        <div class="card-content">
-          <p><h5><center>The Question Goes Here</center></h5></p>
+<!-- Card 1-->
+    <div class="col s12 m4">
+      <div class="card blue-grey darken-1">
+        <div class="card-title white-text">
+          Assignment 1
         </div>
-    </div>
+        <div class="card-content blue-grey darken-2 white-text">
+        	<p>THE QUESTION HERE</p>
+        	<a class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Submit</a>
+        </div>
       </div>
     </div>
-    <!-- End of Card 2 -->
-    
-  </div>
+ <!-- End of Card  -->
+
+ <!-- Card 1-->
+    <div class="col s12 m4">
+      <div class="card blue-grey darken-1">
+        <div class="card-title white-text">
+          Assignment 1
+        </div>
+        <div class="card-content blue-grey darken-2 white-text">
+        	<p>THE QUESTION HERE</p>
+        	<a class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Submit</a>
+        </div>
+      </div>
+    </div>
+ <!-- End of Card  -->
+
+ <!-- Card 1-->
+    <div class="col s12 m4">
+      <div class="card blue-grey darken-1">
+        <div class="card-title white-text">
+          Assignment 1
+        </div>
+        <div class="card-content blue-grey darken-2 white-text">
+        	<p>THE QUESTION HERE</p>
+        	<a class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Submit</a>
+        </div>
+      </div>
+    </div>
+ <!-- End of Card  -->
+ 
 </div>
 		
  		</main>
@@ -218,7 +232,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},3000);
+					},0);
 			</script>
 
 			<!--Button tooltips JS-->
