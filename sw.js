@@ -1,4 +1,5 @@
 // This file will handle the installed service worker
+// Add all cache-worthy resources here
 
 importScripts('cache-polyfill.js');
 
