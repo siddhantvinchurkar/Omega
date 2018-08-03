@@ -1,3 +1,5 @@
+// This file will handle the installed service worker
+
 importScripts('cache-polyfill.js');
 
 self.addEventListener('install', function(e) {
