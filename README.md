@@ -10,4 +10,6 @@ We've configured [Continuous Integration (CI)](https://en.wikipedia.org/wiki/Con
 
 Currently only available for students and faculty of the [Computer Science Department,](http://sjc.ac.in/dept_cmptr_sci.html "Computer Science Department") [St. Joseph's College (Autonomous),](http://sjc.ac.in/ "St. Joseph's College (Autonomous)") [Bengaluru.](https://en.wikipedia.org/wiki/Bangalore "Bengaluru") It is however, an open source project with an [MIT License](https://github.com/siddhantvinchurkar/Omega/blob/master/LICENSE.md "MIT License"). So feel free to use it in any way you like.
 
+Omega's documentation is available [here](https://github.com/siddhantvinchurkar/Omega/wiki "Omega Documentation") and [here](https://docs.omegaclassrooms.ga/ "Omega Documentation").
+
 Developed by [Siddhant Vinchurkar](https://github.com/siddhantvinchurkar "Siddhant Vinchurkar"), [Nikhil Sujith](https://github.com/nik98hil "Nikhil Sujith") and [Shreyas Harle](https://github.com/Harle11 "Shreyas Harle").
