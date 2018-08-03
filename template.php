@@ -1,4 +1,3 @@
-<!--something-->
 <!DOCTYPE html>
 <html lang="en">
 
