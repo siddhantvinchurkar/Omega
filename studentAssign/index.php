@@ -167,14 +167,27 @@
     <div class="col s12 m12">
       <div class="card">
           <span class="card-title">Assignment 1</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">send</i></a>
         <div class="card-content">
-          <p>The question goes here</p>
+          <p><h5><center>The Question Goes Here</center></h5></p>
         </div>
     </div>
       </div>
     </div>
     <!-- End of Card 1 -->
+
+    <!-- Card 2-->
+    <div class="col s12 m12">
+      <div class="card">
+          <span class="card-title">Assignment 2</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">send</i></a>
+        <div class="card-content">
+          <p><h5><center>The Question Goes Here</center></h5></p>
+        </div>
+    </div>
+      </div>
+    </div>
+    <!-- End of Card 2 -->
     
   </div>
 </div>
