@@ -90,7 +90,7 @@
 									<br />
 									<div class="row" style="margin-bottom:-2em;">
 										<div class="input-field col s12 m6 offset-m1">
-											<input placeholder="16BCA41044" id="rno" type="text" class="validate" data-length="15" pattern=".{10,15}" required>
+											<input placeholder="16BCA41044" id="rno" type="text" class="validate" data-length="10" pattern=".{10,10}" required>
 											<label for="first_name">Roll Number / Employee ID</label>
 											<span class="helper-text" data-error="That's not a valid number!" data-success="You're ready to go!"></span>
 										</div>
