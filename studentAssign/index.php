@@ -218,7 +218,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},0);
+					},3000);
 			</script>
 
 			<!--Button tooltips JS-->
