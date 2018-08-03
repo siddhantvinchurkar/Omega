@@ -118,7 +118,7 @@
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments" href="../student/index.php"><i class="tiny material-icons icon-white">assignments</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>

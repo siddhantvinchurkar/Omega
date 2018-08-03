@@ -87,7 +87,7 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-	<a href="../student/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
+	<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
 						</li>
 
 						<li>
@@ -95,7 +95,7 @@
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments" href="../studentAssign/index.php"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>
