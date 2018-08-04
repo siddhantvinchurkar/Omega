@@ -5,8 +5,6 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<!--Fetch local style resources-->
-		<link rel="stylesheet" href="../css/tstyle.css" media="none" onload="if(media!='screen,projection')media='screen,projection'">
 		<!--Fetch minified normalizecss from the CDN asynchronously-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" media="none" onload="if(media!='screen,projection')media='screen,projection'">
 		<!--Fetch minified materializecss from the CDN asynchronously-->
@@ -53,15 +51,8 @@
 			bottom: 0;
 			left: 0;
 			}
-			.left-center {
-			width: 250px;
-			position: left;
-			margin: auto;
-			top: 0;
-			right: 0;
-			bottom: 100;
-			left: 0;
-			}
+			.icon-white {
+			    color: white;
 		</style>
 	</head>
 	<body>
@@ -71,6 +62,37 @@
 				<div class="nav-wrapper">
 					<img data-target="slide-out" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
 					<a href="" class="brand-logo">Omega</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li>
+							<a class='dropdown-trigger btn-flat icon-white' data-target='dropdown1'>All Classes</a>
+						</li>
+
+						<li>
+							<a id="announceM" class="btn-flat tooltipped waves-effect modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
+						</li>
+
+						<li>
+							<a id="assignM" class="btn-flat tooltipped waves-effect modal-trigger" href="#assignmentModal" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
+						</li>
+
+						<li>
+							<a id="noteM" class="btn-flat tooltipped waves-effect modal-trigger" href="#notesModal" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
+						</li>
+					</ul>
+					<!-- Dropdown Structure -->
+  					<ul id='dropdown1' class='dropdown-content'>
+    					<li><a href="#1bca"><center>I BCA</center></a></li>
+    					<li><a href="#2bca"><center>II BCA</center></a></li>
+    					<li><a href="#3bca"><center>III BCA</center></a></li>
+    					<li class="divider" tabindex="-1"></li>
+    					<li><a href="#1pcm"><center>I PCM</center></a></li>
+    					<li><a href="#2pcm"><center>II PCM</center></a></li>
+    					<li><a href="#3pcm"><center>III PCM</center></a></li>
+    					<li class="divider" tabindex="-1"></li>
+    					<li><a href="#1mec"><center>I MEC</center></a></li>
+    					<li><a href="#2mec"><center>II MEC</center></a></li>
+    					<li><a href="#3mec"><center>III MEC</center></a></li>
+  					</ul>
 				</div>
 			</nav>
 			<!-- Sliding Navigation Bar -->
@@ -84,7 +106,7 @@
       					<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
     				</div>
     			</li>
-    				<li><a href="#!" class="waves-effect" onclick="askClassCode();"><i class="material-icons">school</i>Add New Subject</a></li>
+    				<li><a id="addsubj" href="#subjectModal" class="waves-effect modal-trigger"><i class="material-icons">school</i>Add New Subject</a></li>
     				<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     				<li><div class="divider"></div></li>
     				<li><a class="subheader">Subheader</a></li>
@@ -94,122 +116,52 @@
 		<!--Main-->
 		<main>
 			<!--Progrss Bar-->
-			<div class="container" id="progressBar">
+			<div class="container">
 				<img src="../images/icons/512.png" class="center2" />
-				<div class="progress center">
+				<div class="progress center" id="progressBar">
 					<div class="indeterminate" style="margin-right: auto; margin-left: auto; width: 250px;"></div>
 				</div>
-			</div>
-			<!--Contents-->
-			<div id="pageContents" style="display:none;">
-				<img src="../images/icons/512.png" class="center2" />
-				<div class="com">
-					<div class="com__content">
-						<section class="com__section">
-							<h1 class="animate slideInLeft">I Year BCA</h1>
-							<p class="animate slideInLeft delay-1">First year BCA.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate slideInLeft">II Year BCA</h1>
-							<p class="animate slideInLeft delay-1">2nd year BCA.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate scaleIn">III Year BCA</h1>
-							<p class="animate slideInLeft delay-1">Final year BCA.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate slideInLeft">I Year PMC</h1>
-							<p class="animate slideInLeft delay-1">First year PMC.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate slideInLeft">II Year PMC</h1>
-							<p class="animate slideInLeft delay-1">2nd year PMC.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate scaleIn">III Year PMC</h1>
-							<p class="animate slideInLeft delay-1">Final year PMC.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate slideInLeft">I Year MEC</h1>
-							<p class="animate slideInLeft delay-1">First year MEC.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate slideInLeft">II Year MEC</h1>
-							<p class="animate slideInLeft delay-1">2nd year MEC.....</p>
-						</section>
-						<section class="com__section">
-							<h1 class="animate scaleIn">III Year MEC</h1>
-							<p class="animate slideInLeft delay-1">Final year MEC.....</p>
-						</section>
-					</div>
-					<nav class="com__nav">
-						<ul class="com__nav-list">
-							<li class="com__nav-item"><center><h5>I BCA</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>I BCA</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>II BCA</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>II BCA</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>III BCA</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>III BCA</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>I PMC</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>I PMC</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>II PMC</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>II PMC</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>III PMC</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>III PMC</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>I MEC</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>I MEC</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>II MEC</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>II MEC</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-							<li class="com__nav-item"><center><h5>III MEC</h5></center>
-								<a href="" class="com__nav-link">
-									<h4>III MEC</h4>
-									<span class="white-line animate scaleInLeft delay-2"></span>
-									<span class="white-line animate scaleInLeft delay-3"></span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
+				<!-- Modal Structure -->
+  				<div id="subjectModal" class="modal">
+    				<div class="modal-content">
+      					<h4>Subject Modal</h4>
+      					<p>A bunch of text</p>
+    				</div>
+    				<div class="modal-footer">
+      					<a href="#" class="modal-close waves-effect btn-flat">Create</a>
+    				</div>
+  				</div>
+
+  				<div id="announceModal" class="modal">
+    				<div class="modal-content">
+      					<h4>Announcements Modal</h4>
+      					<p>A bunch of text</p>
+    				</div>
+    				<div class="modal-footer">
+      					<a href="#" class="modal-close waves-effect btn-flat">Create</a>
+    				</div>
+  				</div>
+
+  				<div id="assignmentModal" class="modal">
+    				<div class="modal-content">
+      					<h4>Assignment Modal</h4>
+      					<p>A bunch of text</p>
+    				</div>
+    				<div class="modal-footer">
+      					<a href="#" class="modal-close waves-effect btn-flat">Create</a>
+    				</div>
+  				</div>
+
+  				<div id="notesModal" class="modal">
+    				<div class="modal-content">
+      					<h4>Notes Modal</h4>
+      					<p>A bunch of text</p>
+    				</div>
+    				<div class="modal-footer">
+      					<a href="#" class="modal-close waves-effect blue btn-flat">Create</a>
+    				</div>
+  				</div>
+
 			</div>
 		</main>
 		<!--Footer-->
@@ -222,27 +174,19 @@
 			</div>
 		</footer>
 		<!--JavaScript at end of body for optimized asynchronous loading-->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-		<!--Not loading asynchronously as tindex.js is dependant on this-->
-		<script type="text/javascript" src="../js/tindex.js" async></script>
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 		<script>
 				 document.addEventListener('DOMContentLoaded', function() {
 			    	var elems = document.querySelectorAll('.sidenav');
 			    	var instances = M.Sidenav.init(elems, 'edge middle');
+
+			    	var elemsD = document.querySelectorAll('.dropdown-trigger');
+    				var instancesD = M.Dropdown.init(elemsD, closeOnClick='true');
+
+    				var elemsM = document.querySelectorAll('.modal');
+    				var instancesM = M.Modal.init(elemsM, '');
   				});
-
-				 function askClassCode(){
-					var code = prompt("Please enter the class code");
-
-					if(code!=null)
-					{
-						alert("The code to join the class is:" + " " +code);
-					}
-
-}
 		</script>
 		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script> <!--Not loading asynchronously as the following script is dependant on this-->
 		<script type="text/javascript">
@@ -270,6 +214,19 @@
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
 					}, 3000);
+
+				document.getElementById("addsubj").onclick = function(){
+					instancesM[0].open();
+				}
+				document.getElementById("announceM").onclick = function(){
+					instancesM[0].open();
+				}
+				document.getElementById("assignM").onclick = function(){
+					instancesM[0].open();
+				}
+				document.getElementById("noteM").onclick = function(){
+					instancesM[0].open();
+				}
 			
 			}
 			
