@@ -154,7 +154,7 @@
       		<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
     		</div>
     	</li>
-    	<li><a href="#!" onclick="askClassCode();"><i class="material-icons">school</i>Join New Class</a></li>
+    	<li><a class=" modal-trigger" href="#modal1"><i class="material-icons">school</i>Join New Class</a></li>
     	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     	<li><div class="divider"></div></li>
     	<li><a class="subheader">Account</a></li>
@@ -203,10 +203,23 @@
       </div>
     </div>
  <!-- End of Card  -->
- 
-</div>
-		
- 		</main>
+	</div>
+
+	<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+    	<img src="../images/icons/192.png" class="center2"/>
+      <h5>Join New Class</h5>
+       <div class="input-field col s6">
+          <input placeholder="Enter Class Code Here" id="first_name" type="text" class="validate">
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+
+</main>
 			<!--Footer-->
 			<footer class="page-footer" style="padding-top:0px;">
 				<div class="footer-copyright">
@@ -227,12 +240,20 @@
   				});
 			</script>
 
+			<!-- Modal JS-->
+			<script>
+				 document.addEventListener('DOMContentLoaded', function() {
+				    var elems = document.querySelectorAll('.modal');
+				    var instances = M.Modal.init(elems, 'noScrolling');
+				  });
+				</script>
+
 			<script>
 				// Get rid of the loader after three seconds
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},0);
+					},3000);
 			</script>
 
 			<!--Button tooltips JS-->
