@@ -138,7 +138,14 @@
 			
 				// Handle continue action
 				document.getElementById("continueButton").onclick = function(){
-					alert(document.getElementById("rno").value);
+					if(!isNaN(document.getElementById("rno").value[1])){
+						// Student. Go to student.
+						window.location.href = "../student";
+					}
+					else{
+						// Teacher. Go to teacher
+						window.location.href = "../teacher";
+					}
 				}
 			
 			}
