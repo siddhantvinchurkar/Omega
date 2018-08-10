@@ -126,8 +126,8 @@
     		<img src="../images/list.jpg">
       	</div>
       		<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-      		<a href="#name"><span class="white-text name">John Doe</span></a>
-      		<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      		<a href="#name"><span class="white-text name">Nikhil Sujith</span></a>
+      		<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
     	</div>
     </li>
     	<li><a class=" modal-trigger" href="#modal1"><i class="material-icons">school</i>Join New Class</a></li>
@@ -217,7 +217,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},3000);
+					},0);
 			</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
