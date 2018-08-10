@@ -297,7 +297,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},3000);
+					},0);
 			</script>
 
 			<!--Button tooltips JS-->
