@@ -140,8 +140,9 @@
 			</div>
 
 			<!--Contents-->
-			<div id="pageContents" style="display:none;">
+			<div id="pageContents" style="display:block;">
 				<img src="../images/icons/512.png" class="center2" />
+
 						<!-- Sliding Navigation Bar -->
   <ul id="slide-out" class="sidenav">
     	<li>
@@ -150,8 +151,8 @@
         			<img src="../images/list.jpg">
       			</div>
       		<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-      		<a href="#name"><span class="white-text name">John Doe</span></a>
-      		<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      		<a href="#name"><span class="white-text name">Nikhil Sujith</span></a>
+      		<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
     		</div>
     	</li>
     	<li><a class=" modal-trigger" href="#modal1"><i class="material-icons">school</i>Join New Class</a></li>
@@ -160,8 +161,8 @@
     	<li><a class="subheader">Account</a></li>
     	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
- <div class="row">
 
+ <div class="row">
 <!-- Card 1-->
     <div class="col s12 m4">
       <div class="card blue-grey darken-1">
