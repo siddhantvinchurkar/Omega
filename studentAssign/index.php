@@ -114,11 +114,11 @@
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
+							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements" ><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements" ><i class="tiny material-icons icon-white">announcements</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>
