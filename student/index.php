@@ -176,30 +176,24 @@
     </div>
   </div>
 
-<!-- Announcement Modal -->
- <div id="joinClassModal" class="modal">
-    <div class="modal-content">
-    	<img src="../images/icons/192.png" class="center2"/>
-      <h5>Join New Class</h5>
-       <div class="input-field col s6">
-          <input placeholder="Enter Class Code Here" id="first_name" type="text" class="validate">
-        </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
-  </div>
-
   <!-- Announcement modal -->
   <div id="announceModal" class="modal">
-	<div class="modal-content">
-			<h4>Announcements Modal</h4>
-			<p>A bunch of text</p>
-	</div>
-	<div class="modal-footer">
-			<a href="#" class="modal-close waves-effect btn-flat">Create</a>
-	</div>
- </div>
+    <div class="modal-content">
+    	<img src="../images/icons/192.png" class="center2"/>
+      <h4>Announcements</h4>
+      <center>
+      <ul type="disc">
+      	<li> Announcement 1 </li>
+      	<li> Announcement 2 </li>
+      	<li> Announcement 3 </li>
+      	<li> Announcement 4 </li>
+      </ul>
+  </center>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+    </div>
+  </div>
 
 </main>
 		
@@ -244,7 +238,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},0);
+					},3000);
 			</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->

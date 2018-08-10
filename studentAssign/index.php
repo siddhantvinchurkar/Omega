@@ -118,7 +118,7 @@
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
+							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements" ><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
 
 						<li>
@@ -220,6 +220,25 @@
     </div>
   </div>
 
+  <!-- Announcement modal -->
+  <div id="announceModal" class="modal">
+    <div class="modal-content">
+    	<img src="../images/icons/192.png" class="center2"/>
+      <h4>Announcements</h4>
+      <center>
+      <ul type="disc">
+      	<li> Announcement 1 </li>
+      	<li> Announcement 2 </li>
+      	<li> Announcement 3 </li>
+      	<li> Announcement 4 </li>
+      </ul>
+  </center>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+    </div>
+  </div>
+
    
   <!-- Upload assignmet Modal Structure -->
   <div id="modal2" class="modal">
@@ -278,7 +297,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},0);
+					},3000);
 			</script>
 
 			<!--Button tooltips JS-->
