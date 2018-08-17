@@ -1,4 +1,4 @@
-![Contributor Covenant Code of Conduct](https://s15.postimg.cc/y0o8gtiqz/baseline_playlist_add_check_black_48dp.png "Contributor Covenant Code of Conduct")
+![Contributor Covenant Code of Conduct](https://omegaclassrooms.ga/images/icons/cclogo.svg "Contributor Covenant Code of Conduct")
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
