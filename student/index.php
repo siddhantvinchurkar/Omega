@@ -91,11 +91,11 @@
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements" ><i class="tiny material-icons icon-white">announcements</i></a>
+							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments" href="../studentAssign/index.php"><i class="tiny material-icons icon-white">assignments</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments" href="../studentAssign/index.php" accesskey="a"><i class="tiny material-icons icon-white">assignments</i></a>
 						</li>
 
 						<li>
@@ -150,7 +150,7 @@
 							<div class="collection">
 								<a href="#!" class="collection-item"><span class="badge">1</span>Assignments</a>
 								<a href="#!" class="collection-item"><span class="badge">4</span>Notes</a>
-								<a href="#!" class="collection-item"><span class="badge">10</span>Annoucements</a>
+								<a href="#announceModal" class="collection-item modal-trigger"><span class="badge">10</span>Annoucements</a>
 							</div>
 						</div>
 					</div>
@@ -183,18 +183,40 @@
       <h4>Announcements</h4>
       <center>
       <ul type="disc">
-      	<li> Announcement 1 </li>
-      	<li> Announcement 2 </li>
-      	<li> Announcement 3 </li>
-      	<li> Announcement 4 </li>
+	      <table>
+	        <thead>
+	          <tr>
+	              <th>Class</th>
+	              <th>Due</th>
+	              <th>Annoucement</th>
+	          </tr>
+	        </thead>
+
+	        <tbody>
+	          <tr>
+	            <td>Web Technology</td>
+	            <td>9/9</td>
+	            <td>Install XAMP server</td>
+	          </tr>
+	          <tr>
+	            <td>Newtorks</td>
+	            <td>10/9</td>
+	            <td>CIA - TCP/IP</td>
+	          </tr>
+	          <tr>
+	            <td>Multimedia</td>
+	            <td>10/9</td>
+	            <td>CIA questions</td>
+	          </tr>
+	        </tbody>
+	     </table>
       </ul>
   </center>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
-
 </main>
 		
 <!--Footer-->
@@ -238,7 +260,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},3000);
+					},0);
 			</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
