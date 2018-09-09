@@ -96,7 +96,11 @@
 				width:auto;
 				padding: 2px;
 			}
-
+			#notes-nav{
+				width: 300px;
+				top: 65px;
+			}
+			
 		}
 		</style>
 		<title>Omega</title>
@@ -106,11 +110,11 @@
 		<header>
 			<nav>
 				<div class="nav-wrapper">
-					<img data-target="slide-out" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
+					<img data-target="menu-nav" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-	<a href="../student/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
+	<a href="../student/index.html" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
 						</li>
 
 						<li>
@@ -118,11 +122,7 @@
 						</li>
 
 						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
-						</li>
-
-						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i data-target="notes-nav" class="tiny material-icons icon-white sidenav-trigger">library_books</i></a>
 						</li>
 					</ul>
 				</div>
@@ -143,8 +143,8 @@
 			<div id="pageContents" style="display:block;">
 				<img src="../images/icons/512.png" class="center2" />
 
-						<!-- Sliding Navigation Bar -->
-  <ul id="slide-out" class="sidenav">
+<!-- Sliding Navigation Bars -->
+  <ul id="menu-nav" class="sidenav">
     	<li>
     		<div class="user-view">
       			<div class="background">
@@ -161,6 +161,83 @@
     	<li><a class="subheader">Account</a></li>
     	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
+
+  <!--Notes Side Navigation Bar-->
+   <ul id="notes-nav" class="sidenav">
+   	<div>
+    		<table class="responsive-table highlight"> 
+	        <thead>
+	          <tr>
+	              <th>Lecture Notes</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td>9/9/18</td>
+	            <td>TCP/IP</td>
+	          </tr>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>IP Header</td>	        
+	          </tr>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>R-Login</td>	            
+	          </tr>
+	        </tbody>
+	     </table>
+
+	     <table class="responsive-table highlight"> 
+	        <table class="responsive-table highlight"> 
+	        <thead>
+	          <tr>
+	              <th>Reference</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>TCP/IP</td>
+	          </tr>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>IP Header</td>
+	          </tr>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>R-Login</td>
+	          </tr>
+	        </tbody>
+	     </table>
+
+	     <table class="responsive-table highlight"> 
+	        <thead>
+	          <tr>
+	              <th>Peer Notes</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>TCP/IP</td>
+	          </tr>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>IP Header</td>
+	          </tr>
+	          <tr>
+	          	<td>9/9/18</td>
+	            <td>R-Login</td>
+	          </tr>
+	          <tr>
+	          	<td>9/9/18</td>
+	          	<td>Telnet</td>
+	          </tr>
+	        </tbody>
+	     </table>
+	</div>
+  </ul>
+  <!-- end Note Side Nav Bar-->
 
  <div class="row">
 <!-- Card 1-->
@@ -220,24 +297,48 @@
     </div>
   </div>
 
-  <!-- Announcement modal -->
+<!-- Announcement modal -->
   <div id="announceModal" class="modal">
     <div class="modal-content">
     	<img src="../images/icons/192.png" class="center2"/>
       <h4>Announcements</h4>
       <center>
       <ul type="disc">
-      	<li> Announcement 1 </li>
-      	<li> Announcement 2 </li>
-      	<li> Announcement 3 </li>
-      	<li> Announcement 4 </li>
+	      <table>
+	        <thead>
+	          <tr>
+	              <th>Class</th>
+	              <th>Due</th>
+	              <th>Annoucement</th>
+	          </tr>
+	        </thead>
+
+	        <tbody>
+	          <tr>
+	            <td>Web Technology</td>
+	            <td>9/9</td>
+	            <td>Install XAMP server</td>
+	          </tr>
+	          <tr>
+	            <td>Newtorks</td>
+	            <td>10/9</td>
+	            <td>CIA - TCP/IP</td>
+	          </tr>
+	          <tr>
+	            <td>Multimedia</td>
+	            <td>10/9</td>
+	            <td>CIA questions</td>
+	          </tr>
+	        </tbody>
+	     </table>
       </ul>
   </center>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
+  <!-- end of announcement modal-->
 
    
   <!-- Upload assignmet Modal Structure -->
