@@ -136,7 +136,7 @@
 		<div class="row">
 
 			<!--Card 1-->
-			<a href="../studentAssign/index.html">
+			<a href="../studentAssign/index.php">
 				<div class="col s6">
 					<div class="card">
 						<div class="card-image"> 

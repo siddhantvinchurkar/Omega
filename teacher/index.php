@@ -102,8 +102,8 @@
         				<img src="../images/list.jpg">
       					</div>
       					<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-      					<a href="#name"><span class="white-text name">John Doe</span></a>
-      					<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      					<a href="#name"><span class="white-text name">Shreyas Harle</span></a>
+      					<a href="#email"><span class="white-text email">teacherSJC@gmail.com</span></a>
     				</div>
     			</li>
     				<li><a id="addsubj" href="#subjectModal" class="waves-effect modal-trigger"><i class="material-icons">school</i>Add New Subject</a></li>
@@ -115,54 +115,92 @@
 		</header>
 		<!--Main-->
 		<main>
+			
 			<!--Progrss Bar-->
-			<div class="container">
+			<div class="container" id="progressBar">
 				<img src="../images/icons/512.png" class="center2" />
-				<div class="progress center" id="progressBar">
+				<div class="progress center">
 					<div class="indeterminate" style="margin-right: auto; margin-left: auto; width: 250px;"></div>
 				</div>
+			</div>
+<!--Contents-->
+<div id="pageContents" style="display:none;">
+	<img src="../images/icons/512.png" class="center2" />
+
 				<!-- Modal Structure -->
   				<div id="subjectModal" class="modal">
     				<div class="modal-content">
       					<h4>Subject Modal</h4>
-      					<p>A bunch of text</p>
+      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
+      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" /></p>
     				</div>
     				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Create</a>
+      					<a href="#" class="modal-close waves-effect btn-flat">Create Subject</a>
     				</div>
   				</div>
 
   				<div id="announceModal" class="modal">
     				<div class="modal-content">
       					<h4>Announcements Modal</h4>
-      					<p>A bunch of text</p>
+      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
+      					<p><b>Enter Announcement</b> 	<input type="text" size="10" /></p>
     				</div>
     				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Create</a>
+      					<a href="#" class="modal-close waves-effect btn-flat">Add Anouncement</a>
     				</div>
   				</div>
 
   				<div id="assignmentModal" class="modal">
     				<div class="modal-content">
       					<h4>Assignment Modal</h4>
-      					<p>A bunch of text</p>
+      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
+      					<p><b>Enter Assignment Topic</b> 	<input type="text" size="10" /></p>
+      					<p><b>Enter Assignment Description</b> 	<input type="text" size="10" /></p>
     				</div>
     				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Create</a>
+      					<a href="#" class="modal-close waves-effect btn-flat">Add Assignment</a>
     				</div>
   				</div>
 
   				<div id="notesModal" class="modal">
     				<div class="modal-content">
       					<h4>Notes Modal</h4>
-      					<p>A bunch of text</p>
-    				</div>
+      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
+	        			<div class="green btn-flat">
+	        				<i class="material-icons">attach_file</i>
+	        			</div>
+	      		</div>
     				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect blue btn-flat">Create</a>
+      					<a href="#" class="modal-close waves-effect btn-flat">Add notes</a>
     				</div>
   				</div>
+  				<!--card container-->
+	<div class="container">
+		<div class="row">
 
-			</div>
+			<!--Card 1-->
+				<div class="col s6">
+					<div class="card">
+						<div class="card-image"> 
+							<img src="../images/list.jpg">
+							<span class="card-title"> Networks </span>
+						</div>
+						<div class="card-content">			
+							<div class="collection">
+								<a href="#!" class="collection-item"><span class="badge">3</span>Assignments</a>
+								<a href="#!" class="collection-item"><span class="badge">3</span>Notes</a>
+								<a href="#announceModal" class="collection-item modal-trigger"><span class="badge">5</span>Annoucements</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+			<!--end of card 1-->
+
+		</div>
+	</div>
+</div>
+
 		</main>
 		<!--Footer-->
 		<footer class="page-footer" style="padding-top:0px;">
@@ -183,9 +221,6 @@
 
 			    	var elemsD = document.querySelectorAll('.dropdown-trigger');
     				var instancesD = M.Dropdown.init(elemsD, closeOnClick='true');
-
-    				var elemsM = document.querySelectorAll('.modal');
-    				var instancesM = M.Modal.init(elemsM, '');
   				});
 		</script>
 		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script> <!--Not loading asynchronously as the following script is dependant on this-->
@@ -214,22 +249,15 @@
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
 					}, 3000);
-
-				document.getElementById("addsubj").onclick = function(){
-					instancesM[0].open();
-				}
-				document.getElementById("announceM").onclick = function(){
-					instancesM[0].open();
-				}
-				document.getElementById("assignM").onclick = function(){
-					instancesM[0].open();
-				}
-				document.getElementById("noteM").onclick = function(){
-					instancesM[0].open();
-				}
-			
 			}
 			
+		</script>
+
+		<script>
+				 document.addEventListener('DOMContentLoaded', function() {
+				    var elems = document.querySelectorAll('.modal');
+				    var instances = M.Modal.init(elems, 'noScrolling');
+				  });
 		</script>
 	</body>
 </html>
