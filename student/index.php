@@ -376,7 +376,7 @@
 				document.getElementById("dp").src = JSON.parse(data).users[0].photo;
 			}
 		window.onload = function(){
-				getHttpAsync("http://localhost/omega/api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
+				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
 		}
 	</script>
 
