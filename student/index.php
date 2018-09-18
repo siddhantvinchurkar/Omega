@@ -120,9 +120,9 @@
     	<div class="user-view"><div class="background">
     		<img src="../images/list.jpg">
       	</div>
-      		<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-      		<a href="#name"><span class="white-text name">Nikhil Sujith</span></a>
-      		<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
+      		<a href="#user"><img id="dp" class="circle" src="../images/icons/72.png"></a>
+      		<a href="#name"><span id="name" class="white-text name">Nikhil Sujith</span></a>
+      		<a href="#email"><span id="email" class="white-text email">nik98hil@gmail.com</span></a>
     	</div>
     </li>
     	<li><a class="modal-trigger" href="#joinClassModal"><i class="material-icons">school</i>Join New Class</a></li>
@@ -361,5 +361,24 @@
 				firebase.initializeApp(config);
 			</script>
 		</main>
+
+	<script>
+		function getHttpAsync(link, callback){
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.onreadystatechange = function(){ 
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					callback(xmlHttp.responseText);
+				}
+				xmlHttp.open("GET", link, true);
+				xmlHttp.send(null);
+			}
+			function results(data){
+				document.getElementById("dp").src = JSON.parse(data).users[0].photo;
+			}
+		window.onload = function(){
+				getHttpAsync("https://api.omegaclassrooms.ga/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
+		}
+	</script>
+
 	</body>
 </html>
