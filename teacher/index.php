@@ -62,37 +62,6 @@
 				<div class="nav-wrapper">
 					<img data-target="slide-out" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
 					<a href="" class="brand-logo">Omega</a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li>
-							<a class='dropdown-trigger btn-flat icon-white' data-target='dropdown1'>All Classes</a>
-						</li>
-
-						<li>
-							<a id="announceM" class="btn-flat tooltipped waves-effect modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
-						</li>
-
-						<li>
-							<a id="assignM" class="btn-flat tooltipped waves-effect modal-trigger" href="#assignmentModal" data-position="bottom" data-tooltip="Assignments"><i class="tiny material-icons icon-white">assignments</i></a>
-						</li>
-
-						<li>
-							<a id="noteM" class="btn-flat tooltipped waves-effect modal-trigger" href="#notesModal" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
-						</li>
-					</ul>
-					<!-- Dropdown Structure -->
-  					<ul id='dropdown1' class='dropdown-content'>
-    					<li><a href="#1bca"><center>I BCA</center></a></li>
-    					<li><a href="#2bca"><center>II BCA</center></a></li>
-    					<li><a href="#3bca"><center>III BCA</center></a></li>
-    					<li class="divider" tabindex="-1"></li>
-    					<li><a href="#1pcm"><center>I PCM</center></a></li>
-    					<li><a href="#2pcm"><center>II PCM</center></a></li>
-    					<li><a href="#3pcm"><center>III PCM</center></a></li>
-    					<li class="divider" tabindex="-1"></li>
-    					<li><a href="#1mec"><center>I MEC</center></a></li>
-    					<li><a href="#2mec"><center>II MEC</center></a></li>
-    					<li><a href="#3mec"><center>III MEC</center></a></li>
-  					</ul>
 				</div>
 			</nav>
 			<!-- Sliding Navigation Bar -->
@@ -101,16 +70,14 @@
       					<div class="background">
         				<img src="../images/list.jpg">
       					</div>
-      					<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-      					<a href="#name"><span class="white-text name">Shreyas Harle</span></a>
-      					<a href="#email"><span class="white-text email">teacherSJC@gmail.com</span></a>
+      					<a href="#user"><img id="snDP" class="circle" src="../images/icons/72.png"></a>
+      					<a href="#name"><span id="snName" class="white-text name">Teacher Name</span></a>
+      					<a href="#email"><span id="snEmail" class="white-text email">teacherSJC@gmail.com</span></a>
     				</div>
     			</li>
     				<li><a id="addsubj" href="#subjectModal" class="waves-effect modal-trigger"><i class="material-icons">school</i>Add New Subject</a></li>
-    				<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     				<li><div class="divider"></div></li>
-    				<li><a class="subheader">Subheader</a></li>
-    				<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    				<li><a class="waves-effect" href="https://omegaclassrooms.ga/"><i class="material-icons">clear</i>Sign Out</a></li>
   			</ul>
 		</header>
 		<!--Main-->
@@ -204,12 +171,9 @@
 		</main>
 		<!--Footer-->
 		<footer class="page-footer" style="padding-top:0px;">
-			<div class="footer-copyright">
 				<div class="container" id="footerText">
-					<a href="https://volatile.ga/" target="_blank" title="Volatile, Inc." style="color:#FFFFFF">&emsp;Volatile, Inc.&emsp;</a>
-					<a class="grey-text text-lighten-4 right" href="">Made with love for everyone</a>
+					<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
 				</div>
-			</div>
 		</footer>
 		<!--JavaScript at end of body for optimized asynchronous loading-->
 
@@ -239,18 +203,33 @@
 
 		<!--Onload Function-->
 		<script type="text/javascript">
-			window.onload = function(){
-			
-				// Set the copyright year in the footer
-				document.getElementById("footerText").innerHTML = '&copy; ' + new Date().getFullYear() + document.getElementById("footerText").innerHTML;
 			
 				// Get rid of the loader after three seconds
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
 					}, 3000);
-			}
 			
+		</script>
+
+		<script>
+			function getHttpAsync(link, callback){
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.onreadystatechange = function(){ 
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					callback(xmlHttp.responseText);
+				}
+				xmlHttp.open("GET", link, true);
+				xmlHttp.send(null);
+			}
+			function results(data){
+				document.getElementById("snDP").src = JSON.parse(data).users[0].photo;
+				document.getElementById("snName").innerHTML = JSON.parse(data).users[0].fn;
+				document.getElementById("snEmail").innerHTML = JSON.parse(data).users[0].eml;
+			}
+		window.onload = function(){
+				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
+			}
 		</script>
 
 		<script>
