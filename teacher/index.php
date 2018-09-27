@@ -79,7 +79,7 @@
     				<li><div class="divider"></div></li>
     				<li><a id="addsubj" href="#subjectModal" class="waves-effect modal-trigger"><i class="material-icons">school</i>Add New Subject</a></li>
     				<li><div class="divider"></div></li>
-    				<li><a class="waves-effect" href="#signOutModal"><i class="material-icons">power_settings_new</i>Sign Out</a></li>
+    				<li><a class="waves-effect" href="https://omegaclassrooms.ga/"><i class="material-icons">power_settings_new</i>Sign Out</a></li>
   			</ul>
 		</header>
 		<!--Main-->
@@ -122,7 +122,7 @@
 						<div class="card-content">			
 							<div class="collection">
 								<a href="../teacherAssign/index.php" class="collection-item"><span id="assignNo" class="badge">0</span>Assignments</a>
-								<a href="#notesList" class="collection-item"><span id="notesNo" class="badge">0</span>Notes</a>
+								<a href="#notesList" class="collection-item modal-trigger"><span id="notesNo" class="badge">0</span>Notes</a>
 								<a href="#announceList" class="collection-item modal-trigger"><span id="announceNo" class="badge">0</span>Annoucements</a>
 							</div>
 						</div>
@@ -134,6 +134,81 @@
 		</div>
 	</div>
 </div>
+
+			<!--Edit Information Modal -->
+			<div id="editInfoModal" class="modal">
+				<div class="modal-content">
+  					<h4>Edit Information</h4>
+  					<p><b>User Name</b><input type="text" value="nameplace"/></p>
+  					<p><b>User ID</b><input type="text" value="IDnumber"/></p>
+				</div>
+				<div class="modal-footer">
+  					<a href="#" class="modal-close waves-effect btn-flat">Done</a>
+				</div>
+			</div>
+		<!--List of Announcement modal -->
+  			<div id="announceList" class="modal">
+    			<div class="modal-content">
+    				<img src="../images/icons/192.png" class="center2"/>
+      				<h4>Announcements</h4>
+      				<center>
+      				<ul type="disc">
+	      				<table id="annouceTable" class="responsive-table highlight">
+	        				<thead>
+	          					<tr>
+	              					<th>Annoucement</th>
+	              					<th>Due Date</th>
+	          					</tr>
+	        				</thead>
+
+	        				<tbody>
+					          <tr>
+					            <td>Example Announcement</td>
+					            <td>Example Due Date</a></td>
+					          </tr> 
+					        </tbody>
+
+					     </table>
+				      </ul>
+  					</center>
+    			</div>
+    			<div class="modal-footer">
+      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+    			</div>
+  			</div>
+  			
+  			<!--List of Notes modal -->
+			<div id="notesList" class="modal">
+    			<div class="modal-content">
+    				<img src="../images/icons/192.png" class="center2"/>
+      				<h4>Notes List</h4>
+      				<center>
+      				<ul type="disc">
+	      				<table id="notesTable" class="responsive-table highlight">
+	        				<thead>
+	          					<tr>
+	              					<th width="50%">Notes</th>
+	              					<th width="40%">File</th>
+	              					<th width="10%"> </th>
+	          					</tr>
+	        				</thead>
+
+	        				<tbody>
+					          <tr>
+					            <td>Example Notes Title</td>
+					            <td>Example File</td>
+					            <td><a class="waves-effect btn-flat" href="downloadfilepath"><i class="material-icons">vertical_align_bottom</i></a></td>
+					          </tr> 
+					        </tbody>
+
+					     </table>
+				      </ul>
+  					</center>
+    			</div>
+    			<div class="modal-footer">
+      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+    			</div>
+  			</div>
 
 		</main>
 		<!--Footer-->
