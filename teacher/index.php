@@ -75,9 +75,11 @@
       					<a href="#email"><span id="snEmail" class="white-text email">teacherSJC@gmail.com</span></a>
     				</div>
     			</li>
+    				<li><a id="detailsEdit" href="#editInfoModal" class="waves-effect modal-trigger"><i class="material-icons">assignment_ind</i>Edit Information</a></li>
+    				<li><div class="divider"></div></li>
     				<li><a id="addsubj" href="#subjectModal" class="waves-effect modal-trigger"><i class="material-icons">school</i>Add New Subject</a></li>
     				<li><div class="divider"></div></li>
-    				<li><a class="waves-effect" href="https://omegaclassrooms.ga/"><i class="material-icons">clear</i>Sign Out</a></li>
+    				<li><a class="waves-effect" href="https://omegaclassrooms.ga/"><i class="material-icons">power_settings_new</i>Sign Out</a></li>
   			</ul>
 		</header>
 		<!--Main-->
@@ -106,41 +108,6 @@
     				</div>
   				</div>
 
-  				<div id="announceModal" class="modal">
-    				<div class="modal-content">
-      					<h4>Announcements Modal</h4>
-      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
-      					<p><b>Enter Announcement</b> 	<input type="text" size="10" /></p>
-    				</div>
-    				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Add Anouncement</a>
-    				</div>
-  				</div>
-
-  				<div id="assignmentModal" class="modal">
-    				<div class="modal-content">
-      					<h4>Assignment Modal</h4>
-      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
-      					<p><b>Enter Assignment Topic</b> 	<input type="text" size="10" /></p>
-      					<p><b>Enter Assignment Description</b> 	<input type="text" size="10" /></p>
-    				</div>
-    				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Add Assignment</a>
-    				</div>
-  				</div>
-
-  				<div id="notesModal" class="modal">
-    				<div class="modal-content">
-      					<h4>Notes Modal</h4>
-      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
-	        			<div class="green btn-flat">
-	        				<i class="material-icons">attach_file</i>
-	        			</div>
-	      		</div>
-    				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Add notes</a>
-    				</div>
-  				</div>
   				<!--card container-->
 	<div class="container">
 		<div class="row">
@@ -150,13 +117,13 @@
 					<div class="card">
 						<div class="card-image"> 
 							<img src="../images/list.jpg">
-							<span class="card-title"> Networks </span>
+							<span id="subjectName" class="card-title">Subject Name</span>
 						</div>
 						<div class="card-content">			
 							<div class="collection">
-								<a href="#!" class="collection-item"><span class="badge">3</span>Assignments</a>
-								<a href="#!" class="collection-item"><span class="badge">3</span>Notes</a>
-								<a href="#announceModal" class="collection-item modal-trigger"><span class="badge">5</span>Annoucements</a>
+								<a href="../teacherAssign/index.php" class="collection-item"><span id="assignNo" class="badge">0</span>Assignments</a>
+								<a href="#notesList" class="collection-item modal-trigger"><span id="notesNo" class="badge">0</span>Notes</a>
+								<a href="#announceList" class="collection-item modal-trigger"><span id="announceNo" class="badge">0</span>Annoucements</a>
 							</div>
 						</div>
 					</div>
@@ -167,6 +134,81 @@
 		</div>
 	</div>
 </div>
+
+			<!--Edit Information Modal -->
+			<div id="editInfoModal" class="modal">
+				<div class="modal-content">
+  					<h4>Edit Information</h4>
+  					<p><b>User Name</b><input type="text" value="nameplace"/></p>
+  					<p><b>User ID</b><input type="text" value="IDnumber"/></p>
+				</div>
+				<div class="modal-footer">
+  					<a href="#" class="modal-close waves-effect btn-flat">Done</a>
+				</div>
+			</div>
+		<!--List of Announcement modal -->
+  			<div id="announceList" class="modal">
+    			<div class="modal-content">
+    				<img src="../images/icons/192.png" class="center2"/>
+      				<h4>Announcements</h4>
+      				<center>
+      				<ul type="disc">
+	      				<table id="annouceTable" class="responsive-table highlight">
+	        				<thead>
+	          					<tr>
+	              					<th>Annoucement</th>
+	              					<th>Due Date</th>
+	          					</tr>
+	        				</thead>
+
+	        				<tbody>
+					          <tr>
+					            <td>Example Announcement</td>
+					            <td>Example Due Date</a></td>
+					          </tr> 
+					        </tbody>
+
+					     </table>
+				      </ul>
+  					</center>
+    			</div>
+    			<div class="modal-footer">
+      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+    			</div>
+  			</div>
+  			
+  			<!--List of Notes modal -->
+			<div id="notesList" class="modal">
+    			<div class="modal-content">
+    				<img src="../images/icons/192.png" class="center2"/>
+      				<h4>Notes List</h4>
+      				<center>
+      				<ul type="disc">
+	      				<table id="notesTable" class="responsive-table highlight">
+	        				<thead>
+	          					<tr>
+	              					<th width="50%">Notes</th>
+	              					<th width="40%">File</th>
+	              					<th width="10%"> </th>
+	          					</tr>
+	        				</thead>
+
+	        				<tbody>
+					          <tr>
+					            <td>Example Notes Title</td>
+					            <td>Example File</td>
+					            <td><a class="waves-effect btn-flat" href="downloadfilepath"><i class="material-icons">vertical_align_bottom</i></a></td>
+					          </tr> 
+					        </tbody>
+
+					     </table>
+				      </ul>
+  					</center>
+    			</div>
+    			<div class="modal-footer">
+      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+    			</div>
+  			</div>
 
 		</main>
 		<!--Footer-->
@@ -182,9 +224,6 @@
 				 document.addEventListener('DOMContentLoaded', function() {
 			    	var elems = document.querySelectorAll('.sidenav');
 			    	var instances = M.Sidenav.init(elems, 'edge middle');
-
-			    	var elemsD = document.querySelectorAll('.dropdown-trigger');
-    				var instancesD = M.Dropdown.init(elemsD, closeOnClick='true');
   				});
 		</script>
 		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script> <!--Not loading asynchronously as the following script is dependant on this-->
@@ -223,9 +262,9 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[0].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[0].fn;
-				document.getElementById("snEmail").innerHTML = JSON.parse(data).users[0].eml;
+				document.getElementById("snDP").src = JSON.parse(data).users[2].photo;
+				document.getElementById("snName").innerHTML = JSON.parse(data).users[2].fn;
+				document.getElementById("snEmail").innerHTML = JSON.parse(data).users[2].eml;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
