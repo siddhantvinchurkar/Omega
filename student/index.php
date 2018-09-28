@@ -90,12 +90,6 @@
 					<img data-target="slide-out" class="sidenav-trigger" src="../images/icons/72.png" style="height:95%; cursor: pointer;" />
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						
-
-						<!--<li>
-							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements"><i class="tiny material-icons icon-white">announcements</i></a>
-						</li>
-					-->
 					</ul>
 				</div>
 			</nav>
@@ -136,22 +130,20 @@
 		<div class="row">
 
 			<!--Card 1-->
-			<a href="../studentAssign/index.php">
+			<a href="../studentAssign/">
 				<div class="col s6">
 					<div class="card">
 						<div class="card-image"> 
 							<img src="../images/list.jpg">
-							<span class="card-title"> Networks </span>
+							<span id="subjectName" class="card-title"> Networks </span>
 						</div>
 						<div class="card-content">			
 							<div class="collection">
-								<a href="#!" class="collection-item"><span class="badge">1</span>Assignments</a>
+								<a href="#!" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a>
 								
-								<a class="collection-item sidenav-trigger" data-target="notes-nav"><span class="badge">4</span>Notes</i></a>
+								<a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a>
 
-								<!--<a href="#notes-nav!" class="collection-item"><span class="badge">4</span>Notes</a>-->
-
-								<a href="#announceModal" class="collection-item modal-trigger"><span class="badge">10</span>Annoucements</a>
+								<a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">10</span>Annoucements</a>
 							</div>
 						</div>
 					</div>
@@ -187,33 +179,7 @@
       <h4>Announcements</h4>
       <center>
       <ul type="disc">
-	      <table>
-	        <thead>
-	          <tr>
-	              <th>Class</th>
-	              <th>Due</th>
-	              <th>Annoucement</th>
-	          </tr>
-	        </thead>
-
-	        <tbody>
-	          <tr>
-	            <td>Web Technology</td>
-	            <td>9/9</td>
-	            <td>Install XAMP server</td>
-	          </tr>
-	          <tr>
-	            <td>Newtorks</td>
-	            <td>10/9</td>
-	            <td>CIA - TCP/IP</td>
-	          </tr>
-	          <tr>
-	            <td>Multimedia</td>
-	            <td>10/9</td>
-	            <td>CIA questions</td>
-	          </tr>
-	        </tbody>
-	     </table>
+      	<?php include 'pullFromDb.php';?>
       </ul>
   </center>
     </div>
@@ -271,7 +237,7 @@
 	        </tbody>
 	     </table>
 
-	     <table class="responsive-table highlight"> 
+	     <table class="responsive-table highlight" id="peer"> 
 	        <thead>
 	          <tr>
 	              <th>Peer Notes</th>
@@ -282,18 +248,7 @@
 	          	<td>9/9/18</td>
 	            <td>TCP/IP</td>
 	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	          	<td>Telnet</td>
-	          </tr>
+	          
 	        </tbody>
 	     </table>
 	</div>
@@ -344,7 +299,7 @@
 				setTimeout(function(){
 					document.getElementById("progressBar").style.display="none";
 					document.getElementById("pageContents").style.display="block";
-					},3000);
+					},0);
 			</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->

@@ -304,33 +304,7 @@
       <h4>Announcements</h4>
       <center>
       <ul type="disc">
-	      <table>
-	        <thead>
-	          <tr>
-	              <th>Class</th>
-	              <th>Due</th>
-	              <th>Annoucement</th>
-	          </tr>
-	        </thead>
-
-	        <tbody>
-	          <tr>
-	            <td>Web Technology</td>
-	            <td>9/9</td>
-	            <td>Install XAMP server</td>
-	          </tr>
-	          <tr>
-	            <td>Newtorks</td>
-	            <td>10/9</td>
-	            <td>CIA - TCP/IP</td>
-	          </tr>
-	          <tr>
-	            <td>Multimedia</td>
-	            <td>10/9</td>
-	            <td>CIA questions</td>
-	          </tr>
-	        </tbody>
-	     </table>
+      	<?php include 'pullFromDb.php';?>
       </ul>
   </center>
     </div>
