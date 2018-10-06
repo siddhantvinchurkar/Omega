@@ -103,7 +103,7 @@
 	      					<h4>Subject Modal</h4>
 	      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" name="subName"/></p>
 	      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" name="subID"/>
-	      						<input type="hidden" name="teacherID" id="tID" value="some ID"/></p>
+	      						<input type="hidden" name="teacherID" id="tID"/></p>
 	    				</div>
 	    				<div class="modal-footer">
 	      					<input type="submit" class="modal-close waves-effect btn-flat" value="Create Subject"/>
@@ -265,10 +265,10 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[2].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[2].fn;
-				document.getElementById("snID").innerHTML = JSON.parse(data).users[2].rno;
-				document.getElementById("tID").value = JSON.parse(data).users[2].rno;
+				document.getElementById("snDP").src = JSON.parse(data).users[3].photo;
+				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
+				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
+				document.getElementById("tID").value = JSON.parse(data).users[3].rno;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
