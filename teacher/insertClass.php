@@ -1,18 +1,17 @@
 <?php
 	echo "Adding Class...";
-	$conn=mysqli_connect("localhost","shreyas","password","omega");
+	$conn = mysqli_connect("localhost","shreyas","password","omega");
 	if(!$conn)
 	{
 		echo "Unable to connect to server: ".mysqli_connect_error();
 	}
-	$subjectN=$_POST['subName'];
-	$subjectID=$_POST['subID'];
+	$subjectN = $_POST['subName'];
+	$subjectID = $_POST['subID'];
 
-	$sql="INSERT INTO ClassTable (ClassName,ClassCode) VALUES ('$subjectN','subjectID')";
+	$sql = "INSERT INTO ClassTable (ClassName,ClassCode) VALUES ('$subjectN','subjectID')";
 	if(!mysqli_query($conn,$sql))
 	{
 		echo "Unable to Add Class: ".mysqli.error($conn);
 	}
-	header{"refresh:1; url=index.php"};
-	mysqli_close($conn)
+	echo "<script>window.location = 'https://omegaclassrooms.ga/teacher/'</script>";
 ?>
