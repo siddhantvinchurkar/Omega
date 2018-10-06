@@ -268,7 +268,7 @@
 				document.getElementById("snDP").src = JSON.parse(data).users[2].photo;
 				document.getElementById("snName").innerHTML = JSON.parse(data).users[2].fn;
 				document.getElementById("snID").innerHTML = JSON.parse(data).users[2].rno;
-				document.getElementById("tID").innerHTML = JSON.parse(data).users[2].rno;
+				document.getElementById("tID").value = JSON.parse(data).users[2].rno;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);

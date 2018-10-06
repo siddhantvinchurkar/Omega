@@ -7,8 +7,9 @@
 	}
 	$subjectN = $_POST['subName'];
 	$subjectID = $_POST['subID'];
+	$teachID = $_POST['teacherID'];
 
-	$sql = "INSERT INTO ClassTable (ClassName,ClassCode) VALUES ('$subjectN','$subjectID')";
+	$sql = "INSERT INTO ClassTable (ClassName,ClassCode,teacherID) VALUES ('$subjectN','$subjectID','$teachID')";
 	if(!mysqli_query($conn,$sql))
 	{
 		echo "Unable to Add Class: ".mysqli.error($conn);
