@@ -101,9 +101,9 @@
     				<form action="insertClass.php" method="post">
 	    				<div class="modal-content">
 	      					<h4>Subject Modal</h4>
-	      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" name="subName"/></p>
-	      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" name="subID"/>
-	      						<input type="hidden" name="teacherID" id="tID"/></p>
+	      					<p><b>Enter Subject Name:</b> 	<input type="text" size="20" name="subName"/></p>
+	      					<p><b>Enter Subject ID:</b> 	<input type="text" size="10" name="subID"/></p>
+	      					<p><b>Your ID is:</b>			<input type="text" name="teacherID" id="tID" value="sth" readonly/></p>
 	    				</div>
 	    				<div class="modal-footer">
 	      					<input type="submit" class="modal-close waves-effect btn-flat" value="Create Subject"/>
