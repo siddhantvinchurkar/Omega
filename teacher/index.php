@@ -98,14 +98,16 @@
 
 				<!-- Modal Structure -->
   				<div id="subjectModal" class="modal">
-    				<div class="modal-content">
-      					<h4>Subject Modal</h4>
-      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
-      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" /></p>
-    				</div>
-    				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Create Subject</a>
-    				</div>
+    				<form action="insertClass.php" method="post">
+	    				<div class="modal-content">
+	      					<h4>Subject Modal</h4>
+	      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" name="subName"/></p>
+	      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" name="subID"/></p>
+	    				</div>
+	    				<div class="modal-footer">
+	      					<input type="submit" class="modal-close waves-effect btn-flat" value="Create Subject"/>
+	    				</div>
+	    			</form>
   				</div>
 
   				<!--card container-->
