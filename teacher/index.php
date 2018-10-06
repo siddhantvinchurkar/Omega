@@ -72,7 +72,7 @@
       					</div>
       					<a href="#user"><img id="snDP" class="circle" src="../images/icons/72.png"></a>
       					<a href="#name"><span id="snName" class="white-text name">Teacher Name</span></a>
-      					<a href="#email"><span id="snEmail" class="white-text email">teacherSJC@gmail.com</span></a>
+      					<a href="#teacherID"><span id="snID" class="white-text email">teacher ID</span></a>
     				</div>
     			</li>
     				<li><a id="detailsEdit" href="#editInfoModal" class="waves-effect modal-trigger"><i class="material-icons">assignment_ind</i>Edit Information</a></li>
@@ -102,7 +102,8 @@
 	    				<div class="modal-content">
 	      					<h4>Subject Modal</h4>
 	      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" name="subName"/></p>
-	      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" name="subID"/></p>
+	      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" name="subID"/>
+	      						<input type="hidden" name="teacherID" id="tID" value="some ID"/></p>
 	    				</div>
 	    				<div class="modal-footer">
 	      					<input type="submit" class="modal-close waves-effect btn-flat" value="Create Subject"/>
@@ -266,7 +267,8 @@
 			function results(data){
 				document.getElementById("snDP").src = JSON.parse(data).users[2].photo;
 				document.getElementById("snName").innerHTML = JSON.parse(data).users[2].fn;
-				document.getElementById("snEmail").innerHTML = JSON.parse(data).users[2].eml;
+				document.getElementById("snID").innerHTML = JSON.parse(data).users[2].rno;
+				document.getElementById("tID").innerHTML = JSON.parse(data).users[2].rno;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
