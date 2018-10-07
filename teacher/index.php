@@ -53,6 +53,10 @@
 			}
 			.icon-white {
 			    color: white;
+			}
+			.btnptr{
+				cursor: pointer;
+			}
 		</style>
 	</head>
 	<body>
@@ -106,7 +110,7 @@
 	      					<p><b>Your ID is:</b>			<input type="text" name="teacherID" id="tID" value="sth" readonly/></p>
 	    				</div>
 	    				<div class="modal-footer">
-	      					<input type="submit" class="modal-close waves-effect btn-flat" value="Create Subject"/>
+	      					<input type="submit" class="modal-close waves-effect btn-flat btnptr" value="Create Subject"/>
 	    				</div>
 	    			</form>
   				</div>
@@ -131,7 +135,6 @@
 						</div>
 					</div>
 				</div>
-			</a>
 			<!--end of card 1-->
 
 		</div>
@@ -140,14 +143,17 @@
 
 			<!--Edit Information Modal -->
 			<div id="editInfoModal" class="modal">
-				<div class="modal-content">
-  					<h4>Edit Information</h4>
-  					<p><b>User Name</b><input type="text" value="nameplace"/></p>
-  					<p><b>User ID</b><input type="text" value="IDnumber"/></p>
-				</div>
-				<div class="modal-footer">
-  					<a href="#" class="modal-close waves-effect btn-flat">Done</a>
-				</div>
+				<form action="updateInfo.php" method="post">
+					<div class="modal-content">
+	  					<h4>Edit Information</h4>
+	  					<p><b>User Name</b>	<input type="text" id="infoEditFn" name="infoName"/></p>
+	  					<p><b>User ID</b>	<input type="text" id="infoEditRno" name="infoID"/>
+	  						<input type="hidden" id="infoEditEml" name="infoEmail"/></p>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat btnptr" value="Update Info"/>
+					</div>
+				</form>
 			</div>
 		<!--List of Announcement modal -->
   			<div id="announceList" class="modal">
@@ -269,6 +275,9 @@
 				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
 				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
 				document.getElementById("tID").value = JSON.parse(data).users[3].rno;
+				document.getElementById("infoEditFn").value = JSON.parse(data).users[3].fn;
+				document.getElementById("infoEditRno").value = JSON.parse(data).users[3].rno;
+				document.getElementById("infoEditEml").value = JSON.parse(data).users[3].eml;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
