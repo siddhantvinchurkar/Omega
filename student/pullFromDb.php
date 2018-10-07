@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 <?php include 'dbConnect.php';
+=======
+<?php
+$servername="localhost";
+$username="nikhil";
+$password="password";
+$dbname="omega";
+>>>>>>> 9cf52d4f3bb64c36c36084febd7d8add7ebfb842
 
 //Networks
 $netAnn = 'SELECT * FROM master WHERE subject = "networks"';  
@@ -10,7 +18,6 @@ while($row = mysqli_fetch_assoc($retnet)){
 echo "<tr><td>{$row['announce']}</td></tr>";  
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 //Multimedia
 $mulAnn = 'SELECT * FROM master WHERE subject = "multimedia"';  
@@ -23,7 +30,6 @@ while($row = mysqli_fetch_assoc($retmul)){
 echo "<tr><td>{$row['announce']}</td></tr>"; 
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 
 //COA
@@ -37,7 +43,6 @@ while($row = mysqli_fetch_assoc($retcoa)){
 echo "<tr><td>{$row['announce']}</td></tr>";  
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 
 //web
@@ -51,7 +56,6 @@ while($row = mysqli_fetch_assoc($retweb)){
 echo "<tr><td>{$row['announce']}</td></tr>";  
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 
 
