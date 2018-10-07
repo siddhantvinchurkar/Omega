@@ -261,7 +261,7 @@
 			function subjectOpen(){
 				var subjName = document.getElementById("subjectName").innerHTML;
 				var teachID = document.getElementById("snID").innerHTML;
-				window.location.href = "../teacherAssign.php?teacher=" + teachID + "subname=" + subjName;
+				window.location.href = "../teacherAssign/index.php?teacher=" + teachID + "subname=" + subjName;
 			}
 
 		</script>
