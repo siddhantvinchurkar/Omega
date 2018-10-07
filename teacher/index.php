@@ -124,7 +124,7 @@
 					<div class="card">
 						<div class="card-image"> 
 							<img src="../images/list.jpg">
-							<a href="#" onclick="subjectOpen()"><span id="subjectName" class="card-title">Subject Name</span></a>
+							<a href="#" onclick="subjectOpen()"><span id="subjectName" class="card-title">History</span></a>
 						</div>
 						<div class="card-content">			
 							<div class="collection">

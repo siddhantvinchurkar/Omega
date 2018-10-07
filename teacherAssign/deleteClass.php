@@ -6,7 +6,7 @@
 		echo "Unable to connect to server: ".mysqli_connect_error();
 	}
 	
-	$subjectN = $_GET["subname"];
+	$subjectN = $_GET["sname"];
 
 	$sql = "DELETE FROM ClassTable WHERE ClassName = '$subjectN'";
 
