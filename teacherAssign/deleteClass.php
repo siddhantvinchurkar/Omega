@@ -8,7 +8,7 @@
 	
 	$subjectN = $_GET["subname"];
 
-	$sql = "DELETE FROM ClassTable WHERE ClassTable.ClassName = '$subjectN'";
+	$sql = "DELETE FROM ClassTable WHERE ClassName = '$subjectN'";
 
 	if(!mysqli_query($conn,$sql))
 	{
