@@ -9,7 +9,7 @@
 	$infoI = $_POST['infoID'];
 	$infoE = $_POST['infoEmail'];
 
-	$sql = "UPDATE users SET fn = $infoN, rno = $infoI WHERE users.eml = $infoE";
+	$sql = "UPDATE users SET fn = '$infoN', rno = '$infoI' WHERE users.eml = '$infoE'";
 	if(!mysqli_query($conn,$sql))
 	{
 		echo "Unable to update information: ".mysqli.error($conn);
