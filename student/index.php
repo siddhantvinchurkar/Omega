@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
-		<script type="text/javascript" src="student.js"> </script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
