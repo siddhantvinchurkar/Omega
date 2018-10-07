@@ -1,6 +1,8 @@
 <?php
 include 'dbConnect.php'; 
 
+echo '<script>alert("I\'m here!");</script>';
+
 //Networks
 $netAnn = 'SELECT * FROM master WHERE subject = "networks"';  
 $retnet=mysqli_query($conn, $netAnn); 
