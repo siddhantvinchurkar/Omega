@@ -296,7 +296,7 @@
   					<center><h5>Are you sure you want to delete this subject?</h5></center>
       			</div>
 				<div class="modal-footer">
-					<a href ="deleteClass.php?sname=<?php echo $_GET['subname']; ?>" class="modal-close waves-effect btn-flat">Delete</a>
+					<?php echo '<a href ="deleteClass.php?sname='.$_GET['subname'].'" class="modal-close waves-effect btn-flat">Delete</a>'; ?>
 				</div>
 			</div>
 
