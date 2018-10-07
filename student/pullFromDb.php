@@ -1,12 +1,11 @@
-<<<<<<< HEAD
-<?php include 'dbConnect.php';
-=======
-<?php
+
+<?php include 'dbConnect.php'; 
+
 $servername="localhost";
 $username="nikhil";
 $password="password";
 $dbname="omega";
->>>>>>> 9cf52d4f3bb64c36c36084febd7d8add7ebfb842
+
 
 //Networks
 $netAnn = 'SELECT * FROM master WHERE subject = "networks"';  
