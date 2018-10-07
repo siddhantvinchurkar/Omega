@@ -18,7 +18,6 @@ while($row = mysqli_fetch_assoc($retnet)){
 echo "<tr><td>{$row['announce']}</td></tr>";  
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 
 $mulAnn = 'SELECT * FROM announce WHERE subject = "multimedia"';  
@@ -30,7 +29,6 @@ while($row = mysqli_fetch_assoc($retmul)){
 echo "<tr><td>{$row['announce']}</td></tr>"; 
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 
 $coaAnn = 'SELECT * FROM announce WHERE subject = "coa"';  
@@ -42,7 +40,6 @@ while($row = mysqli_fetch_assoc($retcoa)){
 echo "<tr><td>{$row['announce']}</td></tr>";  
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 
 $webAnn = 'SELECT * FROM announce WHERE subject = "web"';  
@@ -54,7 +51,6 @@ while($row = mysqli_fetch_assoc($retweb)){
 echo "<tr><td>{$row['announce']}</td></tr>";  
 } 
 echo "</table>";//end of while  
-}else{  	echo "no announcements";  
 }
 
 

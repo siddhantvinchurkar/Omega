@@ -165,16 +165,13 @@
 	      				<table id="annouceTable" class="responsive-table highlight">
 	        				<thead>
 	          					<tr>
-	              					<th>Annoucement</th>
-	              					<th>Due Date</th>
+	              					<th>Announcement</th>
+	              					<th>Announcement Date</th>
 	          					</tr>
 	        				</thead>
 
 	        				<tbody>
-					          <tr>
-					            <td>Example Announcement</td>
-					            <td>Example Due Date</a></td>
-					          </tr> 
+					          <?php include '..\student\pullFromDb.php';?>
 					        </tbody>
 
 					     </table>
