@@ -124,11 +124,11 @@
 					<div class="card">
 						<div class="card-image"> 
 							<img src="../images/list.jpg">
-							<span id="subjectName" class="card-title">Subject Name</span>
+							<a href="#" onclick="subjectOpen()"><span id="subjectName" class="card-title">Subject Name</span></a>
 						</div>
 						<div class="card-content">			
 							<div class="collection">
-								<a href="../teacherAssign/index.php" class="collection-item"><span id="assignNo" class="badge">0</span>Assignments</a>
+								<a href="#" onclick="subjectOpen()" class="collection-item"><span id="assignNo" class="badge">0</span>Assignments</a>
 								<a href="#notesList" class="collection-item modal-trigger"><span id="notesNo" class="badge">0</span>Notes</a>
 								<a href="#announceList" class="collection-item modal-trigger"><span id="announceNo" class="badge">0</span>Annoucements</a>
 							</div>
@@ -255,6 +255,15 @@
 					document.getElementById("pageContents").style.display="block";
 					}, 3000);
 			
+		</script>
+
+		<script>
+			function subjectOpen(){
+				var subjName = document.getElementById("subjectName").innerHTML;
+				var teachID = document.getElementById("snID").innerHTML;
+				window.location.href = "../teacherAssign.php?teacher=" + teachID + "subname=" + subjName;
+			}
+
 		</script>
 
 		<script>

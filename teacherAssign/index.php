@@ -115,7 +115,7 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="../teacher/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
+							<a href="../teacher/" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
 						</li>
 						<li>
 							<a class="btn-flat tooltipped modal-trigger" href="#notesList" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
@@ -296,8 +296,7 @@
   					<center><h5>Are you sure you want to delete this subject?</h5></center>
       			</div>
 				<div class="modal-footer">
-					<a href="#" class="modal-close waves-effect btn-flat">Cancel</a>
-  					<a href="../teacher/" class="modal-close waves-effect btn-flat">Delete</a>
+					<a href ="deleteClass.php?subname=<?php echo $_GET['subname']; ?>" class="modal-close waves-effect btn-flat">Delete</a>
 				</div>
 			</div>
 
@@ -352,6 +351,27 @@
 				    var instances = M.Datepicker.init(elems, options);
 				  });
 			</script>
+
+			<script>
+			function getHttpAsync(link, callback){
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.onreadystatechange = function(){ 
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					callback(xmlHttp.responseText);
+				}
+				xmlHttp.open("GET", link, true);
+				xmlHttp.send(null);
+			}
+			function results(data){
+				document.getElementById("snDP").src = JSON.parse(data).users[3].photo;
+				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
+				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
+				
+			}
+		window.onload = function(){
+				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
+			}
+		</script>
 
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
