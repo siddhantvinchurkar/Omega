@@ -1,18 +1,10 @@
-<?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="omega";
+<?php include 'dbConnect.php';
 
-$conn= new mysqli($servername, $username, $password, $dbname);
-
-if(!$conn){
-die("Could not connect:".mysqli_connect_error());
-}
-$netAnn = 'SELECT * FROM announce WHERE subject = "networks"';  
-$retnet=mysqli_query($conn, $netAnn);  
-
-if(mysqli_num_rows($retnet) > 0){  
+//Networks
+$netAnn = 'SELECT * FROM master WHERE subject = "networks"';  
+$retnet=mysqli_query($conn, $netAnn); 
+$ncount = mysqli_num_rows($retnet); 
+if($ncount > 0){  
 	echo "<table><tr><th>Networks</th></tr>";
 while($row = mysqli_fetch_assoc($retnet)){ 
 echo "<tr><td>{$row['announce']}</td></tr>";  
@@ -20,11 +12,12 @@ echo "<tr><td>{$row['announce']}</td></tr>";
 echo "</table>";//end of while  
 }else{  	echo "no announcements";  
 }
-
-$mulAnn = 'SELECT * FROM announce WHERE subject = "multimedia"';  
+//Multimedia
+$mulAnn = 'SELECT * FROM master WHERE subject = "multimedia"';  
 $retmul = mysqli_query($conn, $mulAnn);  
+$mcount = mysqli_num_rows($retmul);
 
-if(mysqli_num_rows($retmul) > 0){  
+if($mcount > 0){  
 	echo "<table><tr><th>Multimedia</th></tr>";
 while($row = mysqli_fetch_assoc($retmul)){ 
 echo "<tr><td>{$row['announce']}</td></tr>"; 
@@ -33,10 +26,12 @@ echo "</table>";//end of while
 }else{  	echo "no announcements";  
 }
 
-$coaAnn = 'SELECT * FROM announce WHERE subject = "coa"';  
-$retcoa = mysqli_query($conn, $coaAnn);  
+//COA
+$coaAnn = 'SELECT * FROM master WHERE subject = "coa"';  
+$retcoa = mysqli_query($conn, $coaAnn);
+$ccount = mysqli_num_rows($retcoa);  
 
-if(mysqli_num_rows($retcoa) > 0){  
+if($ccount > 0){  
 	echo "<table><tr><th>COA</th></tr>";
 while($row = mysqli_fetch_assoc($retcoa)){ 
 echo "<tr><td>{$row['announce']}</td></tr>";  
@@ -45,10 +40,12 @@ echo "</table>";//end of while
 }else{  	echo "no announcements";  
 }
 
-$webAnn = 'SELECT * FROM announce WHERE subject = "web"';  
+//web
+$webAnn = 'SELECT * FROM master WHERE subject = "web"';  
 $retweb = mysqli_query($conn, $webAnn);  
+$wcount = mysqli_num_rows($retweb);
 
-if(mysqli_num_rows($retweb) > 0){  
+if($wcount > 0){  
 	echo "<table><tr><th>Web</th></tr>";
 while($row = mysqli_fetch_assoc($retweb)){ 
 echo "<tr><td>{$row['announce']}</td></tr>";  

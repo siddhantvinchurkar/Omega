@@ -143,7 +143,7 @@
 								
 								<a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a>
 
-								<a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">10</span>Annoucements</a>
+								<a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge"><?php include 'countBadge.php'?></span>Annoucements</a>
 							</div>
 						</div>
 					</div>
