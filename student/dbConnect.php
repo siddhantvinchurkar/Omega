@@ -5,4 +5,5 @@ if(!$conn)
 {
 	echo "Unable to connect to server: ".mysqli_connect_error();
 }
+echo "Connected!!!!!"
 ?>
