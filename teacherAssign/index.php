@@ -199,7 +199,7 @@
 				<?php echo '<form action="insertAnnounce.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
 					<div class="modal-content">
 	  					<h4>New Announcement</h4>
-	  					<p><b>Enter Announcement</b><input type="text" size="10" /></p>
+	  					<p><b>Enter Announcement</b><input type="text" size="10"  name="annote" /></p>
 					</div>
 					<div class="modal-footer">
 	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Add Announcement"/>
