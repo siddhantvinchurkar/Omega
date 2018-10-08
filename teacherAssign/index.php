@@ -202,7 +202,7 @@
 	  					<p><b>Enter Announcement</b><input type="text" size="10" /></p>
 					</div>
 					<div class="modal-footer">
-	  					<a href="#" class="modal-close waves-effect btn-flat">Add Announcement</a>
+	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Add Announcement"/>
 					</div>
 				</form>
 			</div>
