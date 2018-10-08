@@ -14,8 +14,17 @@
 	// SQL commands
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
 	$result = $conn->query($checksql);
+	$subcodes = "stuff";
 	while ($row = $result->fetch_assoc()) {
-		echo '<script type="text/javascript">var subs="'.$row["classes"].'"; console.log(subs);</script>';
+		$subcodes = $row["classes"];
+	}
+	$subcodesArray = explode('*', $subcodes);
+	foreach($subcodesArray as $subcode){
+		$checksql = "SELECT * FROM ClassTable WHERE ClassCode='".$subcode."'";
+		$result = $conn->query($checksql);
+		while ($row = $result->fetch_assoc()) {
+			echo '<script type="text/javascript">console.log("'.$row["ClassName"].'");</script>';
+		}
 	}
 	// Close connection to the database
 	$conn->close();
