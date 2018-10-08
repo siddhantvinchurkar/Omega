@@ -19,10 +19,16 @@
 	// SQL commands
 
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
-
-	while ($row = $conn->query($checksql)->fetch_assoc()) {
-	    	$conn->query("INSERT INTO users(classes) VALUES(".$row['classes'].$_GET['subcode']."*)");
+	$result = $conn->query($checksql);
+	$mainsql = "stuff";
+	while ($row = $result->fetch_assoc()) {
+		$mainsql = "INSERT INTO users(classes) VALUES('".$row['classes'].$_GET['subcode']."*')";
 	}
+
+	$result = $conn->query($mainsql);
+
+	if($result->num_rows > 0) { echo "Done!";}
+	else {echo "Not Done!";}
 
 	// Close connection to the database
 
