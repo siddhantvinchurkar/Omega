@@ -6,18 +6,17 @@ if(!$conn)
 		echo "Unable to connect to server: ".mysqli_connect_error();
 	}
 
-//Networks
-$netAnn = 'SELECT * FROM announce WHERE subject = "networks"'; 
-$retnet=mysqli_query($conn, $netAnn); 
-$ncount = mysqli_num_rows($retnet); 
+$subjectN = $_GET["subname"];
+$sql = "SELECT * FROM announce WHERE subject = '$subjectN'"; 
+$retsub = mysqli_query($conn, $sql); 
+$ncount = mysqli_num_rows($retsub); 
 if($ncount > 0)
 {  
-	echo "<table><tr><th>Networks</th></tr>";
-	while($row = mysqli_fetch_assoc($retnet))
+	echo "<tr><th>".$subjectN."</th></tr>";
+	while($row = mysqli_fetch_assoc($retsub))
 	{ 
-		echo "<tr><td>{$row['announce']}</td></tr>";  
-	} 
-	echo "</table>";//end of while  
+		echo "<tr><td>{$row['announcemnt']}</td></tr>";  
+	} //end of while  
 }
 else
 {  	
