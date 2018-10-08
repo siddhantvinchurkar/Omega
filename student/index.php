@@ -360,8 +360,7 @@
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
 				for(var m=0; m<subArray.length; m++)
 				document.getElementById("subCards").innerHTML += '<a href="#" onclick="subjectOpen()"><div class="col s6"><div class="card"><div class="card-image"> <img src="../images/list.jpg"><span id="subjectName" class="card-title">'+subArray[m]+'</span></div><div class="card-content"><div class="collection"><a href="#" onclick="subjectOpen()" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a><a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a><a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">5</span>Annoucements</a></div></div></div></div></a>';
-				document.getElementById("joinNewClassButton").onclick = function{
-					console.log("In case things don't work...");
+				document.getElementById("joinNewClassButton").onclick = function(){
 					<?php echo 'getHttpAsync("../actions/joinclass.php?eml='.$_GET['eml'].'&subcode=" + document.getElementById("newClass").value, results2);'; ?>
 				}
 		}
