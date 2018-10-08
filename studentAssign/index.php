@@ -302,11 +302,9 @@
     <div class="modal-content">
     	<img src="../images/icons/192.png" class="center2"/>
       <h4>Announcements</h4>
-      <center>
-      <ul type="disc">
+      <table>
       	<?php include 'pullFromDb.php';?>
-      </ul>
-  </center>
+  </table>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
