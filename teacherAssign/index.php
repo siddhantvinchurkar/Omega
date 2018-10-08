@@ -196,14 +196,15 @@
 
 			<!--New Announcement modal -->
 			<div id="announceModal" class="modal">
-				<div class="modal-content">
-  					<h4>New Announcement</h4>
-  					<p><b>Enter Announcement</b><input type="text" size="10" /></p>
-  					<p><b>Enter Due Date</b><input type="date" class="datepicker"/></p>
-				</div>
-				<div class="modal-footer">
-  					<a href="#" class="modal-close waves-effect btn-flat">Add Announcement</a>
-				</div>
+				<?php echo '<form action="insertClass.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
+					<div class="modal-content">
+	  					<h4>New Announcement</h4>
+	  					<p><b>Enter Announcement</b><input type="text" size="10" /></p>
+					</div>
+					<div class="modal-footer">
+	  					<a href="#" class="modal-close waves-effect btn-flat">Add Announcement</a>
+					</div>
+				</form>
 			</div>
 
 			<!--Add Notes modal -->
