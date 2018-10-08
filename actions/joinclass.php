@@ -22,7 +22,7 @@
 	$result = $conn->query($checksql);
 	$mainsql = "stuff";
 	while ($row = $result->fetch_assoc()) {
-		$mainsql = "INSERT INTO users(classes) VALUES('".$row['classes'].$_GET['subcode']."*')";
+		$mainsql = "UPDATE users SET classes='".$row['classes'].$_GET['subcode']."*' WHERE eml='".$_GET['eml']."'";
 	}
 
 	$result = $conn->query($mainsql);
