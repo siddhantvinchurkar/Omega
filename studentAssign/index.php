@@ -165,76 +165,7 @@
   <!--Notes Side Navigation Bar-->
    <ul id="notes-nav" class="sidenav">
    	<div>
-    		<table class="responsive-table highlight"> 
-	        <thead>
-	          <tr>
-	              <th>Lecture Notes</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	            <td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>	        
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>	            
-	          </tr>
-	        </tbody>
-	     </table>
-
-	     <table class="responsive-table highlight"> 
-	        <table class="responsive-table highlight"> 
-	        <thead>
-	          <tr>
-	              <th>Reference</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>
-	          </tr>
-	        </tbody>
-	     </table>
-
-	     <table class="responsive-table highlight"> 
-	        <thead>
-	          <tr>
-	              <th>Peer Notes</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	          	<td>Telnet</td>
-	          </tr>
-	        </tbody>
-	     </table>
+    	<?php include 'pullNotes.php'?>;
 	</div>
   </ul>
   <!-- end Note Side Nav Bar-->
