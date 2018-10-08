@@ -114,9 +114,9 @@
     	<div class="user-view"><div class="background">
     		<img src="../images/list.jpg">
       	</div>
-      		<a href="#user"><img id="dp" class="circle" src="../images/icons/72.png"></a>
-      		<a href="#name"><span id="name" class="white-text name">Nikhil Sujith</span></a>
-      		<a href="#email"><span id="email" class="white-text email">nik98hil@gmail.com</span></a>
+      		<a href="#user"><img id="snDP" class="circle" src="../images/icons/72.png"></a>
+      		<a href="#name"><span id="snName" class="white-text name">Nikhil Sujith</span></a>
+      		<a href="#regno"><span id="snID" class="white-text email">nik98hil@gmail.com</span></a>
     	</div>
     </li>
     	<li><a class="modal-trigger" href="#joinClassModal"><i class="material-icons">school</i>Join New Class</a></li>
@@ -338,7 +338,9 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("dp").src = JSON.parse(data).users[0].photo;
+				document.getElementById("snDP").src = JSON.parse(data).users[1].photo;
+				document.getElementById("snName").innerHTML = JSON.parse(data).users[1].fn;
+				document.getElementById("snID").innerHTML = JSON.parse(data).users[1].rno;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
