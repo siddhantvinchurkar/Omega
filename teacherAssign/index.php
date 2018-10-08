@@ -199,7 +199,7 @@
 				<?php echo '<form action="insertAnnounce.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
 					<div class="modal-content">
 	  					<h4>New Announcement</h4>
-	  					<p><b>Enter Announcement</b><input type="text" size="10"  name="annote" /></p>
+	  					<p><b>Enter Announcement</b><input type="text" size="99"  name="annote" /></p>
 					</div>
 					<div class="modal-footer">
 	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Add Announcement"/>
@@ -209,22 +209,17 @@
 
 			<!--Add Notes modal -->
 			<div id="notesModal" class="modal">
-				<div class="modal-content">
-  					<h4>Upload Notes</h4>
-  					<p><b>Enter Notes Title</b><input type="text" size="10" /></p>
-        			<div class="file-field input-field">
-			      		<div class="btn">
-			        		<span><i class="material-icons">attach_file</i></span>
-			       			 <input type="file">
-			      		</div>
-			      		<div class="file-path-wrapper">
-			        		<input class="file-path validate" type="text" placeholder="Attach File">
-			      		</div>
-	    			</div>
-      			</div>
-				<div class="modal-footer">
-  					<a href="#" class="modal-close waves-effect btn-flat">Add Notes</a>
-				</div>
+				<?php echo '<form action="insertNotes.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
+					<div class="modal-content">
+	  					<h4>Upload Notes</h4>
+	  					<p><b>Enter Notes Topic</b><input type="text" size="50" name="topnotes"></p>
+	  					<p>Upload the notes in your google drive and paste the shared link below.</p>
+	  					<p><b>Enter Notes Link</b><input type="text" size="99"  name="annote" /></p>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Upload Notes"/>
+					</div>
+				</form>
 			</div>
 
 			<!--List of Announcement modal -->
