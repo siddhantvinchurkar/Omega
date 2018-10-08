@@ -15,6 +15,7 @@
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
 	$result = $conn->query($checksql);
 	$subcodes = "stuff";
+	echo '<script type="text/javascript">var subArray = [];</script>';
 	while ($row = $result->fetch_assoc()) {
 		$subcodes = $row["classes"];
 	}
@@ -23,7 +24,7 @@
 		$checksql = "SELECT * FROM ClassTable WHERE ClassCode='".$subcode."'";
 		$result = $conn->query($checksql);
 		while ($row = $result->fetch_assoc()) {
-			echo '<script type="text/javascript">console.log("'.$row["ClassName"].'");</script>';
+			echo '<script type="text/javascript">subArray.push("'.$row["ClassName"].'");</script>';
 		}
 	}
 	// Close connection to the database
@@ -158,30 +159,8 @@
   </ul>
   <!--card container-->
 	<div class="container">
-		<div class="row">
-
-			<!--Card 1-->
-			<a href="#" onclick="subjectOpen()">
-				<div class="col s6">
-					<div class="card">
-						<div class="card-image"> 
-							<img src="../images/list.jpg">
-							<span id="subjectName" class="card-title">Networks</span>
-						</div>
-						<div class="card-content">			
-							<div class="collection">
-								<a href="#" onclick="subjectOpen()" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a>
-								
-								<a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a>
-
-								<a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">5</span>Annoucements</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</a>
-			<!--end of card 1-->
-
+		<div class="row" id="subCards">
+			<!--Cards Go Here-->
 		</div>
 	</div>
 	<!-- end card container-->
@@ -375,6 +354,8 @@
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
+				for(var m=0; m<subArray.length; m++)
+				document.getElementById("subCards").innerHTML += '<a href="#" onclick="subjectOpen()"><div class="col s6"><div class="card"><div class="card-image"> <img src="../images/list.jpg"><span id="subjectName" class="card-title">'+subArray[m]+'</span></div><div class="card-content"><div class="collection"><a href="#" onclick="subjectOpen()" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a><a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a><a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">5</span>Annoucements</a></div></div></div></div></a>';
 		}
 	</script>
 
