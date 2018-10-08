@@ -33,7 +33,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		
+
 		<title>Omega</title>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
@@ -151,7 +151,7 @@
   	<!--card container-->
 	<div class="container">
 		<div class="row" id="subCards">
-			<!--Cards Go Here--><p>Output testing</p>
+			<!--Cards Go Here-->
 		</div>
 	</div>
 	<!-- end card container-->
@@ -258,9 +258,10 @@
 			window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
 				for(var m=0; m<subArray.length; m++)
-					document.getElementById("subCards").innerHTML += '<a href="" onclick="subjectOpen(this)"><div class="col s4"><div class="card"><div class="card-image"><img src="../images/list.jpg"></div><div class="card-content blue-grey darken-2 white-text"><span id="subjectName" onclick="subjectOpen(this)">'+subArray[m]+'</span></div></div></div></a>';
+				document.getElementById("subCards").innerHTML += '<a href="" onclick="subjectOpen(this)"><div class="col s4"><div class="card"><div class="card-image"><img src="../images/list.jpg"></div><div class="card-content blue-grey darken-2 white-text"><span id="subjectName" onclick="subjectOpen(this)">'+subArray[m]+'</span></div></div></div></a>';
 				document.getElementById("joinNewClassButton").onclick = function(){
 					<?php echo 'getHttpAsync("../actions/joinclass.php?eml='.$_GET['eml'].'&subcode=" + document.getElementById("newClass").value, results2);'; ?>
+				}
 			}
 		</script>
 
