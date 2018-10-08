@@ -1,28 +1,27 @@
-<?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="omega";
+<?php 
 
-$conn= new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect("localhost","nikhil","password","omega");
+if(!$conn)
+	{
+		echo "Unable to connect to server: ".mysqli_connect_error();
+	}
 
-if(!$conn){
-die("Could not connect:".mysqli_connect_error());
+$subjectN = $_GET["subname"];
+$sql = "SELECT * FROM announce WHERE subject = '$subjectN'"; 
+$retsub = mysqli_query($conn, $sql); 
+$ncount = mysqli_num_rows($retsub); 
+if($ncount > 0)
+{  
+	echo "<tr><th>".$subjectN."</th></tr>";
+	while($row = mysqli_fetch_assoc($retsub))
+	{ 
+		echo "<tr><td>{$row['announcemnt']}</td></tr>";  
+	} //end of while  
 }
-$sql = 'SELECT * FROM announce';  
-$retval=mysqli_query($conn, $sql);  
-
-if(mysqli_num_rows($retval) > 0){  
-	echo "<table><tr><th>Subject</th>
-		<th>Announcement</th></tr>";
-while($row = mysqli_fetch_assoc($retval)){ 
-echo "<tr><td>{$row['subject']}</td>
-	<td>{$row['announce']}</td></tr>";  
-} 
-echo "</table>";//end of while  
-}else{  	echo "0 results";  
-}  
-
+else
+{  	
+	echo "<p><h6>No announcements</h6></p>";  
+}
 mysqli_close($conn);  
 ?>
 

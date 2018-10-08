@@ -7,18 +7,16 @@ if(!$conn)
 	}
 
 $subjectN = $_GET["subname"];
-$stuID = $_GET["student"];
 $sql = "SELECT * FROM announce WHERE subject = '$subjectN'"; 
 $retsub = mysqli_query($conn, $sql); 
 $ncount = mysqli_num_rows($retsub); 
 if($ncount > 0)
 {  
-	echo "<h4>".$subjectN."</h4>";
+	echo "<tr><th>".$subjectN."</th></tr>";
 	while($row = mysqli_fetch_assoc($retsub))
 	{ 
-		echo "<li>{$row['announcemnt']}</li>";  
-	} 
-	//end of while  
+		echo "<tr><td>{$row['announcemnt']}</td></tr>";  
+	} //end of while  
 }
 else
 {  	
