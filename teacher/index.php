@@ -27,6 +27,12 @@
 			echo '<script type="text/javascript">subArray.push("'.$row["ClassName"].'");</script>';
 		}
 	}
+	$userDP = "SELECT photo FROM users WHERE eml='".$_GET['eml']."'";
+	$userFN = "SELECT fn FROM users WHERE eml='".$_GET['eml']."'";
+	$userID = "SELECT rno FROM users WHERE eml='".$_GET['eml']."'";
+	$userEml = $_GET['eml'];
+
+	echo '<script type="text/javascript">var userDetail = ["'.$userDP.'","'.$userFN.'","'.$userID.'","'.$userEml.'"]; </script>';
 	// Close connection to the database
 	$conn->close();
 ?>
@@ -244,14 +250,14 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[3].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
-				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
-				document.getElementById("tID").value = JSON.parse(data).users[3].rno;
-				document.getElementById("tEml").value = JSON.parse(data).users[3].eml;
-				document.getElementById("infoEditFn").value = JSON.parse(data).users[3].fn;
-				document.getElementById("infoEditRno").value = JSON.parse(data).users[3].rno;
-				document.getElementById("infoEditEml").value = JSON.parse(data).users[3].eml;
+				document.getElementById("snDP").src = userDetail[0];
+				document.getElementById("snName").innerHTML = userDetail[1];
+				document.getElementById("snID").innerHTML = userDetail[2];
+				document.getElementById("tID").value = userDetail[2];
+				document.getElementById("tEml").value = userDetail[3];
+				document.getElementById("infoEditFn").value = userDetail[1];
+				document.getElementById("infoEditRno").value = userDetail[2];
+				document.getElementById("infoEditEml").value = userDetail[3];
 			}
 			function results2(data){
 				if(data == "1") console.log("Added New Class!");
