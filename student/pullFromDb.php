@@ -1,4 +1,10 @@
-<?php include 'dbConnect.php';
+<?php 
+
+$conn = mysqli_connect("localhost","nikhil","password","omega");
+if(!$conn)
+	{
+		echo "Unable to connect to server: ".mysqli_connect_error();
+	}
 
 //Networks
 $netAnn = 'SELECT * FROM announce WHERE subject = "networks"'; 
