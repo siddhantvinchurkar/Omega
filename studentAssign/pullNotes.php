@@ -6,8 +6,6 @@ if(!$conn)
 		echo "Unable to connect to server: ".mysqli_connect_error();
 	}
 
-	echo "connected";
-
 $subjectN = $_GET["subname"];
 $sql = "SELECT * FROM notes WHERE subject = '$subjectN'"; 
 $retsub = mysqli_query($conn, $sql); 
@@ -22,7 +20,7 @@ if($ncount > 0)
 }
 else
 {  	
-	echo "<p><h6>No announcements</h6></p>";  
+	echo "<p><h6>No notes</h6></p>";  
 }
 
 mysqli_close($conn);  

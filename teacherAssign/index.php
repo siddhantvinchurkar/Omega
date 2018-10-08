@@ -251,21 +251,8 @@
       				<center>
       				<ul type="disc">
 	      				<table id="notesTable" class="responsive-table highlight">
-	        				<thead>
-	          					<tr>
-	              					<th width="50%">Notes</th>
-	              					<th width="40%">File</th>
-	              					<th width="10%"> </th>
-	          					</tr>
-	        				</thead>
-
-	        				<tbody>
-					          <tr>
-					            <td>Example Notes Title</td>
-					            <td>Example File</td>
-					            <td><a class="waves-effect btn-flat" href="downloadfilepath"><i class="material-icons">vertical_align_bottom</i></a></td>
-					          </tr> 
-					        </tbody>
+	        				
+	        				<?php include 'pullNotes.php'; ?>
 
 					     </table>
 				      </ul>
