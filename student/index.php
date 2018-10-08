@@ -179,7 +179,7 @@
       <h4>Announcements</h4>
       <center>
       <ul type="disc">
-      	<!--<php include 'pullFromDb.php';?>-->
+      	<php include 'pullFromDb.php'; ?>
       </ul>
   </center>
     </div>
