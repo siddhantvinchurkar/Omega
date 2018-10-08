@@ -22,13 +22,12 @@
 	$result = $conn->query($checksql);
 	$mainsql = "stuff";
 	while ($row = $result->fetch_assoc()) {
-		$mainsql = "INSERT INTO users(classes) VALUES('".$row['classes'].$_GET['subcode']."*')";
+		$mainsql = "UPDATE users SET classes='".$row['classes'].$_GET['subcode']."*' WHERE eml='".$_GET['eml']."'";
 	}
 
 	$result = $conn->query($mainsql);
 
-	if($result->num_rows > 0) { echo "Done!";}
-	else {echo "Not Done!";}
+	echo '1';
 
 	// Close connection to the database
 
