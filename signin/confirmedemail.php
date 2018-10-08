@@ -140,11 +140,11 @@
 				document.getElementById("continueButton").onclick = function(){
 					if(!isNaN(document.getElementById("rno").value[1])){
 						// Student. Go to student.
-						window.location.href = "../student";
+						<?php echo 'window.location.href = "../student?eml='.$_GET['eml'].'";'; ?>
 					}
 					else{
 						// Teacher. Go to teacher
-						window.location.href = "../teacher";
+						<?php echo 'window.location.href = "../teacher?eml='.$_GET['eml'].'";'; ?>
 					}
 				}
 			
