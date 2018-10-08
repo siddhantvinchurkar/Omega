@@ -19,8 +19,8 @@
 	// SQL commands
 
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
-
-	while ($row = $conn->query($checksql)->fetch_assoc()) {
+	$result = $conn->query($checksql);
+	while ($row = $result->fetch_assoc()) {
 	    	//if($conn->query("INSERT INTO users(classes) VALUES(".$row['classes'].$_GET['subcode']."*)")) echo "Done!";
 		//else echo "Not done!";
 		echo $row["eml"];
