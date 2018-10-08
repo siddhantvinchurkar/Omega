@@ -232,15 +232,11 @@
     			<div class="modal-content">
     				<img src="../images/icons/192.png" class="center2"/>
       				<h4>Announcements</h4>
-      				<center>
-      				<ul type="disc">
 	      				<table id="annouceTable" class="responsive-table highlight">
 	        				
 	        				<?php include 'pullAnnounce.php';?>
 
 					     </table>
-				      </ul>
-  					</center>
     			</div>
     			<div class="modal-footer">
       				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
