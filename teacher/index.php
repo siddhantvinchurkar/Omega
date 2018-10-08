@@ -27,10 +27,14 @@
 			echo '<script type="text/javascript">subArray.push("'.$row["ClassName"].'");</script>';
 		}
 	}
-	$userDP = "SELECT photo FROM users WHERE eml='".$_GET['eml']."'";
-	$userFN = "SELECT fn FROM users WHERE eml='".$_GET['eml']."'";
-	$userID = "SELECT rno FROM users WHERE eml='".$_GET['eml']."'";
+	$userDPQ = "SELECT photo FROM users WHERE eml='".$_GET['eml']."'";
+	$userFNQ = "SELECT fn FROM users WHERE eml='".$_GET['eml']."'";
+	$userIDQ = "SELECT rno FROM users WHERE eml='".$_GET['eml']."'";
 	$userEml = $_GET['eml'];
+
+	$userDP = $conn->query($userDPQ);
+	$userFN = $conn->query($userFNQ);
+	$userID = $conn->query($userIDQ);
 
 	echo '<script type="text/javascript">var userDetail = ["'.$userDP.'","'.$userFN.'","'.$userID.'","'.$userEml.'"]; </script>';
 	// Close connection to the database
