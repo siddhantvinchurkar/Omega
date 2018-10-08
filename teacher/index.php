@@ -53,6 +53,10 @@
 			}
 			.icon-white {
 			    color: white;
+			}
+			.btnptr{
+				cursor: pointer;
+			}
 		</style>
 	</head>
 	<body>
@@ -72,7 +76,7 @@
       					</div>
       					<a href="#user"><img id="snDP" class="circle" src="../images/icons/72.png"></a>
       					<a href="#name"><span id="snName" class="white-text name">Teacher Name</span></a>
-      					<a href="#email"><span id="snEmail" class="white-text email">teacherSJC@gmail.com</span></a>
+      					<a href="#teacherID"><span id="snID" class="white-text email">teacher ID</span></a>
     				</div>
     			</li>
     				<li><a id="detailsEdit" href="#editInfoModal" class="waves-effect modal-trigger"><i class="material-icons">assignment_ind</i>Edit Information</a></li>
@@ -98,14 +102,17 @@
 
 				<!-- Modal Structure -->
   				<div id="subjectModal" class="modal">
-    				<div class="modal-content">
-      					<h4>Subject Modal</h4>
-      					<p><b>Enter Subject Name</b> 	<input type="text" size="20" /></p>
-      					<p><b>Enter Subject ID</b> 	<input type="text" size="10" /></p>
-    				</div>
-    				<div class="modal-footer">
-      					<a href="#" class="modal-close waves-effect btn-flat">Create Subject</a>
-    				</div>
+    				<form action="insertClass.php" method="post">
+	    				<div class="modal-content">
+	      					<h4>Subject Modal</h4>
+	      					<p><b>Enter Subject Name:</b> 	<input type="text" size="20" name="subName"/></p>
+	      					<p><b>Enter Subject ID:</b> 	<input type="text" size="10" name="subID"/></p>
+	      					<p><b>Your ID is:</b>			<input type="text" name="teacherID" id="tID" value="sth" readonly/></p>
+	    				</div>
+	    				<div class="modal-footer">
+	      					<input type="submit" class="modal-close waves-effect btn-flat btnptr" value="Create Subject"/>
+	    				</div>
+	    			</form>
   				</div>
 
   				<!--card container-->
@@ -117,18 +124,17 @@
 					<div class="card">
 						<div class="card-image"> 
 							<img src="../images/list.jpg">
-							<span id="subjectName" class="card-title">Subject Name</span>
+							<a href="#" onclick="subjectOpen()"><span id="subjectName" class="card-title">Geography</span></a>
 						</div>
 						<div class="card-content">			
 							<div class="collection">
-								<a href="../teacherAssign/index.php" class="collection-item"><span id="assignNo" class="badge">0</span>Assignments</a>
+								<a href="#" onclick="subjectOpen()" class="collection-item"><span id="assignNo" class="badge">0</span>Assignments</a>
 								<a href="#notesList" class="collection-item modal-trigger"><span id="notesNo" class="badge">0</span>Notes</a>
 								<a href="#announceList" class="collection-item modal-trigger"><span id="announceNo" class="badge">0</span>Annoucements</a>
 							</div>
 						</div>
 					</div>
 				</div>
-			</a>
 			<!--end of card 1-->
 
 		</div>
@@ -137,14 +143,17 @@
 
 			<!--Edit Information Modal -->
 			<div id="editInfoModal" class="modal">
-				<div class="modal-content">
-  					<h4>Edit Information</h4>
-  					<p><b>User Name</b><input type="text" value="nameplace"/></p>
-  					<p><b>User ID</b><input type="text" value="IDnumber"/></p>
-				</div>
-				<div class="modal-footer">
-  					<a href="#" class="modal-close waves-effect btn-flat">Done</a>
-				</div>
+				<form action="updateInfo.php" method="post">
+					<div class="modal-content">
+	  					<h4>Edit Information</h4>
+	  					<p><b>User Name</b>	<input type="text" id="infoEditFn" name="infoName"/></p>
+	  					<p><b>User ID</b>	<input type="text" id="infoEditRno" name="infoID"/>
+	  						<input type="hidden" id="infoEditEml" name="infoEmail"/></p>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat btnptr" value="Update Info"/>
+					</div>
+				</form>
 			</div>
 		<!--List of Announcement modal -->
   			<div id="announceList" class="modal">
@@ -154,19 +163,8 @@
       				<center>
       				<ul type="disc">
 	      				<table id="annouceTable" class="responsive-table highlight">
-	        				<thead>
-	          					<tr>
-	              					<th>Annoucement</th>
-	              					<th>Due Date</th>
-	          					</tr>
-	        				</thead>
-
-	        				<tbody>
-					          <tr>
-					            <td>Example Announcement</td>
-					            <td>Example Due Date</a></td>
-					          </tr> 
-					        </tbody>
+	        				
+					          
 
 					     </table>
 				      </ul>
@@ -252,6 +250,15 @@
 		</script>
 
 		<script>
+			function subjectOpen(){
+				var subjName = document.getElementById("subjectName").innerHTML;
+				var teachID = document.getElementById("snID").innerHTML;
+				window.location.href = "../teacherAssign/index.php?teacher=" + teachID + "&subname=" + subjName;
+			}
+
+		</script>
+
+		<script>
 			function getHttpAsync(link, callback){
 				var xmlHttp = new XMLHttpRequest();
 				xmlHttp.onreadystatechange = function(){ 
@@ -262,9 +269,13 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[2].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[2].fn;
-				document.getElementById("snEmail").innerHTML = JSON.parse(data).users[2].eml;
+				document.getElementById("snDP").src = JSON.parse(data).users[3].photo;
+				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
+				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
+				document.getElementById("tID").value = JSON.parse(data).users[3].rno;
+				document.getElementById("infoEditFn").value = JSON.parse(data).users[3].fn;
+				document.getElementById("infoEditRno").value = JSON.parse(data).users[3].rno;
+				document.getElementById("infoEditEml").value = JSON.parse(data).users[3].eml;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);

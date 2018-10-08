@@ -143,7 +143,7 @@
 								
 								<a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a>
 
-								<a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">10</span>Annoucements</a>
+								<a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">5</span>Annoucements</a>
 							</div>
 						</div>
 					</div>
@@ -179,7 +179,7 @@
       <h4>Announcements</h4>
       <center>
       <ul type="disc">
-      	<?php include 'pullFromDb.php';?>
+      	<php include 'pullFromDb.php'; ?>
       </ul>
   </center>
     </div>
