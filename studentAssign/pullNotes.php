@@ -9,7 +9,7 @@ if(!$conn)
 	echo "connected";
 
 $subjectN = $_GET["subname"];
-$sql = "SELECT * FROM notes"; 
+$sql = "SELECT * FROM notes WHERE subject = '$subjectN'"; 
 $retsub = mysqli_query($conn, $sql); 
 $ncount = mysqli_num_rows($retsub); 
 if($ncount > 0)
