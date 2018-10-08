@@ -14,5 +14,5 @@
 	{
 		echo "Unable to Add Announcement: ".mysqli.error($conn);
 	}
-	//echo "<script>window.location = 'https://omegaclassrooms.ga/teacherAssign/'</script>";
+	echo "<script>window.location = 'https://omegaclassrooms.ga/teacherAssign/index.php?subname=".$subjectN."&teacher=".$teachID."'</script>";
 ?>
