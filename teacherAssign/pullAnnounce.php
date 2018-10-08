@@ -15,7 +15,7 @@ if($ncount > 0)
 	echo "<tr><th>".$subjectN."</th></tr>";
 	while($row = mysqli_fetch_assoc($retsub))
 	{ 
-		echo "<tr><td>{$row['announce']}</td></tr>";  
+		echo "<tr><td>{$row['announcemnt']}</td></tr>";  
 	} //end of while  
 }
 else
