@@ -13,10 +13,10 @@ $retsub = mysqli_query($conn, $sql);
 $ncount = mysqli_num_rows($retsub); 
 if($ncount > 0)
 {  
-	echo "<tr><th>".$subjectN."</th></tr>";
+	echo "<tr><th><h4>Subject: ".$subjectN."</h4></th></tr>";
 	while($row = mysqli_fetch_assoc($retsub))
 	{ 
-		echo "<tr><td>{$row['announcemnt']}</td></tr>";  
+		echo "<tr><th>{$row['announcemnt']}</th></tr>";  
 	} //end of while  
 }
 else
