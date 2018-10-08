@@ -184,14 +184,16 @@
 
  			<!--New Assignment Modal-->
  			<div id="assignModal" class="modal">
-				<div class="modal-content">
-  					<h4>New Assignment</h4>
-  					<p><b>Enter Assignment Topic</b><input type="text" size="10" /></p>
-  					<p><b>Enter Assignment Question</b><input type="text" size="10" /></p>
-				</div>
-				<div class="modal-footer">
-  					<a href="#" class="modal-close waves-effect btn-flat">Add Assignment</a>
-				</div>
+				<?php echo '<form action="insertAssignment.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
+					<div class="modal-content">
+	  					<h4>New Assignment</h4>
+	  					<p><b>Enter Assignment Topic</b><input type="text" size="20"  name="topassign" /></p>
+	  					<p><b>Enter Assignment Description</b><input type="text" size="50"  name="desassign" /></p>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Add Assignment"/>
+					</div>
+				</form>
 			</div>
 
 			<!--New Announcement modal -->
