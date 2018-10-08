@@ -236,7 +236,7 @@
 					     </table>
     			</div>
     			<div class="modal-footer">
-      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      				<a class="modal-close waves-effect btn-flat">Close</a>
     			</div>
   			</div>
   			
