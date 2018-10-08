@@ -165,7 +165,9 @@
   <!--Notes Side Navigation Bar-->
    <ul id="notes-nav" class="sidenav">
    	<div>
+   		<table>
     	<?php include 'pullNotes.php'?>;
+    	</table>
 	</div>
   </ul>
   <!-- end Note Side Nav Bar-->
