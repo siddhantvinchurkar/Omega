@@ -196,7 +196,7 @@
 
 			<!--New Announcement modal -->
 			<div id="announceModal" class="modal">
-				<?php echo '<form action="insertClass.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
+				<?php echo '<form action="insertAnnounce.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
 					<div class="modal-content">
 	  					<h4>New Announcement</h4>
 	  					<p><b>Enter Announcement</b><input type="text" size="10" /></p>
