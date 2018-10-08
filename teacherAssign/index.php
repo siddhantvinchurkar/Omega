@@ -235,19 +235,8 @@
       				<center>
       				<ul type="disc">
 	      				<table id="annouceTable" class="responsive-table highlight">
-	        				<thead>
-	          					<tr>
-	              					<th>Annoucement</th>
-	              					<th>Due Date</th>
-	          					</tr>
-	        				</thead>
-
-	        				<tbody>
-					          <tr>
-					            <td>Example Announcement</td>
-					            <td>Example Due Date</a></td>
-					          </tr> 
-					        </tbody>
+	        				
+	        				<?php include 'pullAnnounce.php';?>
 
 					     </table>
 				      </ul>

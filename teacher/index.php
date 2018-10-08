@@ -163,16 +163,8 @@
       				<center>
       				<ul type="disc">
 	      				<table id="annouceTable" class="responsive-table highlight">
-	        				<thead>
-	          					<tr>
-	              					<th>Announcement</th>
-	              					<th>Announcement Date</th>
-	          					</tr>
-	        				</thead>
-
-	        				<tbody>
-					          <?php include '..\student\pullFromDb.php';?>
-					        </tbody>
+	        				
+					          
 
 					     </table>
 				      </ul>
