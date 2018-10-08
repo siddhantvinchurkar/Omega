@@ -114,9 +114,9 @@
     	<div class="user-view"><div class="background">
     		<img src="../images/list.jpg">
       	</div>
-      		<a href="#user"><img id="dp" class="circle" src="../images/icons/72.png"></a>
-      		<a href="#name"><span id="name" class="white-text name">Nikhil Sujith</span></a>
-      		<a href="#email"><span id="email" class="white-text email">nik98hil@gmail.com</span></a>
+      		<a href="#user"><img id="snDP" class="circle" src="../images/icons/72.png"></a>
+      		<a href="#name"><span id="snName" class="white-text name">Nikhil Sujith</span></a>
+      		<a href="#regno"><span id="snID" class="white-text email">nik98hil@gmail.com</span></a>
     	</div>
     </li>
     	<li><a class="modal-trigger" href="#joinClassModal"><i class="material-icons">school</i>Join New Class</a></li>
@@ -130,16 +130,16 @@
 		<div class="row">
 
 			<!--Card 1-->
-			<a href="../studentAssign/">
+			<a href="#" onclick="subjectOpen()">
 				<div class="col s6">
 					<div class="card">
 						<div class="card-image"> 
 							<img src="../images/list.jpg">
-							<span id="subjectName" class="card-title"> Networks </span>
+							<span id="subjectName" class="card-title">Networks</span>
 						</div>
 						<div class="card-content">			
 							<div class="collection">
-								<a href="#!" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a>
+								<a href="#" onclick="subjectOpen()" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a>
 								
 								<a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a>
 
@@ -302,6 +302,16 @@
 					},0);
 			</script>
 
+			<!--Go to StudentAssign-->
+			<script>
+			function subjectOpen(){
+				var subjName = document.getElementById("subjectName").innerHTML;
+				var teachID = document.getElementById("snID").innerHTML;
+				window.location.href = "../studentAssign/index.php?teacher=" + teachID + "&subname=" + subjName;
+			}
+
+		</script>
+
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
 			<script type="text/javascript">
 				// Initialize Firebase
@@ -328,7 +338,9 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("dp").src = JSON.parse(data).users[0].photo;
+				document.getElementById("snDP").src = JSON.parse(data).users[1].photo;
+				document.getElementById("snName").innerHTML = JSON.parse(data).users[1].fn;
+				document.getElementById("snID").innerHTML = JSON.parse(data).users[1].rno;
 			}
 		window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
