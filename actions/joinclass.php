@@ -27,8 +27,7 @@
 
 	$result = $conn->query($mainsql);
 
-	if($result->num_rows > 0) { echo "Done!";}
-	else {echo "Not Done!";}
+	echo '1';
 
 	// Close connection to the database
 
