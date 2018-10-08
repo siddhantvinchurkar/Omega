@@ -20,11 +20,12 @@
 
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
 	$result = $conn->query($checksql);
+	$mainsql = "stuff";
 	while ($row = $result->fetch_assoc()) {
-	    	//if($conn->query("INSERT INTO users(classes) VALUES(".$row['classes'].$_GET['subcode']."*)")) echo "Done!";
-		//else echo "Not done!";
-		echo $row["eml"];
+		$mainsql = "INSERT INTO users(classes) VALUES(".$row['classes'].$_GET['subcode']."*)";
 	}
+
+	echo $mainsql;
 
 	// Close connection to the database
 
