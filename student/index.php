@@ -182,90 +182,6 @@
     </div>
   </div>
 
-  <!-- Announcement modal -->
-  <div id="announceModal" class="modal">
-    <div class="modal-content">
-    	<img src="../images/icons/192.png" class="center2"/>
-      <h4>Announcements</h4>
-      <center>
-      <ul type="disc">
-      	<php include 'pullFromDb.php'; ?>
-      </ul>
-  </center>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-  <!-- end of announcement modal-->
-
-   <!--Notes Side Navigation Bar-->
-   <ul id="notes-nav" class="sidenav">
-   	<div>
-    		<table class="responsive-table highlight"> 
-	        <thead>
-	          <tr>
-	              <th>Lecture Notes</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	            <td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>	        
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>	            
-	          </tr>
-	        </tbody>
-	     </table>
-
-	     <table class="responsive-table highlight"> 
-	        <table class="responsive-table highlight"> 
-	        <thead>
-	          <tr>
-	              <th>Reference</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>
-	          </tr>
-	        </tbody>
-	     </table>
-
-	     <table class="responsive-table highlight" id="peer"> 
-	        <thead>
-	          <tr>
-	              <th>Peer Notes</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          
-	        </tbody>
-	     </table>
-	</div>
-  </ul>
-  <!-- end Note Side Nav Bar-->
-
-
 </main>
 		
 <!--Footer-->
@@ -337,8 +253,8 @@
 			</script>
 		</main>
 
-	<script>
-		function getHttpAsync(link, callback){
+		<script>
+			function getHttpAsync(link, callback){
 				var xmlHttp = new XMLHttpRequest();
 				xmlHttp.onreadystatechange = function(){ 
 					if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -356,14 +272,14 @@
 				if(data == "1") console.log("Added New Class!");
 				else console.log("failed!");
 			}
-		window.onload = function(){
+			window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
 				for(var m=0; m<subArray.length; m++)
 				document.getElementById("subCards").innerHTML += '<a href="#"><div class="col s6"><div class="card"><div class="card-image"><img src="../images/list.jpg"><span id="subjectName" class="card-title" onclick="subjectOpen(this)">'+subArray[m]+'</span></div><div class="card-content"><div class="collection"><a href="#" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a><a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a><a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">5</span>Annoucements</a></div></div></div></div></a>';
 				document.getElementById("joinNewClassButton").onclick = function(){
 					<?php echo 'getHttpAsync("../actions/joinclass.php?eml='.$_GET['eml'].'&subcode=" + document.getElementById("newClass").value, results2);'; ?>
 				}
-		}
+			}
 	</script>
 
 	</body>
