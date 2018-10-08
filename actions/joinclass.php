@@ -21,7 +21,8 @@
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
 
 	while ($row = $conn->query($checksql)->fetch_assoc()) {
-	    	$conn->query("INSERT INTO users(classes) VALUES(".$row['classes'].$_GET['subcode']."*)");
+	    	if($conn->query("INSERT INTO users(classes) VALUES(".$row['classes'].$_GET['subcode']."*)")) echo "Done!";
+		else echo "Not done!";
 	}
 
 	// Close connection to the database
