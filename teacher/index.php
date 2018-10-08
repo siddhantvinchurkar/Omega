@@ -140,7 +140,8 @@
 	      					<h4>Subject Modal</h4>
 	      					<p><b>Enter Subject Name:</b> 	<input type="text" size="20" name="subName"/></p>
 	      					<p><b>Enter Subject ID:</b> 	<input type="text" size="10" id="newClass" name="subID"/></p>
-	      					<p><b>Your ID is:</b>			<input type="text" name="teacherID" id="tID" value="sth" readonly/></p>
+	      					<p><b>Your ID is:</b>			<input type="text" name="teacherID" id="tID" value="sth" readonly/>
+	      						<input type="hidden" id="tEml" name="infoEmail"/></p>
 	    				</div>
 	    				<div class="modal-footer">
 	      					<input id="joinNewClassButton" type="submit" class="modal-close waves-effect btn-flat btnptr" value="Create Subject"/>
@@ -247,6 +248,7 @@
 				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
 				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
 				document.getElementById("tID").value = JSON.parse(data).users[3].rno;
+				document.getElementById("tEml").value = JSON.parse(data).users[3].eml;
 				document.getElementById("infoEditFn").value = JSON.parse(data).users[3].fn;
 				document.getElementById("infoEditRno").value = JSON.parse(data).users[3].rno;
 				document.getElementById("infoEditEml").value = JSON.parse(data).users[3].eml;
