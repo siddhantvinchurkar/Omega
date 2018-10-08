@@ -7,7 +7,7 @@ if(!$conn)
 	}
 
 $subjectN = $_GET["subname"];
-$teachID = $_GET["teacher"];
+$stuID = $_GET["student"];
 $sql = "SELECT * FROM announce WHERE subject = '$subjectN'"; 
 $retsub = mysqli_query($conn, $sql); 
 $ncount = mysqli_num_rows($retsub); 

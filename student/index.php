@@ -306,8 +306,8 @@
 			<script>
 			function subjectOpen(){
 				var subjName = document.getElementById("subjectName").innerHTML;
-				var teachID = document.getElementById("snID").innerHTML;
-				window.location.href = "../studentAssign/index.php?teacher=" + teachID + "&subname=" + subjName;
+				var studID = document.getElementById("snID").innerHTML;
+				window.location.href = "../studentAssign/index.php?student=" + studID + "&subname=" + subjName;
 			}
 
 		</script>
