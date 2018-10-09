@@ -12,6 +12,20 @@
 		die("Connection failed: " . $conn->connect_error);
 	}
 
+	// SQL commands
+	$checksql = "SELECT * FROM AssignmentTable WHERE subject='".$_GET['subname']."'";
+	$result = $conn->query($checksql);
+	echo '<script type="text/javascript">var assignArray = [];var assign2Array = [];</script>';
+	$ncount = mysqli_num_rows($result); 
+	if($ncount > 0)
+	{  $n = 0;
+		while($row = mysqli_fetch_assoc($result))
+		{ 
+			  echo '<script type="text/javascript">assignArray['.$n.'] = '.$row["topic"].';assign2Array['.$n.'] = '.$row["description"].';</script>';
+			  $n += 1;
+		} //end of while  
+	}
+
 	//get user details from users table using email in url
 	$userDet = "SELECT * FROM users WHERE rno='".$_GET['teacher']."'";
 	$userRet = mysqli_query($conn, $userDet);
@@ -189,21 +203,11 @@
   			</ul>
 
   
- 			<div class="row">
+ 			<div class="row" id="assignCards">
 			<!-- Card 1-->
-    			<div class="col s12 m4">
-      				<div class="card blue-grey darken-1">
-        				<div id="assignTitle" class="card-title white-text">
-          					Assignment Topic
-        				</div>
-        				<div class="card-content blue-grey darken-2 white-text">
-        					<p id="assignQues">THE QUESTION HERE</p>
-        					<a class="waves-effect waves-light btn right" href="assignmentView.php"><i class="material-icons right">list</i>View</a>
-        				</div>
-        				
-      				</div>
-    			</div>
+    			
  			<!-- End of Card  -->
+ 			</div>
 
  			<!--New Assignment Modal-->
  			<div id="assignModal" class="modal">
@@ -350,6 +354,13 @@
 				document.getElementById("snDP").src = userDetail[0];
 				document.getElementById("snName").innerHTML = userDetail[1];
 				document.getElementById("snID").innerHTML = userDetail[2];
+			</script>
+
+			<script>
+				window.onload = function(){
+					for(var m=0; m<assignArray.length; m++)
+				document.getElementById("subCards").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div id="assignTitle" class="card-title white-text">'+assignArray[m]+'</div><div class="card-content blue-grey darken-2 white-text"><p id="assignQues">'+assign2Array[m]+'</p><a class="waves-effect waves-light btn right" href="assignmentView.php"><i class="material-icons right">list</i>View</a></div></div></div>';
+				}
 			</script>
 
 
