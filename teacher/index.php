@@ -32,9 +32,9 @@
 	$userIDQ = "SELECT rno FROM users WHERE eml='".$_GET['eml']."'";
 	$userEml = $_GET['eml'];
 
-	$userDP = mysqli_query($conn, $userDPQ);
-	$userFN = mysqli_query($conn, $userFNQ);
-	$userID = mysqli_query($conn, $userIDQ);
+	//$userDP = mysqli_query($conn, $userDPQ);
+	//$userFN = mysqli_query($conn, $userFNQ);
+	//$userID = mysqli_query($conn, $userIDQ);
 
 	echo '<script type="text/javascript">var userDetail = ["'.$userDP.'","'.$userFN.'","'.$userID.'","'.$userEml.'"]; </script>';
 	// Close connection to the database

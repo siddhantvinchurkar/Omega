@@ -116,14 +116,15 @@
 						<li>
 	<a href="../student/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
 						</li>
+						<li>
+							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i data-target="notes-nav" class="tiny material-icons icon-white sidenav-trigger">library_books</i></a>
+						</li>
 
 						<li>
 							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements" ><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
 
-						<li>
-							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i data-target="notes-nav" class="tiny material-icons icon-white sidenav-trigger">library_books</i></a>
-						</li>
+						
 					</ul>
 				</div>
 			</nav>
@@ -240,7 +241,7 @@
   </table>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+      <a  class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
   <!-- end of announcement modal-->

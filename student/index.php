@@ -178,7 +178,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a id="joinNewClassButton" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <a id="joinNewClassButton" href="" class="modal-close waves-effect waves-green btn-flat">Submit</a>
     </div>
   </div>
 
