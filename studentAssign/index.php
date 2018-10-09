@@ -201,7 +201,7 @@
 					</div>
 				</ul>
 				<!-- end Note Side Nav Bar-->
-				<div class="row" id="assignMentsContainer"></div>
+				<div class="row" id="assignmentsContainer"></div>
 				<!-- Upload assignmet Modal Structure -->
 				<div id="modal2" class="modal">
 					<div class="modal-content">
