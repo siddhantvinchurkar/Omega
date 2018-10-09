@@ -110,6 +110,9 @@
 				width: 300px;
 				top: 65px;
 			}
+			.cursorptr{
+				cursor: pointer;
+			}
 		}
 		</style>
 		<title>Omega</title>
