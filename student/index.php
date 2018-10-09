@@ -33,7 +33,7 @@
 	$userRet = mysqli_query($conn, $userDet);
 	$userrow = mysqli_fetch_assoc($userRet);
 	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$_GET['eml'].'"]; </script>';
-	
+
 	// Close connection to the database
 	$conn->close();
 ?>
@@ -188,7 +188,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a id="joinNewClassButton" href="" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <a id="joinNewClassButton" href="https://omegaclassrooms.ga/student/?eml=nik98hil@gmail.com" class="modal-close waves-effect waves-green btn-flat">Submit</a>
     </div>
   </div>
 
