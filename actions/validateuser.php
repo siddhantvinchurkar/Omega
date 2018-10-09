@@ -1,5 +1,5 @@
 <?php
-	// Server Credentialssss
+	// Server Credentials
 
 	$servername = "localhost";
 	$username = "omega";
@@ -21,9 +21,7 @@
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
 	$createusersql = "INSERT INTO users(fn, ln, eml, photo) VALUES('".$_GET['fn']."', '".$_GET['ln']."', '".$_GET['eml']."', '".$_GET['photourl']."')";
 
-	$result = $conn->query($checksql);
-
-	if ($result->num_rows > 0) {
+	if ($conn->query($checksql)->fetch_assoc()) {
 	    	echo "1";
 	}
 	else {
