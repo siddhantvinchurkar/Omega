@@ -191,7 +191,7 @@
       					<a href="#email"><span id="snEmail" class="white-text email">teacherSJC@gmail.com</span></a>
     				</div>
     			</li>
-    				<li><a id="viewStud" href="studentsView.php" class="waves-effect"><i class="material-icons">group</i>View Students List</a></li>
+    				<li><a id="viewStud" href="#studentsView" class="waves-effect"><i class="material-icons">group</i>View Students List</a></li>
     				<li><div class="divider"></div></li>
     				<li><a id="addAssign" href="#assignModal" class="waves-effect modal-trigger"><i class="material-icons">assignment</i>Add New Assignment</a></li>
     				<li><a id="addNotes" href="#notesModal" class="waves-effect modal-trigger"><i class="material-icons">note_add</i>Add Notes</a></li>
@@ -208,6 +208,22 @@
     			
  			<!-- End of Card  -->
  			</div>
+
+ 			<!--Classmates modal -->
+			  <div id="studentsView" class="modal">
+			    <div class="modal-content">
+			    	<img src="../images/icons/192.png" class="center2"/>
+			      <h5>List Of Students</h5>
+			       <div class="col s6">
+			          <table>
+			          	<?php include 'pullStudentsList.php';?>
+			          </table>
+			       </div>
+			    </div>
+			    <div class="modal-footer">
+			      <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+			    </div>
+			  </div>
 
  			<!--New Assignment Modal-->
  			<div id="assignModal" class="modal">
