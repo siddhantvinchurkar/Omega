@@ -1,5 +1,5 @@
 <?php
-	// Server Credentials
+	// Server Credentialssss
 
 	$servername = "localhost";
 	$username = "omega";
