@@ -6,16 +6,10 @@
 	$dbname = "omega";
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> d0c4b2c67817edf59ff9443d35b33e58a86a71b4
 	// Check connection
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
-<<<<<<< HEAD
 	// SQL commands
 	$checksql = "SELECT * FROM AssignmentTable WHERE subject='".$_GET['subname']."'";
 	$result = $conn->query($checksql);
@@ -27,8 +21,6 @@
 	// Close connection to the database
 	$conn->close();
 	?>
-=======
-
 	//get user details from users table using email in url
 	$userDet = "SELECT * FROM users WHERE rno='".$_GET['student']."'";
 	$userRet = mysqli_query($conn, $userDet);
@@ -38,7 +30,6 @@
 	// Close connection to the database
 	$conn->close();
 ?>
->>>>>>> d0c4b2c67817edf59ff9443d35b33e58a86a71b4
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -150,11 +141,8 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-<<<<<<< HEAD
 							<a href="../student/index.php" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
-=======
 							<?php echo '<a href="../teacher/?eml='.$userrow["eml"].'" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>'; ?>
->>>>>>> d0c4b2c67817edf59ff9443d35b33e58a86a71b4
 						</li>
 						<li>
 							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i data-target="notes-nav" class="tiny material-icons icon-white sidenav-trigger">library_books</i></a>
@@ -178,7 +166,6 @@
 			</div>
 			<!--Contents-->
 			<div id="pageContents" style="display:block;">
-<<<<<<< HEAD
 			<img src="../images/icons/512.png" class="center2" />
 			<!-- Sliding Navigation Bars -->
 			<ul id="menu-nav" class="sidenav">
@@ -190,7 +177,6 @@
 						<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
 						<a href="#name"><span class="white-text name">Nikhil Sujith</span></a>
 						<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
-=======
 				<img src="../images/icons/512.png" class="center2" />
 
 <!-- Sliding Navigation Bars -->
@@ -324,7 +310,6 @@
 				<div class="footer-copyright">
 					<div class="container" id="footerText">
 						<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
->>>>>>> d0c4b2c67817edf59ff9443d35b33e58a86a71b4
 					</div>
 				</li>
 				<li><a class=" modal-trigger" href="#modal1"><i class="material-icons">school</i>Join New Class</a></li>
@@ -342,7 +327,6 @@
 						<?php include 'pullNotes.php'?>;
 					</table>
 				</div>
-<<<<<<< HEAD
 			</ul>
 			<!-- end Note Side Nav Bar-->
 			<div class="row" id="assignmentsContainer">
@@ -453,7 +437,6 @@
 				for(var b=0; b<assignmentTopicArray.length; b++)
 					document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a></div></div></div>';
 			}
-=======
 			</footer>
 
 			<!--JavaScript at end of body for optimized loading-->
@@ -503,8 +486,6 @@
 				alert("Please refresh the page again to view your newly joined class");
 			}
 			</script>
-
->>>>>>> d0c4b2c67817edf59ff9443d35b33e58a86a71b4
 
 		</script>
 		</main>
