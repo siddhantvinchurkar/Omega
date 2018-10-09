@@ -10,10 +10,14 @@ $retsub = mysqli_query($conn, $sql);
 $ncount = mysqli_num_rows($retsub); 
 if($ncount > 0)
 {  
-	
+	echo "<tr><th>First Name</th></tr>
+			<tr><th><Last Name</th></tr>
+				<tr><th>Email</th></tr>"
 	while($row = mysqli_fetch_assoc($retsub))
 	{ 
-		echo "<tr><th>{$row['fn']}</tr></th>";  
+		echo "<tr><td>{$row['fn']}</tr></td>
+				<tr><td>{$row['ln']}</tr></td>
+					<tr><td>{$row['eml']}</tr></td>";  
 	} //end of while  
 }
 else
