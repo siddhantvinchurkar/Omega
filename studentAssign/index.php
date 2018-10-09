@@ -249,7 +249,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <button id="joinNewClassButton" href="#" onclick="plsrefresh()" class="modal-close waves-effect waves-green btn-flat">Submit</button>
     </div>
   </div>
 
@@ -342,6 +342,12 @@
 				    var elems = document.querySelectorAll('.tooltipped');
 				    var instances = M.Tooltip.init(elems);
 				  });
+			</script>
+
+			<script>
+				function plsrefresh(){
+				alert("Please refresh the page again to view your newly joined class");
+			}
 			</script>
 
 

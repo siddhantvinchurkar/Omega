@@ -188,7 +188,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a id="joinNewClassButton" href="#" onclick="plsrefresh()" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <button id="joinNewClassButton" href="#" onclick="plsrefresh()" class="modal-close waves-effect waves-green btn-flat">Submit</button>
     </div>
   </div>
 
