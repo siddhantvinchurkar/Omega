@@ -15,15 +15,10 @@
 	// SQL commands
 	$checksql = "SELECT * FROM AssignmentTable WHERE subject='".$_GET['subname']."'";
 	$result = $conn->query($checksql);
-	echo '<script type="text/javascript">var topicArray = [];var descArray = [];</script>';
-	$ncount = mysqli_num_rows($result); 
-	if($ncount > 0)
-	{  $n = 0;
-		while($row = mysqli_fetch_assoc($result))
-		{ 
-			  echo '<script type="text/javascript">topicArray['.$n.'] = '.$row["topic"].';descArray['.$n.'] = '.$row["description"].';</script>';
-			  $n += 1;
-		} //end of while  
+	echo '<script type="text/javascript">var assignmentTopicArray = []; var assignmentDescriptionArray = [];</script>';
+	while ($row = $result->fetch_assoc()) {
+	echo '<script type="text/javascript">assignmentTopicArray.push("'.$row['topic'].'");</script>';
+	echo '<script type="text/javascript">assignmentDescriptionArray.push("'.$row['description'].'");</script>';
 	}
 
 	//get user details from users table using email in url
@@ -203,11 +198,9 @@
   			</ul>
 
   
- 			<div class="row" id="assignCards">
-			<!-- Card 1-->
-    			
- 			<!-- End of Card  -->
- 			</div>
+ 			<div class="row" id="assignmentsContainer">
+				<!-- Cards go here-->
+			</div>
 
  			<!--Classmates modal -->
 			  <div id="studentsView" class="modal">
@@ -375,8 +368,7 @@
 
 			<script>
 				window.onload = function(){
-					for(var m=0; m<topicArray.length; m++)
-				document.getElementById("subCards").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div id="assignTitle" class="card-title white-text">'+topicArray[m]+'</div><div class="card-content blue-grey darken-2 white-text"><p id="assignQues">'+descArray[m]+'</p><a class="waves-effect waves-light btn right" href="assignmentView.php"><i class="material-icons right">list</i>View</a></div></div></div>';
+					for(var b=0; b<assignmentTopicArray.length; b++) document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a></div></div></div>';
 				}
 			</script>
 
