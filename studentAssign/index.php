@@ -160,6 +160,7 @@
 			<!--Contents-->
 			<div id="pageContents" style="display:block;">
 			<img src="../images/icons/512.png" class="center2" />
+			<div class="row" id="assignmentsContainer"></div>
 			<!-- Sliding Navigation Bars -->
 			<ul id="menu-nav" class="sidenav">
 			<li>
@@ -199,7 +200,6 @@
 					</div>
 				</ul>
 				<!-- end Note Side Nav Bar-->
-				<div class="row" id="assignmentsContainer"></div>
 				<!-- Upload assignmet Modal Structure -->
 				<div id="modal2" class="modal">
 					<div class="modal-content">
