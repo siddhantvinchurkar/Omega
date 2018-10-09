@@ -27,16 +27,12 @@
 			echo '<script type="text/javascript">subArray.push("'.$row["ClassName"].'");</script>';
 		}
 	}
-	$userDPQ = "SELECT photo FROM users WHERE eml='".$_GET['eml']."'";
-	$userFNQ = "SELECT fn FROM users WHERE eml='".$_GET['eml']."'";
-	$userIDQ = "SELECT rno FROM users WHERE eml='".$_GET['eml']."'";
-	$userEml = $_GET['eml'];
+	$userDet = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
+	$userRet = mysqli_query($conn, $userDet);
+	$userrow = mysqli_fetch_assoc($retsub);
 
-	//$userDP = mysqli_query($conn, $userDPQ);
-	//$userFN = mysqli_query($conn, $userFNQ);
-	//$userID = mysqli_query($conn, $userIDQ);
 
-	echo '<script type="text/javascript">var userDetail = ["'.$userDP.'","'.$userFN.'","'.$userID.'","'.$userEml.'"]; </script>';
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$userrow["eml"].'"]; </script>';
 	// Close connection to the database
 	$conn->close();
 ?>
