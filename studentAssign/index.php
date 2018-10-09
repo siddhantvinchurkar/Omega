@@ -1,4 +1,26 @@
-<!DOCTYPE html>
+<?php
+	// Server Credentials
+	$servername = "localhost";
+	$username = "omega";
+	$password = "uglyhorse3449";
+	$dbname = "omega";
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	//get user details from users table using email in url
+	$userDet = "SELECT * FROM users WHERE rno='".$_GET['student']."'";
+	$userRet = mysqli_query($conn, $userDet);
+	$userrow = mysqli_fetch_assoc($userRet);
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$userrow["eml"].'"]; </script>';
+	
+	// Close connection to the database
+	$conn->close();
+?><!DOCTYPE html>
 <html lang="en">
 	<head>
 
@@ -151,9 +173,9 @@
       			<div class="background">
         			<img src="../images/list.jpg">
       			</div>
-      		<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-      		<a href="#name"><span class="white-text name">Nikhil Sujith</span></a>
-      		<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
+      		<a ><img id="snDP" class="circle" src="../images/icons/72.png"></a>
+      		<a ><span id="snName" class="white-text name">Student Name</span></a>
+    		<a ><span id="snID" class="white-text email">Student ID</span></a>
     		</div>
     	</li>
     	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
@@ -288,6 +310,13 @@
 			    var elems = document.querySelectorAll('.sidenav');
 			    var instances = M.Sidenav.init(elems, 'edge');
   				});
+			</script>
+
+			<script>
+				//put user details in the side nav
+				document.getElementById("snDP").src = userDetail[0];
+				document.getElementById("snName").innerHTML = userDetail[1];
+				document.getElementById("snID").innerHTML = userDetail[2];
 			</script>
 
 			<!-- Modal JS-->
