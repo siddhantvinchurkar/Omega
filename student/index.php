@@ -162,7 +162,7 @@
     	</div>
     </li>
     	<li><a class="modal-trigger" href="#joinClassModal"><i class="material-icons">school</i>Join New Class</a></li>
-    	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
+    	<li><a class="modal-trigger" href="#classmates"><i class="material-icons">group</i>Classmates</a></li>
     	<li><div class="divider"></div></li>
     	<li><a class="subheader">Subheader</a></li>
     	<li><a class="waves-effect" href="#!"><i class="material-icons">clear</i>Sign Out</a></li>
@@ -191,7 +191,24 @@
       <button id="joinNewClassButton" href="#" onclick="plsrefresh()" class="modal-close waves-effect waves-green btn-flat">Submit</button>
     </div>
   </div>
+  <!--end join new class-->
 
+  <!--Classmates modal -->
+  <div id="classmates" class="modal">
+    <div class="modal-content">
+    	<img src="../images/icons/192.png" class="center2"/>
+      <h5>Join New Class</h5>
+       <div class="input-field col s6">
+          <table>
+          	<?php include 'pullClassmates.php';?>
+          </table>
+       </div>
+    </div>
+    <div class="modal-footer">
+      <button id="joinNewClassButton" href="#" class="modal-close waves-effect waves-green btn-flat">Close</button>
+    </div>
+  </div>
+  <!--end classmates modal-->
 </main>
 		
 <!--Footer-->
