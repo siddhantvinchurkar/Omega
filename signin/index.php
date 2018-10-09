@@ -63,9 +63,6 @@
 				<div class="nav-wrapper">
 					<img src="../images/icons/72.png" style="height:95%;" />
 					<a href="" class="brand-logo">Omega</a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a href="https://siddhantvinchurkar.me/" target="_blank" title="Siddhant Vinchurkar">Siddhant Vinchurkar</a></li>
-					</ul>
 				</div>
 			</nav>
 		</header>
