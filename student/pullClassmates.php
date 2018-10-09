@@ -12,7 +12,7 @@ if($ncount > 0)
 {  
 	echo "<tr><th>First Name</th></tr>
 			<tr><th><Last Name</th></tr>
-				<tr><th>Email</th></tr>"
+				<tr><th>Email</th></tr>";
 	while($row = mysqli_fetch_assoc($retsub))
 	{ 
 		echo "<tr><td>{$row['fn']}</tr></td>
