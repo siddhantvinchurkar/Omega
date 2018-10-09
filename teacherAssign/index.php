@@ -1,3 +1,40 @@
+<?php
+	// Server Credentials
+	$servername = "localhost";
+	$username = "omega";
+	$password = "uglyhorse3449";
+	$dbname = "omega";
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	// SQL commands
+	$checksql = "SELECT * FROM AssignmentTable WHERE subject='".$_GET['subname']."'";
+	$result = $conn->query($checksql);
+	echo '<script type="text/javascript">var topicArray = [];var descArray = [];</script>';
+	$ncount = mysqli_num_rows($result); 
+	if($ncount > 0)
+	{  $n = 0;
+		while($row = mysqli_fetch_assoc($result))
+		{ 
+			  echo '<script type="text/javascript">topicArray['.$n.'] = '.$row["topic"].';descArray['.$n.'] = '.$row["description"].';</script>';
+			  $n += 1;
+		} //end of while  
+	}
+
+	//get user details from users table using email in url
+	$userDet = "SELECT * FROM users WHERE rno='".$_GET['teacher']."'";
+	$userRet = mysqli_query($conn, $userDet);
+	$userrow = mysqli_fetch_assoc($userRet);
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$userrow["eml"].'"]; </script>';
+	
+	// Close connection to the database
+	$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -115,7 +152,7 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="../teacher/" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
+							<?php echo '<a href="../teacher/?eml='.$userrow["eml"].'" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>'; ?>
 						</li>
 						<li>
 							<a class="btn-flat tooltipped modal-trigger" href="#notesList" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
@@ -154,7 +191,7 @@
       					<a href="#email"><span id="snEmail" class="white-text email">teacherSJC@gmail.com</span></a>
     				</div>
     			</li>
-    				<li><a id="viewStud" href="studentsView.php" class="waves-effect"><i class="material-icons">group</i>View Students List</a></li>
+    				<li><a id="viewStud" href="#studentsView" class="waves-effect"><i class="material-icons">group</i>View Students List</a></li>
     				<li><div class="divider"></div></li>
     				<li><a id="addAssign" href="#assignModal" class="waves-effect modal-trigger"><i class="material-icons">assignment</i>Add New Assignment</a></li>
     				<li><a id="addNotes" href="#notesModal" class="waves-effect modal-trigger"><i class="material-icons">note_add</i>Add Notes</a></li>
@@ -166,32 +203,40 @@
   			</ul>
 
   
- 			<div class="row">
+ 			<div class="row" id="assignCards">
 			<!-- Card 1-->
-    			<div class="col s12 m4">
-      				<div class="card blue-grey darken-1">
-        				<div id="assignTitle" class="card-title white-text">
-          					Assignment Topic
-        				</div>
-        				<div class="card-content blue-grey darken-2 white-text">
-        					<p id="assignQues">THE QUESTION HERE</p>
-        					<a class="waves-effect waves-light btn right" href="assignmentView.php"><i class="material-icons right">list</i>View</a>
-        				</div>
-        				
-      				</div>
-    			</div>
+    			
  			<!-- End of Card  -->
+ 			</div>
+
+ 			<!--Classmates modal -->
+			  <div id="studentsView" class="modal">
+			    <div class="modal-content">
+			    	<img src="../images/icons/192.png" class="center2"/>
+			      <h5>List Of Students</h5>
+			       <div class="col s6">
+			          <table>
+			          	<?php include 'pullStudentsList.php';?>
+			          </table>
+			       </div>
+			    </div>
+			    <div class="modal-footer">
+			      <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+			    </div>
+			  </div>
 
  			<!--New Assignment Modal-->
  			<div id="assignModal" class="modal">
-				<div class="modal-content">
-  					<h4>New Assignment</h4>
-  					<p><b>Enter Assignment Topic</b><input type="text" size="10" /></p>
-  					<p><b>Enter Assignment Question</b><input type="text" size="10" /></p>
-				</div>
-				<div class="modal-footer">
-  					<a href="#" class="modal-close waves-effect btn-flat">Add Assignment</a>
-				</div>
+				<?php echo '<form action="insertAssignment.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
+					<div class="modal-content">
+	  					<h4>New Assignment</h4>
+	  					<p><b>Enter Assignment Topic</b><input type="text" size="20"  name="topassign" /></p>
+	  					<p><b>Enter Assignment Description</b><input type="text" size="50"  name="desassign" /></p>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Add Assignment"/>
+					</div>
+				</form>
 			</div>
 
 			<!--New Announcement modal -->
@@ -199,7 +244,7 @@
 				<?php echo '<form action="insertAnnounce.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
 					<div class="modal-content">
 	  					<h4>New Announcement</h4>
-	  					<p><b>Enter Announcement</b><input type="text" size="10"  name="annote" /></p>
+	  					<p><b>Enter Announcement</b><input type="text" size="99"  name="annote" /></p>
 					</div>
 					<div class="modal-footer">
 	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Add Announcement"/>
@@ -209,22 +254,17 @@
 
 			<!--Add Notes modal -->
 			<div id="notesModal" class="modal">
-				<div class="modal-content">
-  					<h4>Upload Notes</h4>
-  					<p><b>Enter Notes Title</b><input type="text" size="10" /></p>
-        			<div class="file-field input-field">
-			      		<div class="btn">
-			        		<span><i class="material-icons">attach_file</i></span>
-			       			 <input type="file">
-			      		</div>
-			      		<div class="file-path-wrapper">
-			        		<input class="file-path validate" type="text" placeholder="Attach File">
-			      		</div>
-	    			</div>
-      			</div>
-				<div class="modal-footer">
-  					<a href="#" class="modal-close waves-effect btn-flat">Add Notes</a>
-				</div>
+				<?php echo '<form action="insertNotes.php?sname='.$_GET['subname'].'&techer='.$_GET['teacher'].'" method="post">'; ?>
+					<div class="modal-content">
+	  					<h4>Upload Notes</h4>
+	  					<p><b>Enter Notes Topic</b><input type="text" size="50" name="topnotes"></p>
+	  					<p>Upload the notes in your google drive and paste the shared link below.</p>
+	  					<p><b>Enter Notes Link</b><input type="text" size="99"  name="annote" /></p>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Upload Notes"/>
+					</div>
+				</form>
 			</div>
 
 			<!--List of Announcement modal -->
@@ -239,7 +279,7 @@
 					     </table>
     			</div>
     			<div class="modal-footer">
-      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+      				<a class="modal-close waves-effect btn-flat">Close</a>
     			</div>
   			</div>
   			
@@ -251,21 +291,8 @@
       				<center>
       				<ul type="disc">
 	      				<table id="notesTable" class="responsive-table highlight">
-	        				<thead>
-	          					<tr>
-	              					<th width="50%">Notes</th>
-	              					<th width="40%">File</th>
-	              					<th width="10%"> </th>
-	          					</tr>
-	        				</thead>
-
-	        				<tbody>
-					          <tr>
-					            <td>Example Notes Title</td>
-					            <td>Example File</td>
-					            <td><a class="waves-effect btn-flat" href="downloadfilepath"><i class="material-icons">vertical_align_bottom</i></a></td>
-					          </tr> 
-					        </tbody>
+	        				
+	        				<?php include 'pullNotes.php'; ?>
 
 					     </table>
 				      </ul>
@@ -339,25 +366,19 @@
 			</script>
 
 			<script>
-			function getHttpAsync(link, callback){
-				var xmlHttp = new XMLHttpRequest();
-				xmlHttp.onreadystatechange = function(){ 
-					if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
-					callback(xmlHttp.responseText);
-				}
-				xmlHttp.open("GET", link, true);
-				xmlHttp.send(null);
-			}
-			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[3].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
-				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
+				//put user details in the side nav and other areas
+				document.getElementById("snDP").src = userDetail[0];
+				document.getElementById("snName").innerHTML = userDetail[1];
+				document.getElementById("snID").innerHTML = userDetail[2];
 				
-			}
-		window.onload = function(){
-				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
-			}
-		</script>
+			</script>
+
+			<script>
+				window.onload = function(){
+					for(var m=0; m<topicArray.length; m++)
+				document.getElementById("subCards").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div id="assignTitle" class="card-title white-text">'+topicArray[m]+'</div><div class="card-content blue-grey darken-2 white-text"><p id="assignQues">'+descArray[m]+'</p><a class="waves-effect waves-light btn right" href="assignmentView.php"><i class="material-icons right">list</i>View</a></div></div></div>';
+				}
+			</script>
 
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->

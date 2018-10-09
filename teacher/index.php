@@ -1,6 +1,46 @@
+<?php
+	// Server Credentials
+	$servername = "localhost";
+	$username = "omega";
+	$password = "uglyhorse3449";
+	$dbname = "omega";
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	// SQL commands
+	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
+	$result = $conn->query($checksql);
+	$subcodes = "stuff";
+	echo '<script type="text/javascript">var subArray = [];</script>';
+	while ($row = $result->fetch_assoc()) {
+		$subcodes = $row["classes"];
+	}
+	$subcodesArray = explode('*', $subcodes);
+	foreach($subcodesArray as $subcode){
+		$checksql = "SELECT * FROM ClassTable WHERE ClassCode='".$subcode."'";
+		$result = $conn->query($checksql);
+		while ($row = $result->fetch_assoc()) {
+			echo '<script type="text/javascript">subArray.push("'.$row["ClassName"].'");</script>';
+		}
+	}
+
+	//get user details from users table using email in url
+	$userDet = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
+	$userRet = mysqli_query($conn, $userDet);
+	$userrow = mysqli_fetch_assoc($userRet);
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$_GET['eml'].'"]; </script>';
+	
+	// Close connection to the database
+	$conn->close();
+?>
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 	<head>
+
 		<title>Omega</title>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
@@ -54,7 +94,7 @@
 			.icon-white {
 			    color: white;
 			}
-			.btnptr{
+			.cursorptr{
 				cursor: pointer;
 			}
 		</style>
@@ -106,39 +146,23 @@
 	    				<div class="modal-content">
 	      					<h4>Subject Modal</h4>
 	      					<p><b>Enter Subject Name:</b> 	<input type="text" size="20" name="subName"/></p>
-	      					<p><b>Enter Subject ID:</b> 	<input type="text" size="10" name="subID"/></p>
-	      					<p><b>Your ID is:</b>			<input type="text" name="teacherID" id="tID" value="sth" readonly/></p>
+	      					<p><b>Enter Subject ID:</b> 	<input type="text" size="10" id="newClass" name="subID"/></p>
+	      					<p><b>Your ID is:</b>			<input type="text" name="teacherID" id="tID" value="sth" readonly/>
+	      						<input type="hidden" id="tEml" name="infoEmail"/></p>
 	    				</div>
 	    				<div class="modal-footer">
-	      					<input type="submit" class="modal-close waves-effect btn-flat btnptr" value="Create Subject"/>
+	      					<input id="joinNewClassButton" type="submit" class="modal-close waves-effect btn-flat btnptr" value="Create Subject"/>
 	    				</div>
 	    			</form>
   				</div>
 
-  				<!--card container-->
+  	<!--card container-->
 	<div class="container">
-		<div class="row">
-
-			<!--Card 1-->
-				<div class="col s6">
-					<div class="card">
-						<div class="card-image"> 
-							<img src="../images/list.jpg">
-							<a href="#" onclick="subjectOpen()"><span id="subjectName" class="card-title">Geography</span></a>
-						</div>
-						<div class="card-content">			
-							<div class="collection">
-								<a href="#" onclick="subjectOpen()" class="collection-item"><span id="assignNo" class="badge">0</span>Assignments</a>
-								<a href="#notesList" class="collection-item modal-trigger"><span id="notesNo" class="badge">0</span>Notes</a>
-								<a href="#announceList" class="collection-item modal-trigger"><span id="announceNo" class="badge">0</span>Annoucements</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			<!--end of card 1-->
-
+		<div class="row" id="subCards">
+			<!--Cards Go Here-->
 		</div>
 	</div>
+	<!-- end card container-->
 </div>
 
 			<!--Edit Information Modal -->
@@ -155,58 +179,7 @@
 					</div>
 				</form>
 			</div>
-		<!--List of Announcement modal -->
-  			<div id="announceList" class="modal">
-    			<div class="modal-content">
-    				<img src="../images/icons/192.png" class="center2"/>
-      				<h4>Announcements</h4>
-      				<center>
-      				<ul type="disc">
-	      				<table id="annouceTable" class="responsive-table highlight">
-	        				
-					          
-
-					     </table>
-				      </ul>
-  					</center>
-    			</div>
-    			<div class="modal-footer">
-      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
-    			</div>
-  			</div>
-  			
-  			<!--List of Notes modal -->
-			<div id="notesList" class="modal">
-    			<div class="modal-content">
-    				<img src="../images/icons/192.png" class="center2"/>
-      				<h4>Notes List</h4>
-      				<center>
-      				<ul type="disc">
-	      				<table id="notesTable" class="responsive-table highlight">
-	        				<thead>
-	          					<tr>
-	              					<th width="50%">Notes</th>
-	              					<th width="40%">File</th>
-	              					<th width="10%"> </th>
-	          					</tr>
-	        				</thead>
-
-	        				<tbody>
-					          <tr>
-					            <td>Example Notes Title</td>
-					            <td>Example File</td>
-					            <td><a class="waves-effect btn-flat" href="downloadfilepath"><i class="material-icons">vertical_align_bottom</i></a></td>
-					          </tr> 
-					        </tbody>
-
-					     </table>
-				      </ul>
-  					</center>
-    			</div>
-    			<div class="modal-footer">
-      				<a href="#!" class="modal-close waves-effect btn-flat">Close</a>
-    			</div>
-  			</div>
+		
 
 		</main>
 		<!--Footer-->
@@ -249,9 +222,18 @@
 			
 		</script>
 
+		<!-- Modal JS-->
 		<script>
-			function subjectOpen(){
-				var subjName = document.getElementById("subjectName").innerHTML;
+				 document.addEventListener('DOMContentLoaded', function() {
+				    var elems = document.querySelectorAll('.modal');
+				    var instances = M.Modal.init(elems, 'noScrolling');
+				  });
+		</script>
+
+		<!--Go to teacherAssign-->
+		<script>
+			function subjectOpen(element){
+				var subjName = element.innerHTML;
 				var teachID = document.getElementById("snID").innerHTML;
 				window.location.href = "../teacherAssign/index.php?teacher=" + teachID + "&subname=" + subjName;
 			}
@@ -269,24 +251,28 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[3].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
-				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
-				document.getElementById("tID").value = JSON.parse(data).users[3].rno;
-				document.getElementById("infoEditFn").value = JSON.parse(data).users[3].fn;
-				document.getElementById("infoEditRno").value = JSON.parse(data).users[3].rno;
-				document.getElementById("infoEditEml").value = JSON.parse(data).users[3].eml;
+				document.getElementById("snDP").src = userDetail[0];
+				document.getElementById("snName").innerHTML = userDetail[1];
+				document.getElementById("snID").innerHTML = userDetail[2];
+				document.getElementById("tID").value = userDetail[2];
+				document.getElementById("tEml").value = userDetail[3];
+				document.getElementById("infoEditFn").value = userDetail[1];
+				document.getElementById("infoEditRno").value = userDetail[2];
+				document.getElementById("infoEditEml").value = userDetail[3];
 			}
-		window.onload = function(){
+			function results2(data){
+				if(data == "1") console.log("Added New Class!");
+				else console.log("failed!");
+			}
+			window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
+				for(var m=0; m<subArray.length; m++)
+				document.getElementById("subCards").innerHTML += '<div class="col s4"><div class="card"><div class="card-image"><img src="../images/list.jpg"></div><div class="card-content blue-grey darken-2 white-text"><span id="subjectName" class="cursorptr" onclick="subjectOpen(this)">'+subArray[m]+'</span></div></div></div>';
+				document.getElementById("joinNewClassButton").onclick = function(){
+					<?php echo 'getHttpAsync("../actions/joinclass.php?eml='.$_GET['eml'].'&subcode=" + document.getElementById("newClass").value, results2);'; ?>
+				}
 			}
 		</script>
 
-		<script>
-				 document.addEventListener('DOMContentLoaded', function() {
-				    var elems = document.querySelectorAll('.modal');
-				    var instances = M.Modal.init(elems, 'noScrolling');
-				  });
-		</script>
 	</body>
 </html>

@@ -27,6 +27,13 @@
 			echo '<script type="text/javascript">subArray.push("'.$row["ClassName"].'");</script>';
 		}
 	}
+
+	//get user details from users table using email in url
+	$userDet = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
+	$userRet = mysqli_query($conn, $userDet);
+	$userrow = mysqli_fetch_assoc($userRet);
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$_GET['eml'].'"]; </script>';
+
 	// Close connection to the database
 	$conn->close();
 ?>
@@ -110,6 +117,9 @@
 				width: 300px;
 				top: 65px;
 			}
+			.cursorptr{
+				cursor: pointer;
+			}
 		}
 		</style>
 		<title>Omega</title>
@@ -152,7 +162,7 @@
     	</div>
     </li>
     	<li><a class="modal-trigger" href="#joinClassModal"><i class="material-icons">school</i>Join New Class</a></li>
-    	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
+    	<li><a class="modal-trigger" href="#classmates"><i class="material-icons">group</i>Classmates</a></li>
     	<li><div class="divider"></div></li>
     	<li><a class="subheader">Subheader</a></li>
     	<li><a class="waves-effect" href="#!"><i class="material-icons">clear</i>Sign Out</a></li>
@@ -178,94 +188,27 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a id="joinNewClassButton" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <button id="joinNewClassButton" href="#" onclick="plsrefresh()" class="modal-close waves-effect waves-green btn-flat">Submit</button>
     </div>
   </div>
+  <!--end join new class-->
 
-  <!-- Announcement modal -->
-  <div id="announceModal" class="modal">
+  <!--Classmates modal -->
+  <div id="classmates" class="modal">
     <div class="modal-content">
     	<img src="../images/icons/192.png" class="center2"/>
-      <h4>Announcements</h4>
-      <center>
-      <ul type="disc">
-      	<php include 'pullFromDb.php'; ?>
-      </ul>
-  </center>
+      <h5><center>Classmates</center></h5>
+       <div class="input-field col s6">
+          <table>
+          	<?php include 'pullClassmates.php';?>
+          </table>
+       </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+      <button id="joinNewClassButton" href="#" class="modal-close waves-effect waves-green btn-flat">Close</button>
     </div>
   </div>
-  <!-- end of announcement modal-->
-
-   <!--Notes Side Navigation Bar-->
-   <ul id="notes-nav" class="sidenav">
-   	<div>
-    		<table class="responsive-table highlight"> 
-	        <thead>
-	          <tr>
-	              <th>Lecture Notes</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	            <td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>	        
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>	            
-	          </tr>
-	        </tbody>
-	     </table>
-
-	     <table class="responsive-table highlight"> 
-	        <table class="responsive-table highlight"> 
-	        <thead>
-	          <tr>
-	              <th>Reference</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>IP Header</td>
-	          </tr>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>R-Login</td>
-	          </tr>
-	        </tbody>
-	     </table>
-
-	     <table class="responsive-table highlight" id="peer"> 
-	        <thead>
-	          <tr>
-	              <th>Peer Notes</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	          	<td>9/9/18</td>
-	            <td>TCP/IP</td>
-	          </tr>
-	          
-	        </tbody>
-	     </table>
-	</div>
-  </ul>
-  <!-- end Note Side Nav Bar-->
-
-
+  <!--end classmates modal-->
 </main>
 		
 <!--Footer-->
@@ -320,6 +263,9 @@
 				window.location.href = "../studentAssign/index.php?student=" + studID + "&subname=" + subjName;
 			}
 
+			function plsrefresh(){
+				alert("Please refresh the page again to view your newly joined class");
+			}
 		</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
@@ -337,8 +283,8 @@
 			</script>
 		</main>
 
-	<script>
-		function getHttpAsync(link, callback){
+		<script>
+			function getHttpAsync(link, callback){
 				var xmlHttp = new XMLHttpRequest();
 				xmlHttp.onreadystatechange = function(){ 
 					if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -348,22 +294,22 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[1].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[1].fn;
-				document.getElementById("snID").innerHTML = JSON.parse(data).users[1].rno;
+				document.getElementById("snDP").src = userDetail[0];
+				document.getElementById("snName").innerHTML = userDetail[1];
+				document.getElementById("snID").innerHTML = userDetail[2];
 			}
 			function results2(data){
 				if(data == "1") console.log("Added New Class!");
 				else console.log("failed!");
 			}
-		window.onload = function(){
+			window.onload = function(){
 				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
 				for(var m=0; m<subArray.length; m++)
-				document.getElementById("subCards").innerHTML += '<a href="#"><div class="col s6"><div class="card"><div class="card-image"><img src="../images/list.jpg"><span id="subjectName" class="card-title" onclick="subjectOpen(this)">'+subArray[m]+'</span></div><div class="card-content"><div class="collection"><a href="#" class="collection-item"><span class="badge" id="assignNo">1</span>Assignments</a><a class="collection-item sidenav-trigger" data-target="notes-nav"><span id="notesNo" class="badge">4</span>Notes</i></a><a href="#announceModal" class="collection-item modal-trigger"><span id="announceNo" class="badge">5</span>Annoucements</a></div></div></div></div></a>';
+				document.getElementById("subCards").innerHTML += '<div class="col s4"><div class="card"><div class="card-image"><img src="../images/list.jpg"></div><div class="card-content blue-grey darken-2 white-text"><span id="subjectName" class="cursorptr" onclick="subjectOpen(this)">'+subArray[m]+'</span></div></div></div>';
 				document.getElementById("joinNewClassButton").onclick = function(){
 					<?php echo 'getHttpAsync("../actions/joinclass.php?eml='.$_GET['eml'].'&subcode=" + document.getElementById("newClass").value, results2);'; ?>
 				}
-		}
+			}
 	</script>
 
 	</body>
