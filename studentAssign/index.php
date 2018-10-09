@@ -156,11 +156,10 @@
       		<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
     		</div>
     	</li>
-    	<li><a class=" modal-trigger" href="#modal1"><i class="material-icons">school</i>Join New Class</a></li>
     	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
     	<li><div class="divider"></div></li>
     	<li><a class="subheader">Account</a></li>
-    	<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
+    	<li><a class="waves-effect" href="https://omegaclassrooms.ga/"><i class="material-icons">close</i>Sign Out</a></li>
   </ul>
 
   <!--Notes Side Navigation Bar-->

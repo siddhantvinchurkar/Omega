@@ -32,7 +32,7 @@
 	$userrow = mysqli_fetch_assoc($retsub);
 
 
-	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$userrow["eml"].'"]; </script>';
+	echo '<script type="text/javascript">var userDetail = ["'.$userDet["photo"].'","'.$userRet["fn"].'","'.$userrow["rno"].'","'.$_GET['eml'].'"]; </script>';
 	// Close connection to the database
 	$conn->close();
 ?>
