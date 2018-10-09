@@ -20,15 +20,6 @@
 	}
 	// Close connection to the database
 	$conn->close();
-	?>
-	//get user details from users table using email in url
-	$userDet = "SELECT * FROM users WHERE rno='".$_GET['student']."'";
-	$userRet = mysqli_query($conn, $userDet);
-	$userrow = mysqli_fetch_assoc($userRet);
-	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$userrow["eml"].'"]; </script>';
-	
-	// Close connection to the database
-	$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
