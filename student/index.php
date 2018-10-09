@@ -274,9 +274,9 @@
 				xmlHttp.send(null);
 			}
 			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[1].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[1].fn;
-				document.getElementById("snID").innerHTML = JSON.parse(data).users[1].rno;
+				document.getElementById("snDP").src = userDetail[0];
+				document.getElementById("snName").innerHTML = userDetail[1];
+				document.getElementById("snID").innerHTML = userDetail[2];
 			}
 			function results2(data){
 				if(data == "1") console.log("Added New Class!");
