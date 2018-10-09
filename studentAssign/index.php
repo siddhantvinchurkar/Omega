@@ -273,11 +273,14 @@
 			  messagingSenderId: "230656441501"
 			};
 			firebase.initializeApp(config);
+		</script>
+		<script>
+
 			// Populate cards
 			window.onload = function(){
-				for(var b=0; b<assignmentTopicArray.length; b++)
-					document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a></div></div></div>';
+				for(var b=0; b<assignmentTopicArray.length; b++) document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a></div></div></div>';
 			}
+
 		</script>
 		<!--JavaScript at end of body for optimized loading-->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
