@@ -197,7 +197,7 @@
   <div id="classmates" class="modal">
     <div class="modal-content">
     	<img src="../images/icons/192.png" class="center2"/>
-      <h5>Join New Class</h5>
+      <h5><center>Classmates</center></h5>
        <div class="input-field col s6">
           <table>
           	<?php include 'pullClassmates.php';?>
