@@ -1,4 +1,5 @@
 <?php
+/*
 	// Server Credentials
 	$servername = "localhost";
 	$username = "omega";
@@ -26,6 +27,7 @@
 	
 	// Close connection to the database
 	$conn->close();
+	*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -235,6 +237,24 @@
   <!-- end of announcement modal-->
 
    
+   <!-- Upload assign link -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+    	<img src="../images/icons/192.png" class="center2"/>
+      <h5>Upload Assignment</h5>
+      <br>
+	    <form action="#">
+	    	<div class="file-field input-field">
+	        	<input class="file-path validate" type="text" placeholder="Paste Link Here" id="aLink">	
+	    	</div>
+	  	</form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+  <!-- end Upload assign link -->
+
   <!-- Upload assignmet Modal Structure -->
   <div id="modal2" class="modal">
     <div class="modal-content">
@@ -257,6 +277,7 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
     </div>
   </div>
+  <!-- end Upload assignmet Modal Structure -->
 
 </main>
 			<!--Footer-->
