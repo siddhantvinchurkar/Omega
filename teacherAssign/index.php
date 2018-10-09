@@ -1,3 +1,26 @@
+<?php
+	// Server Credentials
+	$servername = "localhost";
+	$username = "omega";
+	$password = "uglyhorse3449";
+	$dbname = "omega";
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	//get user details from users table using email in url
+	$userDet = "SELECT * FROM users WHERE rno='".$_GET['teacher']."'";
+	$userRet = mysqli_query($conn, $userDet);
+	$userrow = mysqli_fetch_assoc($userRet);
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$userrow["eml"].'"]; </script>';
+	
+	// Close connection to the database
+	$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -323,25 +346,11 @@
 			</script>
 
 			<script>
-			function getHttpAsync(link, callback){
-				var xmlHttp = new XMLHttpRequest();
-				xmlHttp.onreadystatechange = function(){ 
-					if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
-					callback(xmlHttp.responseText);
-				}
-				xmlHttp.open("GET", link, true);
-				xmlHttp.send(null);
-			}
-			function results(data){
-				document.getElementById("snDP").src = JSON.parse(data).users[3].photo;
-				document.getElementById("snName").innerHTML = JSON.parse(data).users[3].fn;
-				document.getElementById("snID").innerHTML = JSON.parse(data).users[3].rno;
-				
-			}
-		window.onload = function(){
-				getHttpAsync("../api/users/?key=WNetcNnHuxs2VjwtjfBA78m3whhMZV5dXddKXQrTkMLVvq75HpESRLf9GawVpef4&transform=1", results);
-			}
-		</script>
+				//put user details in the side nav
+				document.getElementById("snDP").src = userDetail[0];
+				document.getElementById("snName").innerHTML = userDetail[1];
+				document.getElementById("snID").innerHTML = userDetail[2];
+			</script>
 
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->

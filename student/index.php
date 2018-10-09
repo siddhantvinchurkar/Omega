@@ -188,7 +188,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a id="joinNewClassButton" href="https://omegaclassrooms.ga/student/?eml=nik98hil@gmail.com" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <a id="joinNewClassButton" onclick="plsrefresh()" class="modal-close waves-effect waves-green btn-flat">Submit</a>
     </div>
   </div>
 
@@ -246,6 +246,9 @@
 				window.location.href = "../studentAssign/index.php?student=" + studID + "&subname=" + subjName;
 			}
 
+			function plsrefresh(){
+				alert("Please refresh the page again to view your newly joined class");
+			}
 		</script>
 
 			<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script><!--Not loading asynchronously as the following script is dependant on this-->
