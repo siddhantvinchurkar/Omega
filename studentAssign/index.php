@@ -1,5 +1,5 @@
 <?php
-/*
+
 	// Server Credentials
 	$servername = "localhost";
 	$username = "omega";
@@ -27,7 +27,7 @@
 	
 	// Close connection to the database
 	$conn->close();
-	*/
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
