@@ -378,6 +378,7 @@
 				document.getElementById("snDP").src = userDetail[0];
 				document.getElementById("snName").innerHTML = userDetail[1];
 				document.getElementById("snID").innerHTML = userDetail[2];
+				document.getElementById("snEmail").innerHTML = userDetail[2];
 				
 			</script>
 
