@@ -5,7 +5,7 @@ if(!$conn)
 		echo "Unable to connect to server: ".mysqli_connect_error();
 	}
 
-$sql = "SELECT * FROM users"; 
+$sql = 'SELECT * FROM users WHERE usertype = "S"'; 
 $retsub = mysqli_query($conn, $sql); 
 $ncount = mysqli_num_rows($retsub); 
 if($ncount > 0)
