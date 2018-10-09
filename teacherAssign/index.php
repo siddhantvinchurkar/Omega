@@ -152,7 +152,7 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<a href="../teacher/" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>
+							<?php echo '<a href="../teacher/?eml='.$userrow["eml"].'" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>'; ?>
 						</li>
 						<li>
 							<a class="btn-flat tooltipped modal-trigger" href="#notesList" data-position="bottom" data-tooltip="Notes"><i class="tiny material-icons icon-white">library_books</i></a>
@@ -350,10 +350,11 @@
 			</script>
 
 			<script>
-				//put user details in the side nav
+				//put user details in the side nav and other areas
 				document.getElementById("snDP").src = userDetail[0];
 				document.getElementById("snName").innerHTML = userDetail[1];
 				document.getElementById("snID").innerHTML = userDetail[2];
+				
 			</script>
 
 			<script>
