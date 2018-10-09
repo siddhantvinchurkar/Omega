@@ -186,7 +186,7 @@
       					<a href="#email"><span id="snEmail" class="white-text email">teacherSJC@gmail.com</span></a>
     				</div>
     			</li>
-    				<li><a id="viewStud" href="#studentsView" class="waves-effect"><i class="material-icons">group</i>View Students List</a></li>
+    				<li><a id="viewStud" href="#studentsView" class="waves-effect modal-trigger"><i class="material-icons">group</i>View Students List</a></li>
     				<li><div class="divider"></div></li>
     				<li><a id="addAssign" href="#assignModal" class="waves-effect modal-trigger"><i class="material-icons">assignment</i>Add New Assignment</a></li>
     				<li><a id="addNotes" href="#notesModal" class="waves-effect modal-trigger"><i class="material-icons">note_add</i>Add Notes</a></li>
@@ -306,6 +306,21 @@
 				</div>
 			</div>
 
+			<div id="modal2" class="modal">
+					<div class="modal-content">
+	  					<h4>List of Assignment Files</h4>
+	  					<table id="notesTable" class="responsive-table highlight">
+	        				
+	        				<?php include 'pullAssignm.php'; ?>
+
+					     </table>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Close"/>
+					</div>
+				</form>
+			</div>
+
 		</main>
 			<!--Footer-->
 			<footer class="page-footer" style="padding-top:0px;">
@@ -368,7 +383,7 @@
 
 			<script>
 				window.onload = function(){
-					for(var b=0; b<assignmentTopicArray.length; b++) document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a></div></div></div>';
+					for(var b=0; b<assignmentTopicArray.length; b++) document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>View</a></div></div></div>';
 				}
 			</script>
 
