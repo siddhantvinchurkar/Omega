@@ -15,5 +15,5 @@
 	{
 		echo "Unable to Delete Class: ".mysqli.error($conn);
 	}
-	echo "<script>window.location = 'https://omegaclassrooms.ga/teacher/index.php?subname=".$subjectN."&teacher=".$tcherID."'</script>";
+	echo "<script>window.location = 'https://omegaclassrooms.ga/teacher/index.php?eml=".$_GET['eml']."</script>";
 ?>
