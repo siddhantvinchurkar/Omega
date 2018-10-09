@@ -23,10 +23,10 @@
 	$userRet = mysqli_query($conn, $userDet);
 	$userrow = mysqli_fetch_assoc($userRet);
 	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$_GET['eml'].'"]; </script>';
-
+	
 	// Close connection to the database
 	$conn->close();
-?>
+	?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -147,8 +147,6 @@
 						<li>
 							<a class="btn-flat tooltipped modal-trigger" href="#announceModal" data-position="bottom" data-tooltip="Announcements" ><i class="tiny material-icons icon-white">announcements</i></a>
 						</li>
-
-						
 					</ul>
 				</div>
 			</nav>
@@ -166,226 +164,74 @@
 			<img src="../images/icons/512.png" class="center2" />
 			<!-- Sliding Navigation Bars -->
 			<ul id="menu-nav" class="sidenav">
-				<li>
-					<div class="user-view">
-						<div class="background">
-							<img src="../images/list.jpg">
-						</div>
-						<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
-						<a href="#name"><span class="white-text name">Nikhil Sujith</span></a>
-						<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
+			<li>
+				<div class="user-view">
+				<div class="background">
+					<img src="../images/list.jpg">
+				</div>
+				<a href="#user"><img class="circle" src="../images/icons/72.png"></a>
+				<a href="#name"><span class="white-text name">Nikhil Sujith</span></a>
+				<a href="#email"><span class="white-text email">nik98hil@gmail.com</span></a>
 				<img src="../images/icons/512.png" class="center2" />
-
-<!-- Sliding Navigation Bars -->
-  <ul id="menu-nav" class="sidenav">
-    	<li>
-    		<div class="user-view">
-      			<div class="background">
-        			<img src="../images/list.jpg">
-      			</div>
-      		<a ><img id="snDP" class="circle" src="../images/icons/72.png"></a>
-      		<a ><span id="snName" class="white-text name">Student Name</span></a>
-    		<a ><span id="snID" class="white-text email">Student ID</span></a>
-    		</div>
-    	</li>
-    	<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
-    	<li><div class="divider"></div></li>
-    	<li><a class="subheader">Account</a></li>
-    	<li><a class="waves-effect" href="https://omegaclassrooms.ga/"><i class="material-icons">close</i>Sign Out</a></li>
-  </ul>
-
-  <!--Notes Side Navigation Bar-->
-   <ul id="notes-nav" class="sidenav">
-   	<div>
-   		<table>
-    	<?php include 'pullNotes.php'?>;
-    	</table>
-	</div>
-  </ul>
-  <!-- end Note Side Nav Bar-->
-
- <div class="row">
-<!-- Card 1-->
-    <div class="col s12 m4">
-      <div class="card blue-grey darken-1">
-        <div class="card-title white-text">
-          Assignment 1
-        </div>
-        <div class="card-content blue-grey darken-2 white-text">
-        	<p>THE QUESTION HERE</p>
-        	<a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a>
-        </div>
-      </div>
-    </div>
- <!-- End of Card  -->
-
- <!-- Card 1-->
-    <div class="col s12 m4">
-      <div class="card blue-grey darken-1">
-        <div class="card-title white-text">
-          Assignment 1
-        </div>
-        <div class="card-content blue-grey darken-2 white-text">
-        	<p>THE QUESTION HERE</p>
-        	<a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a>
-        </div>
-      </div>
-    </div>
- <!-- End of Card  -->
-
- <!-- Card 1-->
-    <div class="col s12 m4">
-      <div class="card blue-grey darken-1">
-        <div class="card-title white-text">
-          Assignment 1
-        </div>
-        <div class="card-content blue-grey darken-2 white-text">
-        	<p>THE QUESTION HERE</p>
-        	<a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a>
-        </div>
-      </div>
-    </div>
- <!-- End of Card  -->
-	</div>
-
-	<!-- Join New Class Modal -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-    	<img src="../images/icons/192.png" class="center2"/>
-      <h5>Join New Class</h5>
-       <div class="input-field col s6">
-          <input placeholder="Enter Class Code Here" id="first_name" type="text" class="validate">
-        </div>
-    </div>
-    <div class="modal-footer">
-      <button id="joinNewClassButton" href="#" onclick="plsrefresh()" class="modal-close waves-effect waves-green btn-flat">Submit</button>
-    </div>
-  </div>
-
-<!-- Announcement modal -->
-  <div id="announceModal" class="modal">
-    <div class="modal-content">
-    	<img src="../images/icons/192.png" class="center2"/>
-      <h4>Announcements</h4>
-      <table>
-      	<?php include 'pullFromDb.php';?>
-  </table>
-    </div>
-    <div class="modal-footer">
-      <a  class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-  <!-- end of announcement modal-->
-
-   
-  <!-- Upload assignmet Modal Structure -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-    	<img src="../images/icons/192.png" class="center2"/>
-      <h5>Upload Assignment</h5>
-      <br>
-	    <form action="#">
-	    	<div class="file-field input-field">
-	      		<div class="btn">
-	        		<span><i class="material-icons">attach_file</i></span>
-	       			 <input type="file">
-	      		</div>
-	      		<div class="file-path-wrapper">
-	        	<input class="file-path validate" type="text" placeholder="Attach File">
-	      		</div>
-	    	</div>
-	  	</form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
-  </div>
-
-</main>
-			<!--Footer-->
-			<footer class="page-footer" style="padding-top:0px;">
-				<div class="footer-copyright">
-					<div class="container" id="footerText">
-						<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
-					</div>
-				</li>
-				<li><a class=" modal-trigger" href="#modal1"><i class="material-icons">school</i>Join New Class</a></li>
-				<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
-				<li>
-					<div class="divider"></div>
-				</li>
-				<li><a class="subheader">Account</a></li>
-				<li><a class="waves-effect" href="#!"><i class="material-icons">close</i>Sign Out</a></li>
-			</ul>
-			<!--Notes Side Navigation Bar-->
-			<ul id="notes-nav" class="sidenav">
-				<div>
-					<table>
-						<?php include 'pullNotes.php'?>;
-					</table>
-				</div>
-			</ul>
-			<!-- end Note Side Nav Bar-->
-			<div class="row" id="assignmentsContainer">
-				<!-- Cards go here-->
-			</div>
-			<!-- Join New Class Modal -->
-			<div id="modal1" class="modal">
-				<div class="modal-content">
-					<img src="../images/icons/192.png" class="center2"/>
-					<h5>Join New Class</h5>
-					<div class="input-field col s6">
-						<input placeholder="Enter Class Code Here" id="first_name" type="text" class="validate">
-					</div>
-				</div>
-				<div class="modal-footer">
-					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-				</div>
-			</div>
-			<!-- Announcement modal -->
-			<div id="announceModal" class="modal">
-				<div class="modal-content">
-					<img src="../images/icons/192.png" class="center2"/>
-					<h4>Announcements</h4>
-					<table>
-						<?php include 'pullFromDb.php';?>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-				</div>
-			</div>
-			<!-- end of announcement modal-->
-			<!-- Upload assignmet Modal Structure -->
-			<div id="modal2" class="modal">
-				<div class="modal-content">
-					<img src="../images/icons/192.png" class="center2"/>
-					<h5>Upload Assignment</h5>
-					<br>
-					<form action="#">
-						<div class="file-field input-field">
-							<div class="btn">
-								<span><i class="material-icons">attach_file</i></span>
-								<input type="file">
+				<!-- Sliding Navigation Bars -->
+				<ul id="menu-nav" class="sidenav">
+					<li>
+						<div class="user-view">
+							<div class="background">
+								<img src="../images/list.jpg">
 							</div>
-							<div class="file-path-wrapper">
-								<input class="file-path validate" type="text" placeholder="Attach File">
-							</div>
+							<a ><img id="snDP" class="circle" src="../images/icons/72.png"></a>
+							<a ><span id="snName" class="white-text name">Student Name</span></a>
+							<a ><span id="snID" class="white-text email">Student ID</span></a>
 						</div>
-					</form>
+					</li>
+					<li><a href="#!" onclick="showClassmates();"><i class="material-icons">group</i>Classmates</a></li>
+					<li>
+						<div class="divider"></div>
+					</li>
+					<li><a class="subheader">Account</a></li>
+					<li><a class="waves-effect" href="https://omegaclassrooms.ga/"><i class="material-icons">close</i>Sign Out</a></li>
+				</ul>
+				<!--Notes Side Navigation Bar-->
+				<ul id="notes-nav" class="sidenav">
+					<div>
+						<table>
+							<?php include 'pullNotes.php'?>;
+						</table>
+					</div>
+				</ul>
+				<!-- end Note Side Nav Bar-->
+				<div class="row" id="assignMentsContainer"></div>
+				<!-- Upload assignmet Modal Structure -->
+				<div id="modal2" class="modal">
+					<div class="modal-content">
+						<img src="../images/icons/192.png" class="center2"/>
+						<h5>Upload Assignment</h5>
+						<br>
+						<form action="#">
+							<div class="file-field input-field">
+								<div class="btn">
+									<span><i class="material-icons">attach_file</i></span>
+									<input type="file">
+								</div>
+								<div class="file-path-wrapper">
+									<input class="file-path validate" type="text" placeholder="Attach File">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+					</div>
 				</div>
-				<div class="modal-footer">
-					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-				</div>
-			</div>
 		</main>
 		<!--Footer-->
 		<footer class="page-footer" style="padding-top:0px;">
-			<div class="footer-copyright">
-				<div class="container" id="footerText">
-					<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
-				</div>
-			</div>
+		<div class="footer-copyright">
+		<div class="container" id="footerText">
+		<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
+		</div>
+		</div>
 		</footer>
 		<!--JavaScript at end of body for optimized loading-->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -429,59 +275,52 @@
 			  messagingSenderId: "230656441501"
 			};
 			firebase.initializeApp(config);
-
+			
 			window.onload = function(){
 				for(var b=0; b<assignmentTopicArray.length; b++)
 					document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a></div></div></div>';
 			}
 		</script>
-
-			<!--JavaScript at end of body for optimized loading-->
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-			
-			<!-- Slide Navigation Bar JS-->
-			<script>
-				 document.addEventListener('DOMContentLoaded', function() {
-			    var elems = document.querySelectorAll('.sidenav');
-			    var instances = M.Sidenav.init(elems, 'edge');
-  				});
-			</script>
-
-			<script>
-				//put user details in the side nav
-				document.getElementById("snDP").src = userDetail[0];
-				document.getElementById("snName").innerHTML = userDetail[1];
-				document.getElementById("snID").innerHTML = userDetail[2];
-			</script>
-
-			<!-- Modal JS-->
-			<script>
-				 document.addEventListener('DOMContentLoaded', function() {
-				    var elems = document.querySelectorAll('.modal');
-				    var instances = M.Modal.init(elems, 'noScrolling');
-				  });
-				</script>
-
-			<script>
-				// Get rid of the loader after three seconds
-				setTimeout(function(){
-					document.getElementById("progressBar").style.display="none";
-					document.getElementById("pageContents").style.display="block";
-					},0);
-			</script>
-
-			<!--Button tooltips JS-->
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-				    var elems = document.querySelectorAll('.tooltipped');
-				    var instances = M.Tooltip.init(elems);
-				  });
-			</script>
-
-			<script>
-				function plsrefresh(){
-				alert("Please refresh the page again to view your newly joined class");
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+		<!-- Slide Navigation Bar JS-->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+			  var elems = document.querySelectorAll('.sidenav');
+			  var instances = M.Sidenav.init(elems, 'edge');
+				});
+		</script>
+		<script>
+			//put user details in the side nav
+			document.getElementById("snDP").src = userDetail[0];
+			document.getElementById("snName").innerHTML = userDetail[1];
+			document.getElementById("snID").innerHTML = userDetail[2];
+		</script>
+		<!-- Modal JS-->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+			   var elems = document.querySelectorAll('.modal');
+			   var instances = M.Modal.init(elems, 'noScrolling');
+			 });
+		</script>
+		<script>
+			// Get rid of the loader after three seconds
+			setTimeout(function(){
+				document.getElementById("progressBar").style.display="none";
+				document.getElementById("pageContents").style.display="block";
+				},0);
+		</script>
+		<!--Button tooltips JS-->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+			    var elems = document.querySelectorAll('.tooltipped');
+			    var instances = M.Tooltip.init(elems);
+			  });
+		</script>
+		<script>
+			function plsrefresh(){
+			alert("Please refresh the page again to view your newly joined class");
 			}
-			</script>
+		</script>
 	</body>
 </html>
