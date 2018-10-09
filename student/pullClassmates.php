@@ -11,7 +11,7 @@ $ncount = mysqli_num_rows($retsub);
 if($ncount > 0)
 {  
 	echo "<tr><th>First Name</th>
-			<th><Last Name</th>
+			<th>Last Name</th>
 				<th>Email</th></tr>";
 	while($row = mysqli_fetch_assoc($retsub))
 	{ 
