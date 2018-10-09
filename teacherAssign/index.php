@@ -15,13 +15,13 @@
 	// SQL commands
 	$checksql = "SELECT * FROM AssignmentTable WHERE subject='".$_GET['subname']."'";
 	$result = $conn->query($checksql);
-	echo '<script type="text/javascript">var assignArray = [];var assign2Array = [];</script>';
+	echo '<script type="text/javascript">var topicArray = [];var descArray = [];</script>';
 	$ncount = mysqli_num_rows($result); 
 	if($ncount > 0)
 	{  $n = 0;
 		while($row = mysqli_fetch_assoc($result))
 		{ 
-			  echo '<script type="text/javascript">assignArray['.$n.'] = '.$row["topic"].';assign2Array['.$n.'] = '.$row["description"].';</script>';
+			  echo '<script type="text/javascript">topicArray['.$n.'] = '.$row["topic"].';descArray['.$n.'] = '.$row["description"].';</script>';
 			  $n += 1;
 		} //end of while  
 	}
@@ -358,8 +358,8 @@
 
 			<script>
 				window.onload = function(){
-					for(var m=0; m<assignArray.length; m++)
-				document.getElementById("subCards").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div id="assignTitle" class="card-title white-text">'+assignArray[m]+'</div><div class="card-content blue-grey darken-2 white-text"><p id="assignQues">'+assign2Array[m]+'</p><a class="waves-effect waves-light btn right" href="assignmentView.php"><i class="material-icons right">list</i>View</a></div></div></div>';
+					for(var m=0; m<topicArray.length; m++)
+				document.getElementById("subCards").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div id="assignTitle" class="card-title white-text">'+topicArray[m]+'</div><div class="card-content blue-grey darken-2 white-text"><p id="assignQues">'+descArray[m]+'</p><a class="waves-effect waves-light btn right" href="assignmentView.php"><i class="material-icons right">list</i>View</a></div></div></div>';
 				}
 			</script>
 
