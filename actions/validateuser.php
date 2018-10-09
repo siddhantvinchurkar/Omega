@@ -21,7 +21,9 @@
 	$checksql = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
 	$createusersql = "INSERT INTO users(fn, ln, eml, photo) VALUES('".$_GET['fn']."', '".$_GET['ln']."', '".$_GET['eml']."', '".$_GET['photourl']."')";
 
-	if ($conn->query($checksql)->fetch_assoc()) {
+	$result = $conn->query($checksql);
+
+	if ($result->num_rows > 0) {
 	    	echo "1";
 	}
 	else {
