@@ -18,6 +18,12 @@
 	echo '<script type="text/javascript">assignmentTopicArray.push("'.$row['topic'].'");</script>';
 	echo '<script type="text/javascript">assignmentDescriptionArray.push("'.$row['description'].'");</script>';
 	}
+	//get user details from users table using email in url
+	$userDet = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
+	$userRet = mysqli_query($conn, $userDet);
+	$userrow = mysqli_fetch_assoc($userRet);
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$_GET['eml'].'"]; </script>';
+
 	// Close connection to the database
 	$conn->close();
 ?>
