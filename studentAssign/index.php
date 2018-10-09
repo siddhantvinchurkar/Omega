@@ -30,8 +30,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!--ask for new class code JS-->
-		<script type="text/javascript" src="student.js"> </script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Basic meta tags-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -227,11 +225,11 @@
 		</main>
 		<!--Footer-->
 		<footer class="page-footer" style="padding-top:0px;">
-		<div class="footer-copyright">
-		<div class="container" id="footerText">
-		<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
-		</div>
-		</div>
+			<div class="footer-copyright">
+				<div class="container" id="footerText">
+					<a href="#" target="_blank" title="OMEGA" style="color:#FFFFFF">&emsp;Omega&emsp;</a>
+				</div>
+			</div>
 		</footer>
 		<!--JavaScript at end of body for optimized loading-->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -275,7 +273,7 @@
 			  messagingSenderId: "230656441501"
 			};
 			firebase.initializeApp(config);
-			
+			// Populate cards
 			window.onload = function(){
 				for(var b=0; b<assignmentTopicArray.length; b++)
 					document.getElementById("assignmentsContainer").innerHTML += '<div class="col s12 m4"><div class="card blue-grey darken-1"><div class="card-title white-text">'+assignmentTopicArray[b]+'</div><div class="card-content blue-grey darken-2 white-text"><p>'+assignmentDescriptionArray[b]+'</p><a class="waves-effect waves-light btn right modal-trigger" href="#modal2"><i class="material-icons right">send</i>Submit</a></div></div></div>';
