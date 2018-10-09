@@ -23,7 +23,7 @@
 	$userDet = "SELECT * FROM users WHERE eml='".$_GET['eml']."'";
 	$userRet = mysqli_query($conn, $userDet);
 	$userrow = mysqli_fetch_assoc($userRet);
-	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$_GET['eml'].'"]; </script>';
+	echo '<script type="text/javascript">var userDetail = ["'.$userrow["photo"].'","'.$userrow["fn"].'","'.$userrow["rno"].'","'.$userrow["eml"].'"]; </script>';
 	
 	// Close connection to the database
 	$conn->close();
@@ -145,7 +145,7 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<?php echo '<a href="../teacher/?eml='.$userrow["eml"].'" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>'; ?>
+							<?php echo '<a href="../student/?eml='.$userrow["eml"].'" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>'; ?>
 						</li>
 						<li>
 							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i data-target="notes-nav" class="tiny material-icons icon-white sidenav-trigger">library_books</i></a>
@@ -238,46 +238,20 @@
 
    
    <!-- Upload assign link -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-    	<img src="../images/icons/192.png" class="center2"/>
-      <h5>Upload Assignment</h5>
-      <br>
-	    <form action="#">
-	    	<div class="file-field input-field">
-	        	<input class="file-path validate" type="text" placeholder="Paste Link Here" id="aLink">	
-	    	</div>
-	  	</form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
-  </div>
+			<div id="modal2" class="modal">
+				<?php echo '<form action="insertAssign.php?sname='.$_GET['subname'].'&studID='.$_GET['student'].'" method="post">'; ?>
+					<div class="modal-content">
+	  					<h4>Upload Assignment File</h4>
+	  					<p>Upload the file in your google drive and paste the shared link below.</p>
+	  					<p><b>Enter Notes Link</b><input type="text" size="99"  name="annote" /></p>
+					</div>
+					<div class="modal-footer">
+	  					<input type="submit" class="modal-close waves-effect btn-flat" value="Upload Assignment"/>
+					</div>
+				</form>
+			</div>
   <!-- end Upload assign link -->
 
-  <!-- Upload assignmet Modal Structure -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-    	<img src="../images/icons/192.png" class="center2"/>
-      <h5>Upload Assignment</h5>
-      <br>
-	    <form action="#">
-	    	<div class="file-field input-field">
-	      		<div class="btn">
-	        		<span><i class="material-icons">attach_file</i></span>
-	       			 <input type="file">
-	      		</div>
-	      		<div class="file-path-wrapper">
-	        	<input class="file-path validate" type="text" placeholder="Attach File">
-	      		</div>
-	    	</div>
-	  	</form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
-  </div>
-  <!-- end Upload assignmet Modal Structure -->
 
 </main>
 			<!--Footer-->
