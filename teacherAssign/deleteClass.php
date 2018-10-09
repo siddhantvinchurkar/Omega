@@ -9,7 +9,7 @@
 	$tcherID = $_GET["techerID"];
 	$subjectN = $_GET["sname"];
 
-	$sql = "DELETE FROM ClassTable WHERE ClassName = '$subjectN' AND teacherID = '$tcherID'";
+	$sql = "DELETE FROM ClassTable WHERE ClassName = '".$subjectN."' AND teacherID = '".$tcherID."'";
 
 	if(!mysqli_query($conn,$sql))
 	{
