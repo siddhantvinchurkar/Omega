@@ -145,7 +145,7 @@
 					<a href="" class="brand-logo">Omega</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li>
-							<?php echo '<a href="../student/?eml='.$userrow["eml"].'" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>'; ?>
+							<?php /*echo '<a href="../student/?eml='.$userrow["eml"].'" class="btn-flat tooltipped" data-position="bottom" data-tooltip="Dashboard"><i class="tiny material-icons icon-white">dashboard</i></a>';*/ ?>
 						</li>
 						<li>
 							<a class="btn-flat tooltipped" data-position="bottom" data-tooltip="Notes"><i data-target="notes-nav" class="tiny material-icons icon-white sidenav-trigger">library_books</i></a>
