@@ -1,4 +1,5 @@
 <?php
+/*
 	echo "Inserting Assignment...";
 	$conn = mysqli_connect("localhost","shreyas","password","omega");
 	if(!$conn)
@@ -16,8 +17,8 @@
 		echo "Unable to Add Announcement: ".mysqli.error($conn);
 	}
 	echo "<script>window.location.href = 'https://omegaclassrooms.ga/teacherAssign/index.php?subname=".$subjectN."&teacher=".$teachID."';</script>";
+	*/
 ?>
-<!--
 <!DOCTYPE html>
 <html>
   <head>
@@ -50,4 +51,3 @@
     </div>
   </body>	
 </html>
--->
