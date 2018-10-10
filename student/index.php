@@ -165,7 +165,7 @@
     	<li><a class="modal-trigger" href="#classmates"><i class="material-icons">group</i>Classmates</a></li>
     	<li><div class="divider"></div></li>
     	<li><a class="subheader">Subheader</a></li>
-    	<li><a class="waves-effect" href="#!"><i class="material-icons">clear</i>Sign Out</a></li>
+    	<li><a class="waves-effect" href="omegaclassrooms.ga"><i class="material-icons">clear</i>Sign Out</a></li>
   </ul>
   <!--card container-->
 	<div class="container">
