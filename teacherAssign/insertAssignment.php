@@ -10,7 +10,7 @@
 	$asstopi = $_POST['topassign'];
 	$assdesc = $_POST['desassign'];
 
-	$sql = "INSERT INTO AssignmentTable (subject,tID,topic,description) VALUES ('$subjectN','$teachID','$asstopi','$assdesc')";
+	$sql = "INSERT INTO AssignmentTable (subject,tID,topic,description) VALUES ('".$subjectN."','".$teachID."','".$asstopi."','".$assdesc."')";
 	if(!mysqli_query($conn,$sql))
 	{
 		echo "Unable to Add Announcement: ".mysqli.error($conn);
